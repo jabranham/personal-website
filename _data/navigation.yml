@@ -1,19 +1,13 @@
 # Site navigation links
 
-- title: About
-  url: /about/
+- title: Research
+  url: /research/
 
-- title: Articles
-  url: /articles/
+- title: Teaching
+  url: /teaching/
 
-- title: Blog
-  url: /blog/
-
-- title: Theme Setup
-  url: /theme-setup/
-
-- title: Made Mistakes
-  url: http://mademistakes.com
+- title: CV
+  url: /cv/cv.pdf
 
 - title: Search
   url: /search/
