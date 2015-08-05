@@ -1,8 +1,8 @@
 # Site wide configuration
 
-title: Site Title
+title: J. Alexander Branham
 locale: en_US
-description: Describe your website here.
+description: J. Alexander Branham
 logo: site-logo.png
 search: true
 url: http://localhost:4000
@@ -31,13 +31,13 @@ exclude: ["lib", "config.rb", "Capfile", "config", "log", "Rakefile", "Rakefile.
 
 # Site owner
 owner:
-  name: Your Name
+  name: J. Alexander Branham
   avatar: bio-photo.jpg
-  email: you@email.com
+  email: branham@utexas.edu
   disqus-shortname:
   twitter: #username
   facebook: #username
-  github: #username
+  github: jabranham
   stackexchange: #http://stackoverflow.com/users/123456/username
   linkedin: #username
   instagram: #username
@@ -47,7 +47,7 @@ owner:
   weibo: #userid
   google:
     plus: #username
-    analytics:
+    analytics: UA-65548469-1
     verify:
     ad-client:
     ad-slot:
