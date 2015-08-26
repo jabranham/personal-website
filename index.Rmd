@@ -3,5 +3,6 @@ title: J. Alexander Branham
 ---
 
 Hi there! I'm a graduate student at the University of Texas at Austin in the Department of Government.
+Broadly speaking, my research interests are public opinion, public policy, elections, behavior, and methodology.
 
 [View my CV](cv/cv.pdf)
