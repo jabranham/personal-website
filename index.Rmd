@@ -1,7 +1,0 @@
----
-title: J. Alexander Branham
----
-
-Hi there! I'm a graduate student at the University of Texas at Austin in the Department of Government.
-
-[View my CV](cv/cv.pdf)
