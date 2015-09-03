@@ -3,6 +3,7 @@ layout: post
 title: "Motivation for a Blog"
 categories: [why_blog]
 tags: [blog]
+comments: true
 ---
 
 I put a decent amount of effort into my setup.
