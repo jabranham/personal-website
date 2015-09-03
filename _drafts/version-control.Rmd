@@ -22,6 +22,8 @@ One of my favorite features of using a formal version control system is that it 
 Instead, I'm going to focus on my setup and how I implement version control.
 There are a few different ways to do this, but I'm pretty happy with my setup, so that's what I'll focus on here.
 I use git and Github.
+Git is the version management system, Github is just an online host (probably the most popular git-based one).
+You can see all my public repos on github [here](https://github.com/jabranham)
 
 # Step 1: Download and Install git (and a GUI, if you want one)
 Installing git is super easy. 
