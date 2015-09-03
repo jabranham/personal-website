@@ -5,4 +5,68 @@ categories: [best_practices, version_control]
 tags: [git, github, version_control, best_practices]
 ---
 
-This is text. 
+My [first post](2015/09/why-blog.html) explained why I started this blog.
+Essentially, I started to make notes to myself about how I setup and use all the various bits of software that I use.
+But then I figured that it would be nice of me to put them online, since it's not much more work for me, and maybe it'll help out some other hapless person. 
+I then mentioned version control, which is one of those things I wish someone had talked with me about at the very beginning of grad school. 
+
+Version control is one of those things that you don't need, until you *really really really* need it. 
+There's a [great article](http://polmeth.wustl.edu/methodologist/tpm_v18_n2.pdf) by Jake Bowers in The Political Methodologist that makes the case for why you need version control in your life, so I won't focus too much on that here. 
+Instead, I'm going to focus on my setup and how I implement version control.
+I use git and Github.
+
+# Step 1: Download and Install git (and a GUI, if you want one)
+Installing git is super easy. 
+You can navigate to [git's website](https://git-scm.com/) and find a link to download the file. 
+If you're on Linux, git may be installed already.
+If not, you can do `sudo apt-get install git` or similar. 
+
+git is a command line tool, which is great if you're comfortable there. 
+If not, there are a few programs out there that will provide a graphical interface for git. 
+There's a list available [here](http://git-scm.com/downloads/guis).
+I tend to use git either from the command line or from within my text editor, so I don't have much experience with the GUIs. 
+Of the ones I've looked at, though I recommend (in no particular order) SmartGit, SourceTree, and Github. 
+
+# Step 2: Configure git
+Now that we have git installed, you need to tell it who you are. 
+This is, again, super easy. 
+From the terminal (or command line or powershell, depending on your OS), run
+
+```
+$ git config --global user.name "John Doe"
+$ git config --global user.email johndoe@example.com
+```
+
+The first line tells git to configure your user name to be "John Doe" (which you'll obviously want to change, unless you happen to actually be named John Doe).
+The second line tells git your email (which you'll also need to change).
+The `--global` option tells git to remember this for everywhere on your computer, so you will not need to tell git your username or email address ever again.
+You can check to make sure that git is remembering those options with:
+
+```
+git config --list 
+```
+
+which will list all the options that git is remembering. 
+
+# Step 3: Learn git
+There are so many online guides on how to learn git that I'm not going to cover this. 
+[This one](https://try.github.io/levels/1/challenges/1) is nice because you don't even have to have git installed. 
+[Here](https://www.atlassian.com/git/) is a more in-depth guide.
+You can also just google "learn git" and a bajillion resources will pop up. 
+Don't pay for anything; everything you will need is available online
+
+# Step 4: Decide on a workflow
+Git was originally designed to be used with computer code.
+That doesn't mean that we can't use it with prose. 
+It's quite easy, in fact. 
+However, git really excels when you write in **plain text**. 
+So put down Microsoft Word. 
+There are basically two ways of writing academic-style articles in plain text (that I know of)
+You can write the whole thing in LaTeX or you can write in markdown. 
+I started with LaTeX (which is more popular), but have converted to markdown ([rmarkdown](http://rmarkdown.rstudio.com/) in particular). 
+
+LaTeX gives you more control over the structure of your document, but has a much steeper learning curve than markdown. 
+Markdown is much easier to learn.
+It also creates a LaTex .tex file along the way when you compile a .pdf document, so it's relatively easy to convert from markdown to LaTeX if you need to gain the extra power. 
+I'll also write a blog post soonish about the pros and cons of writing in LaTeX vs markdown. 
+
