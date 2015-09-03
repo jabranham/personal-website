@@ -16,4 +16,3 @@ My teaching experience is listed [here](/Teaching/) along with (some) of my note
 
 If you want a pdf of my CV, you can get that [here](/cv/cv.pdf)
 
-This website is hosted on [Github](https://github.com). 
