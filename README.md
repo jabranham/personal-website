@@ -1,3 +1,3 @@
 This website was built based on a template provided [here](https://github.com/yihui/knitr-jekyll). 
 
-Comment system powered by method described [here](http://downtothewire.io/ghpages-ghcomments/). 
+Unless noted otherwise, this site is licensed under the [MIT License](LICENSE)
