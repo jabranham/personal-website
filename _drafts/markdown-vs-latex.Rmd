@@ -6,8 +6,41 @@ tags: [plain_text, latex, markdown, rmarkdown, best_practices]
 ---
 
 I hope that my last post convinced everyone that they need to use at least some kind of version control.
-Near the end of that post, I noted that git (and github) are geared towards plain text files. 
+Near the end of that post, I noted that git (and Github) are geared towards plain text files. 
 In this post, I hope to convince you that plain text is your friend. 
 If you're coming from word processing land (a la Microsoft Word or similar), then there can be a bit of a learning curve. 
 But the flexibility and power you gain far outweigh the costs of switching. 
+
+Here's a (very) brief rundown of why you should prefer typing text to a word processor:
+
+* Math equations are much easier to type
+* You can type your references in easily and the program you use to make a final document (LaTeX or markdown) will put in your reference list and format it automatically
+* Word processors are [stupid and inefficient](http://ricardo.ecn.wfu.edu/~cottrell/wp.html)
+* The typesetting is taken care of for you and is generally of higher quality than a word processor 
+* In twenty years, you might not be able to open that word file. Computers will *always* be able to read text files
+* Text files are typically much smaller than their word processor (or pdf) cousins 
+* Word is expensive. LaTeX and markdown is free! 
+    + and open source 
+
+The real purpose of this blog post is not to weigh the pros and cons of plain text vs a word processor, however. 
+It is to compare two different ways that we can type up articles in plain text and then convert them to nicely-formatted files (like a pdf). 
+
+# LaTeX
+First - what is LaTeX? 
+The simple answer is that it is a document markup language. 
+It takes plain text documents that are tagged in a specific way that specifies the structure of the document and creates an output file (usually pdf) suitable for human reading. 
+It is built on top of TeX, but that's not super important for our purposes. 
+In order to use LaTeX, you'll need to install it. 
+
+## Installation 
+There are different distributions of LaTeX for each operating system. 
+For Linux, the best is TeXLive.
+You can do `sudo apt-get install texlive-full` or similar.
+Get the full version - it's a huge download, but well worth it.
+For Windows users, [MikTeX](http://www.miktex.org/) is what you want.
+For Mac OS people, try [MacTeX](https://tug.org/mactex/). 
+
+# (R)markdown
+
+
 
