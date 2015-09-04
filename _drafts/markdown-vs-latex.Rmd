@@ -1,0 +1,13 @@
+---
+layout: post
+title:  "Markdown vs Latex for Academic Writing"
+categories: [plain_text, latex, markdown]
+tags: [plain_text, latex, markdown, rmarkdown, best_practices]
+---
+
+I hope that my last post convinced everyone that they need to use at least some kind of version control.
+Near the end of that post, I noted that git (and github) are geared towards plain text files. 
+In this post, I hope to convince you that plain text is your friend. 
+If you're coming from word processing land (a la Microsoft Word or similar), then there can be a bit of a learning curve. 
+But the flexibility and power you gain far outweigh the costs of switching. 
+
