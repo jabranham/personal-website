@@ -40,6 +40,99 @@ Get the full version - it's a huge download, but well worth it.
 For Windows users, [MikTeX](http://www.miktex.org/) is what you want.
 For Mac OS people, try [MacTeX](https://tug.org/mactex/). 
 
+## Writing
+LaTeX has a bit of a learning curve. 
+Generally speaking, you just type the text that you want into a plain text file.
+We usually use ".tex" as the file extension.
+So your paper named "document" would be "document.tex".
+Then, if you want to either use a command (like inserting a figure) or define some structure of the document (a section header, say) you use `\` then the name of what you want to do. 
+So, for example, if you want to start a new section, you just do `\section{Section Name}`. 
+That starts a new section and names it "Section Name". 
+When you compile your output file (pdf), LaTeX will automatically make it look nice and neat.
+
+### The preamble 
+Every LaTeX document has to have a preamble where you define the overall structure of the document. 
+This includes telling LaTeX what kind of document you're writing (an article, for example), as well as other information like the author's name, the title of the document, and whatever packages you're going to use. 
+You end the preamble by beginning the document. 
+So, for example, here is a LaTeX document:
+
+```
+% hello.tex - Our first LaTeX example!
+\documentclass{article}
+\begin{document}
+This is a sentence. 
+\end{document}
+```
+
+This is about as simple as it gets with LaTeX. 
+The first line is a comment - LaTeX will ignore anything after a percentage sign when it compiles the output pdf. 
+The second line is the only line in our preamble. 
+It tells LaTeX that we are writing an article. 
+The third line tells LaTeX to end the preamble and begin the document. 
+"This is a sentence." is the text of our document. 
+Finally, we end the document with `\end{document}`. 
+
+Of course, a typical research paper is much more complicated than that. 
+For me, though, it was easiest to just start with that minimal style document and then simply google "How do I ... in latex" whenever I needed to do something beside simple text. 
+There's a great community online that helps out with any LaTeX woes you might run into. 
+If you do want some more material, though, there is a good basic introduction available [here](https://en.wikibooks.org/wiki/LaTeX/Basics). 
+
+Note that LaTeX doesn't care about how many spaces you put between words or after a period or whatever. 
+It will interpret `these       words` exactly the same as `these words` when you compile the pdf. 
+To start a new paragraph, you need to have an empty line between them:
+
+```
+This is my first paragraph.
+This is a second sentence in the first paragraph. This is a third.
+
+This starts a second paragraph. 
+```
+
+Any other difficulties you run into you can solve online by using the google machine. 
+
+### Math Mode
+In the intro for this post, I indicated that it is super easy to use math in LaTeX documents. 
+There are two math modes: inline and display. 
+Inline math displays the math inline: $x=3$
+Display math displays the math centered and prominent: 
+
+$$\int_a^b x^2 dx$$
+
+To use inline math, you do this: `$...$` where `...` represents the math. So for $x=3$, you type `$x=3$`.
+Display math is similar, except you use double dollar signs.[^l] So for that integral above I typed `$$\int_a^b x^2 dx$$`.
+
+
+[^l] Some people use `\[...\]` for display math mode, but I've always found that difficult to remember, so I stick with double dollar signs. 
+
+## Compiling (and choosing an editor)
+You can compile LaTeX documents from the terminal once you have a LaTeX distribution installed with the `pdflatex` command. 
+However, most editors will do this for you. 
+You can either use a LaTeX specific editor (in which case I recommend [TeXStudio](http://www.texstudio.org/)), or you can use any general purpose text editor such as [Atom](https://atom.io/), [Emacs](https://www.gnu.org/software/emacs/) with [AucTex](http://www.gnu.org/software/auctex/), or [Sublime Text](http://www.sublimetext.com/). 
+You can get a full list [here](http://tex.stackexchange.com/questions/339/latex-editors-ides). 
+
+The internet has strong opinions about what editor you should use. 
+Here's a list of what I look for in a good editor:
+
+* Cross-platform
+* Free (preferably open source)
+* Syntax highlighting (both R and LaTeX)
+* Code completion (for both R and LaTeX)
+* Spell checking
+* Ability to send R code to console 
+* BibTeX key completion 
+* git integration 
+
+Since I use rmarkdown files, a general-purpose TeX editor is not what I want. 
+Emacs fulfills all these criteria, but I'm not willing to put in the time to learn it. 
+So I use Sublime Text 3 as my editor of choice.[^textpackages] 
+I am pretty happy with it so far.
+It is not free (nor open source), but you don't actually have to ever pay for it. 
+It just reminds you every now and then that you haven't. 
+If Sublime Text ever tries to force me to pay for it, I'll probably switch to Emacs or Atom.
+It does check the rest of the boxes in my list, though! 
+
+[^textpackages] I use the excellent [package control](https://packagecontrol.io/) system to manage the packages. I use git, LaTeXing, RBox, citer, SublimeREPL, and Terminal. They are all install-able from the Package Control system. 
+
 # (R)markdown
 
 
