@@ -128,7 +128,7 @@ This is what my ".gitignore" file looks like for a recent project that I used La
 
 The asterisk before the period tells it to ignore all files whose file names are anything then a period followed by those letters. 
 So, for example, "*.pdf" tells git to ignore pdf files. 
-You can certainly track them (especially useful if you want to host them on github, for example).[^4]
+If you want git to track the pdf files, you'd just leave that out of the ".gitignore" file (especially useful if you want to host them on github, for example).[^4]
 
 [^4] Because .pdf files are binary, git won't be able to see the difference between two different versions like it can with your LaTeX or markdown files. However, there is a tool called [`latexdiff`](http://www.ctan.org/tex-archive/support/latexdiff/) that will do that for you.
 
