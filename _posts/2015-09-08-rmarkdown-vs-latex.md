@@ -79,31 +79,25 @@ There's a great community online that helps out with any LaTeX woes you might ru
 If you do want some more material, though, there is a good basic introduction available [here](https://en.wikibooks.org/wiki/LaTeX/Basics). 
 
 Note that LaTeX doesn't care about how many spaces you put between words or after a period or whatever. 
-It will interpret `these       words` exactly the same as `these words` when you compile the pdf. 
 To start a new paragraph, you need to have an empty line between them:
 
-```
-This is my first paragraph.
-This is a second sentence in the first paragraph. This is a third.
 
-This starts a second paragraph. 
-```
+    This is my first paragraph.
+    This is a second sentence in the first paragraph. This is a third.
+    
+    This starts a second paragraph. 
+
 
 Any other difficulties you run into you can solve online by using the google machine. 
 
 ### Math Mode
 In the intro for this post, I indicated that it is super easy to use math in LaTeX documents. 
 There are two math modes: inline and display. 
-Inline math displays the math inline: $x=3$
-Display math displays the math centered and prominent: 
+Inline math displays the math inline and starts and ends with dollar signs: $x=3$
+Display math displays the math centered and prominent.
+Display math is similar, except you use double dollar signs.[^l] So for an integral you could write: `$$\int_a^b x^2 dx$$`.
 
-$$\int_a^b x^2 dx$$
-
-To use inline math, you do this: `$...$` where `...` represents the math. So for $x=3$, you type `$x=3$`.
-Display math is similar, except you use double dollar signs.[^l] So for that integral above I typed `$$\int_a^b x^2 dx$$`.
-
-
-[^l] Some people use `\[...\]` for display math mode, but I've always found that difficult to remember, so I stick with double dollar signs. 
+[^l]: Some people use `\[...\]` for display math mode, but I've always found that difficult to remember, so I stick with double dollar signs. 
 
 ## Compiling (and choosing an editor)
 You can compile LaTeX documents from the terminal once you have a LaTeX distribution installed with the `pdflatex` command. 
@@ -129,7 +123,7 @@ Since I use rmarkdown files, a general-purpose TeX editor is not what I want.
 Sublime Text can do most of these things, but is neither free nor open-source.[^textpackages]
 So instead, I use Emacs.
 
-Emac is a part of the [GNU project](https://www.gnu.org), the same as R and many Linux-based operating systems. 
+Emacs is a part of the [GNU project](https://www.gnu.org), the same as R and many Linux-based operating systems. 
 Emacs is amazingly powerful.
 Some people refer to it as "an operating system that happens to be particularly good at editing text."
 This is both a bonus and a drawback; while you can do basically anything in emacs[^emacs], it has a steep-ish learning curve.
@@ -151,16 +145,14 @@ Let's talk about it's simpler cousin, markdown.[^rmdinstall]
 Markdown is a simpler way of marking files to tell a computer how they should be typset.
 So, for example, in LaTeX to begin a new section, you type:
 
-```
-\begin{Section Title}
-```
+
+    \begin{Section Title}
+
 
 In markdown, however, it is much simpler.
 You simply do:
 
-```
-# Section Title
-```
+    # Section Title
 
 As you can see, this is *much* easier.
 Not only is it much easier to type, it is much easier to remember.
@@ -178,19 +170,18 @@ Rmarkdown documents some code at the beginning (this is referred to as YAML fron
 Think of it as similar to the preamble in LaTeX documents.
 The YAML frontmatter is placed between hyphons like so:
 
-```
----
-author: J. Alexander Branham
-title: My Document
-output: pdf_document
----
 
-This would be the first sentence of this document.
+    ---
+    author: J. Alexander Branham
+    title: My Document
+    output: pdf_document
+    ---
 
-# Section
+    This would be the first sentence of this documen
+    # Section
 
-This is the first sentence of the first  section! 
-```
+    This is the first sentence of the first  section! 
+
 
 So here we can see that the document's "settings" are set up in the YAML frontmatter.
 Here, I've told the document that the author's name is "J. Alexander Branham."
@@ -232,4 +223,4 @@ For an acadmeic, that's a dealbreaker.
 However, luckily for us, rmarkdown can handle LaTeX code no problem.
 So we can use the easier-to-read and easier-to-write rmarkdown syntax, then use LaTeX code throughout the document to augment our output pdf.[^pdfwarning]
 
-[^pdfwarning] Note, however, that if you want something other than a pdf, the LaTeX code might not work. So if you're looking to compile an html site as well as a pdf file, you'll need to have html code for the first and LaTeX code for the second (assuming you can't get it done in markdown in the first place!)
+[^pdfwarning]: Note, however, that if you want something other than a pdf, the LaTeX code might not work. So if you're looking to compile an html site as well as a pdf file, you'll need to have html code for the first and LaTeX code for the second (assuming you can't get it done in markdown in the first place!)
