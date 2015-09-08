@@ -35,10 +35,12 @@ In order to use LaTeX, you'll need to install it.
 ## Installation 
 There are different distributions of LaTeX for each operating system. 
 For Linux, the best is TeXLive.
-You can do `sudo apt-get install texlive-full` or similar.
+You can do `sudo apt-get install texlive-full` or similar.[^linuxlatex]
 Get the full version - it's a huge download, but well worth it.
 For Windows users, [MikTeX](http://www.miktex.org/) is what you want.
-For Mac OS people, try [MacTeX](https://tug.org/mactex/). 
+For Mac OS people, try [MacTeX](https://tug.org/mactex/).
+
+[^linuxlatex]: Debian/Ubuntu repositories tend to be a bit behind the more up-to-date Tex User's Group's official builds. While this isn't usually an issue, if you ask for help online (stackoverflow or reddit or whatever), people tend to assume you're using the most current version. So you may want to install what's referred to as "vanilla" LaTeX. You can find install instructions [here](https://www.tug.org/texlive/debian.html). 
 
 ## Writing
 LaTeX has a bit of a learning curve. 
@@ -144,6 +146,70 @@ Regardless of which program you decide on, you should give a great deal of thoug
 [^bib]: I promise to cover BibTeX and all its wonders soon. But believe you me, it has saved me many hours of putting together all my references. And yes, you can make it play nicely with Zotero or Mendely, if you're already using those. 
 
 # (R)markdown
+So enough about LaTeX.
+Let's talk about it's simpler cousin, markdown.[^rmdinstall]
+Markdown is a simpler way of marking files to tell a computer how they should be typset.
+So, for example, in LaTeX to begin a new section, you type:
 
+```
+\begin{Section Title}
+```
+
+In markdown, however, it is much simpler.
+You simply do:
+
+```
+# Section Title
+```
+
+As you can see, this is *much* easier.
+Not only is it much easier to type, it is much easier to remember.
+When I write in LaTeX, I find myself constantly googling "how do I ... in LaTeX?"
+No so in markdown.
+Simple formatting is taken care of with asterisks:
+so `*this*` becomes *this* and `**this**` becomes **this**.
+One octothorpe/hashtag/pound sign (as above) denotes a section, two denote a subsection, and three a subsubsection.
+There is a full cheatsheet available [here](https://www.rstudio.com/wp-content/uploads/2015/03/rmarkdown-reference.pdf).
+
+[^rmdinstall]: In order to install rmarkdown, you'll need to open R and run `install.packages("rmarkdown"). If you want to produce pdf documents as output, you'll also need to install a full LaTeX distribution, as described earlier in this article. 
+
+The flavor of markdown I've presented here is rmarkdown, which is based on pandoc markdown.[^markdown]
+Rmarkdown documents some code at the beginning (this is referred to as YAML frontmatter) that tells the document how to behave.
+Think of it as similar to the preamble in LaTeX documents.
+The YAML frontmatter is placed between hyphons like so:
+
+```
+---
+author: J. Alexander Branham
+title: My Document
+output: pdf_document
+---
+
+This would be the first sentence of this document.
+
+# Section
+
+This is the first sentence of the first  section! 
+```
+
+So here we can see that the document's "settings" are set up in the YAML frontmatter.
+Here, I've told the document that the author's name is "J. Alexander Branham."
+I've said that it is titled "My Document," and that I would like it to be a pdf document when it compiles.
+I've also gone ahead and written the first sentence of the document, as well as the first heading and the first sentence under that heading.
+
+[^markdown]: There are many different "flavors" of markdown. Rmarkdown plays nicely with R code. Pandoc markdown lets you convert between markdown, pdfs, .docx, and many other file types. If you use Gitub, there is also Github flavored markdown, which is similar in spirit to rmarkdown and pandoc markdown. 
+
+If you want to build your rmarkdown document, open an R instance, make sure that its working directory is where your file is, then run rmarkdown::render("document-title.Rmd") in R.
+If there are no errors in your document, yout desired output (pdf, .docx, html, whatever) should be produced!
+
+Note that rmarkdown does not give you as much control over the style of your document as LaTeX does.
+However, if you are going to build a pdf at the end (as basically all of our research articles will do), rmarkdown actually passes your markdown file through LaTeX to build the pdf.
+Guess what?
+To get there, it actually builds a .tex file first!
+This gives you two options.
+First, you can simply put the LaTeX directly into your rmarkdown file.
+When you `rmarkdown::render()` the file, it is smart enough to just pass the LaTeX code on to the LaTeX engine you use (TeXLive or whatever).
+So you can use LaTeX code directly in rmarkdown files just fine, so long as all you want is a pdf.
+Alternatively, you can tell rmarkdown to keep the `.tex` file that it creates with the `keep_tex: true` option.
 
 
