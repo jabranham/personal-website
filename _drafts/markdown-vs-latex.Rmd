@@ -107,24 +107,27 @@ Display math is similar, except you use double dollar signs.[^l] So for that int
 ## Compiling (and choosing an editor)
 You can compile LaTeX documents from the terminal once you have a LaTeX distribution installed with the `pdflatex` command. 
 However, most editors will do this for you. 
-You can either use a LaTeX specific editor (in which case I recommend [TeXStudio](http://www.texstudio.org/)), or you can use any general purpose text editor such as [Atom](https://atom.io/), [Emacs](https://www.gnu.org/software/emacs/), or [Sublime Text](http://www.sublimetext.com/). 
-You can get a full list [here](http://tex.stackexchange.com/questions/339/latex-editors-ides). 
+You can either use a LaTeX specific editor (in which case I recommend [TeXStudio](http://www.texstudio.org/)), or you can use any general purpose text editor such as [Atom](https://atom.io/), [Emacs](https://www.gnu.org/software/emacs/), or [Sublime Text](http://www.sublimetext.com/).
+[Rstudio](https://www.rstudio.com) is a good R interface (and the makers of the rmarkdown package), but the text editing in Rstudio itself I find to be lacking, so that's a nonstarter for me.
+Maybe it will get better in future releases, but at the moment it is no good to write documents in. 
+You can get a full list of available LaTeX editors [here](http://tex.stackexchange.com/questions/339/latex-editors-ides). 
 
 The internet has strong opinions about what editor you should use. 
 Here's a list of what I look for in a good editor:
 
 * Cross-platform
 * Free (preferably open source)
-* Syntax highlighting (both R and LaTeX)
-* Code completion (for both R and LaTeX)
+* Syntax highlighting (for R, LaTeX, and rmarkdown)
+* Code completion (for R, LaTeX, and rmarkdown)
 * Spell checking
-* Ability to send R code to console 
-* BibTeX key completion 
+* Ability to send R code to console
+* BibTeX key completion[^bib] 
 * git integration 
 
 Since I use rmarkdown files, a general-purpose TeX editor is not what I want. 
 Sublime Text can do most of these things, but is neither free nor open-source.[^textpackages]
 So instead, I use Emacs.
+Emac is a part of the [GNU project](https://www.gnu.org), the same as R and many Linux-based operating systems. 
 Emacs is amazingly powerful.
 Some people refer to it as "an operating system that happens to be particularly good at editing text."
 This is both a bonus and a drawback; while you can do basically anything in emacs[^emacs], it has a steep-ish learning curve.
@@ -134,7 +137,9 @@ Regardless of which program you decide on, you should give a great deal of thoug
 
 [^textpackages]: I use the excellent [package control](https://packagecontrol.io/) system to manage the packages. I use git, LaTeXing, RBox, citer, SublimeREPL, and Terminal. They are all install-able from the Package Control system.
 
-[^emacs]: For example, it comes with tetris. But it can integrate with your calendar, handle your email, be your to-do list manager... the list goes on. 
+[^emacs]: For example, it comes with tetris. But it can integrate with your calendar, handle your email, be your to-do list manager... the list goes on.
+
+[^bib]: I promise to cover BibTeX and all its wonders soon. But believe you me, it has saved me many hours of putting together all my references. And yes, you can make it play nicely with Zotero or Mendely, if you're already using those. 
 
 # (R)markdown
 
