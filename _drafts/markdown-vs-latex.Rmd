@@ -107,7 +107,7 @@ Display math is similar, except you use double dollar signs.[^l] So for that int
 ## Compiling (and choosing an editor)
 You can compile LaTeX documents from the terminal once you have a LaTeX distribution installed with the `pdflatex` command. 
 However, most editors will do this for you. 
-You can either use a LaTeX specific editor (in which case I recommend [TeXStudio](http://www.texstudio.org/)), or you can use any general purpose text editor such as [Atom](https://atom.io/), [Emacs](https://www.gnu.org/software/emacs/) with [AucTex](http://www.gnu.org/software/auctex/), or [Sublime Text](http://www.sublimetext.com/). 
+You can either use a LaTeX specific editor (in which case I recommend [TeXStudio](http://www.texstudio.org/)), or you can use any general purpose text editor such as [Atom](https://atom.io/), [Emacs](https://www.gnu.org/software/emacs/), or [Sublime Text](http://www.sublimetext.com/). 
 You can get a full list [here](http://tex.stackexchange.com/questions/339/latex-editors-ides). 
 
 The internet has strong opinions about what editor you should use. 
@@ -123,13 +123,11 @@ Here's a list of what I look for in a good editor:
 * git integration 
 
 Since I use rmarkdown files, a general-purpose TeX editor is not what I want. 
-Emacs fulfills all these criteria, but I'm not willing to put in the time to learn it. 
-So I use Sublime Text 3 as my editor of choice.[^textpackages] 
-I am pretty happy with it so far.
-It is not free (nor open source), but you don't actually have to ever pay for it. 
-It just reminds you every now and then that you haven't. 
-If Sublime Text ever tries to force me to pay for it, I'll probably switch to Emacs or Atom.
-It does check the rest of the boxes in my list, though! 
+Sublime Text can do most of these things, but is neither free nor open-source.[^textpackages]
+So instead, I use Emacs.
+I've only recently switched and am still getting used to the program, but am pretty amazed at how powerful it is.
+
+Regardless of which program you decide on, you should give a great deal of thought to which [workflow apps](http://kieranhealy.org/files/misc/workflow-apps.pdf) you use. 
 
 [^textpackages] I use the excellent [package control](https://packagecontrol.io/) system to manage the packages. I use git, LaTeXing, RBox, citer, SublimeREPL, and Terminal. They are all install-able from the Package Control system. 
 
