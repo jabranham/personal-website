@@ -57,13 +57,13 @@ This includes telling LaTeX what kind of document you're writing (an article, fo
 You end the preamble by beginning the document. 
 So, for example, here is a LaTeX document:
 
-```
-% hello.tex - Our first LaTeX example!
-\documentclass{article}
-\begin{document}
-This is a sentence. 
-\end{document}
-```
+
+    % hello.tex - Our first LaTeX example!
+    \documentclass{article}
+    \begin{document}
+    This is a sentence. 
+    \end{document}
+
 
 This is about as simple as it gets with LaTeX. 
 The first line is a comment - LaTeX will ignore anything on a line after a percentage sign when it compiles the output pdf. 
