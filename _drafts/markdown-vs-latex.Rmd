@@ -211,5 +211,25 @@ First, you can simply put the LaTeX directly into your rmarkdown file.
 When you `rmarkdown::render()` the file, it is smart enough to just pass the LaTeX code on to the LaTeX engine you use (TeXLive or whatever).
 So you can use LaTeX code directly in rmarkdown files just fine, so long as all you want is a pdf.
 Alternatively, you can tell rmarkdown to keep the `.tex` file that it creates with the `keep_tex: true` option.
+Once you've done that, you can simply edit the `.tex` file to the exact specifications that you want.
 
+One advantage of rmarkdown is the ability to easily include R code in your file.
+I will do another blog post in the near future for *why* you would want this, as well as more information about *how* to do it.
+For now, you can look at the [rmarkdown website](http://rmarkdown.rstudio.com/) for how to do that. 
 
+# LaTeX vs rmarkdown
+Ultimately, I don't view this as an either-or battle.
+Rmarkdown is very clearly easier to write in, and easier to read, especially for people who arne't used to LaTeX.
+For that reason, I think that rmarkdown is definitely better to write in, all else equal.
+
+Of course, all else isn't equal.
+LaTeX gives you much more control over your document's output.
+One thing that rmarkdown can't do (or at least I can't figure out a way to do it in rmarkdown) is reference equations/figures/tables elsewhere in the document.
+In LaTeX this is relatively easy - you simply define the thing that you want to reference with a `\label{my-reference-key}` and then reference it in your document like: `see Figure \ref{my-reference-key}`.
+I can't seem to find an easy way to do this in rmarkdown, though.
+
+For an acadmeic, that's a dealbreaker.
+However, luckily for us, rmarkdown can handle LaTeX code no problem.
+So we can use the easier-to-read and easier-to-write rmarkdown syntax, then use LaTeX code throughout the document to augment our output pdf.[^pdfwarning]
+
+[^pdfwarning] Note, however, that if you want something other than a pdf, the LaTeX code might not work. So if you're looking to compile an html site as well as a pdf file, you'll need to have html code for the first and LaTeX code for the second (assuming you can't get it done in markdown in the first place!)
