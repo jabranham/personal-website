@@ -125,11 +125,16 @@ Here's a list of what I look for in a good editor:
 Since I use rmarkdown files, a general-purpose TeX editor is not what I want. 
 Sublime Text can do most of these things, but is neither free nor open-source.[^textpackages]
 So instead, I use Emacs.
+Emacs is amazingly powerful.
+Some people refer to it as "an operating system that happens to be particularly good at editing text."
+This is both a bonus and a drawback; while you can do basically anything in emacs[^emacs], it has a steep-ish learning curve.
 I've only recently switched and am still getting used to the program, but am pretty amazed at how powerful it is.
 
 Regardless of which program you decide on, you should give a great deal of thought to which [workflow apps](http://kieranhealy.org/files/misc/workflow-apps.pdf) you use. 
 
-[^textpackages] I use the excellent [package control](https://packagecontrol.io/) system to manage the packages. I use git, LaTeXing, RBox, citer, SublimeREPL, and Terminal. They are all install-able from the Package Control system. 
+[^textpackages]: I use the excellent [package control](https://packagecontrol.io/) system to manage the packages. I use git, LaTeXing, RBox, citer, SublimeREPL, and Terminal. They are all install-able from the Package Control system.
+
+[^emacs]: For example, it comes with tetris. But it can integrate with your calendar, handle your email, be your to-do list manager... the list goes on. 
 
 # (R)markdown
 
