@@ -132,6 +132,8 @@ Emacs is amazingly powerful.
 Some people refer to it as "an operating system that happens to be particularly good at editing text."
 This is both a bonus and a drawback; while you can do basically anything in emacs[^emacs], it has a steep-ish learning curve.
 I've only recently switched and am still getting used to the program, but am pretty amazed at how powerful it is.
+I will write a blog post soonish on how to get started in emacs.
+For now, if you want, you can check out my `.emacs` file on [github](https://github.com/jabranham/emacs).
 
 Regardless of which program you decide on, you should give a great deal of thought to which [workflow apps](http://kieranhealy.org/files/misc/workflow-apps.pdf) you use. 
 
