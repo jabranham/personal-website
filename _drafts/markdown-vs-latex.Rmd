@@ -8,19 +8,18 @@ tags: [plain_text, latex, markdown, rmarkdown, best_practices]
 I hope that my last post convinced everyone that they need to use at least some kind of version control.
 Near the end of that post, I noted that git (and Github) are geared towards plain text files. 
 In this post, I hope to convince you that plain text is your friend. 
-If you're coming from word processing land (a la Microsoft Word or similar), then there can be a bit of a learning curve. 
+If you're coming from word processing land (like Microsoft Word or similar), then there can be a bit of a learning curve. 
 But the flexibility and power you gain far outweigh the costs of switching. 
 
 Here's a (very) brief rundown of why you should prefer typing text to a word processor:
 
 * Math equations are much easier to type
 * You can type your references in easily and the program you use to make a final document (LaTeX or markdown) will put in your reference list and format it automatically
-* Word processors are [stupid and inefficient](http://ricardo.ecn.wfu.edu/~cottrell/wp.html)
+* Word processors are [stupid and inefficient](http://ricardo.ecn.wfu.edu/~cottrell/wp.html). Think about all the time you spend trying to get Word to put a figure or table where you want it. 
 * The typesetting is taken care of for you and is generally of higher quality than a word processor 
-* In twenty years, you might not be able to open that word file. Computers will *always* be able to read text files
+* In twenty years, you might not be able to open that word file. Even now, it's hard to open word files from 15 years ago. Computers will *always* be able to read text files
 * Text files are typically much smaller than their word processor (or pdf) cousins 
-* Word is expensive. LaTeX and markdown is free! 
-    + and open source 
+* Word is expensive. LaTeX and markdown are free (and open source)
 
 The real purpose of this blog post is not to weigh the pros and cons of plain text vs a word processor, however. 
 It is to compare two different ways that we can type up articles in plain text and then convert them to nicely-formatted files (like a pdf). 
@@ -40,7 +39,7 @@ Get the full version - it's a huge download, but well worth it.
 For Windows users, [MikTeX](http://www.miktex.org/) is what you want.
 For Mac OS people, try [MacTeX](https://tug.org/mactex/).
 
-[^linuxlatex]: Debian/Ubuntu repositories tend to be a bit behind the more up-to-date Tex User's Group's official builds. While this isn't usually an issue, if you ask for help online (stackoverflow or reddit or whatever), people tend to assume you're using the most current version. So you may want to install what's referred to as "vanilla" LaTeX. You can find install instructions [here](https://www.tug.org/texlive/debian.html). 
+[^linuxlatex]: Debian/Ubuntu repositories tend to be a bit behind the more up-to-date Tex User Group's official builds. While this isn't usually an issue, if you ask for help online (stackoverflow or reddit or whatever), people tend to assume you're using the most current version. So you may want to install what's referred to as "vanilla" LaTeX. You can find install instructions [here](https://www.tug.org/texlive/debian.html). 
 
 ## Writing
 LaTeX has a bit of a learning curve. 
@@ -67,7 +66,7 @@ This is a sentence.
 ```
 
 This is about as simple as it gets with LaTeX. 
-The first line is a comment - LaTeX will ignore anything after a percentage sign when it compiles the output pdf. 
+The first line is a comment - LaTeX will ignore anything on a line after a percentage sign when it compiles the output pdf. 
 The second line is the only line in our preamble. 
 It tells LaTeX that we are writing an article. 
 The third line tells LaTeX to end the preamble and begin the document. 
@@ -118,7 +117,7 @@ The internet has strong opinions about what editor you should use.
 Here's a list of what I look for in a good editor:
 
 * Cross-platform
-* Free (preferably open source)
+* Free and open source
 * Syntax highlighting (for R, LaTeX, and rmarkdown)
 * Code completion (for R, LaTeX, and rmarkdown)
 * Spell checking
@@ -129,6 +128,7 @@ Here's a list of what I look for in a good editor:
 Since I use rmarkdown files, a general-purpose TeX editor is not what I want. 
 Sublime Text can do most of these things, but is neither free nor open-source.[^textpackages]
 So instead, I use Emacs.
+
 Emac is a part of the [GNU project](https://www.gnu.org), the same as R and many Linux-based operating systems. 
 Emacs is amazingly powerful.
 Some people refer to it as "an operating system that happens to be particularly good at editing text."
@@ -141,7 +141,7 @@ Regardless of which program you decide on, you should give a great deal of thoug
 
 [^textpackages]: I use the excellent [package control](https://packagecontrol.io/) system to manage the packages. I use git, LaTeXing, RBox, citer, SublimeREPL, and Terminal. They are all install-able from the Package Control system.
 
-[^emacs]: For example, it comes with tetris. But it can integrate with your calendar, handle your email, be your to-do list manager... the list goes on.
+[^emacs]: For example, it comes with tetris. But it can integrate with your calendar, handle your email, be your to-do list manager... the list goes on. 
 
 [^bib]: I promise to cover BibTeX and all its wonders soon. But believe you me, it has saved me many hours of putting together all my references. And yes, you can make it play nicely with Zotero or Mendely, if you're already using those. 
 
@@ -171,7 +171,7 @@ so `*this*` becomes *this* and `**this**` becomes **this**.
 One octothorpe/hashtag/pound sign (as above) denotes a section, two denote a subsection, and three a subsubsection.
 There is a full cheatsheet available [here](https://www.rstudio.com/wp-content/uploads/2015/03/rmarkdown-reference.pdf).
 
-[^rmdinstall]: In order to install rmarkdown, you'll need to open R and run `install.packages("rmarkdown"). If you want to produce pdf documents as output, you'll also need to install a full LaTeX distribution, as described earlier in this article. 
+[^rmdinstall]: In order to install rmarkdown, you'll need to open R and run `install.packages("rmarkdown"). If you want to produce pdf documents as output, you'll also need to install a full LaTeX distribution, as described earlier in this post. 
 
 The flavor of markdown I've presented here is rmarkdown, which is based on pandoc markdown.[^markdown]
 Rmarkdown documents some code at the beginning (this is referred to as YAML frontmatter) that tells the document how to behave.
