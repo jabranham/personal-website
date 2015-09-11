@@ -58,3 +58,11 @@ The best programs will let you search your .bib file and find the reference you 
 The best of the best (e.g. emacs) let you search via title, author(s), year, etc. 
 
 # Emacs with RefTeX
+Emacs is incredibly powerful.
+It's a text editor, kinda.
+It can edit text, true, but it can also run tetris out of the box.
+Or, ya know, check your email, run twitter, or act as your file manager.
+It can also act as a super powerful reference management tool.
+
+In particular, there is a "minor mode" called RefTeX that is like a godsend for reference management.
+In a LaTeX document, you can just type 
