@@ -37,10 +37,24 @@ It should then pop up with information similar to what I've posted above.
 [Zotero](https://www.zotero.org/) is a pretty nice bibliography management system.[^zotero]
 It can manage your pdf files as well as sync your bibliography across multiple computers.
 There is a plug in that allows you to export your bibliography as a .bib file: [Better BibTeX](https://zotplus.github.io/better-bibtex/).
-The Better BibTeX plugin can also keep the .bib file updated, so if you add a reference to zotero, it will automatically add it to your .bib file. 
+The Better BibTeX plugin can also keep the .bib file updated, so if you add a reference to zotero, it will automatically add it to your .bib file.
+
+That's all I use Zotero for, but I think it has many more features.
+It seems to be able to manage pdf files and images and whatnot.
+Maybe I should put more effort into learning what Zotero can do, but for now I just use it to sync my .bib file between computers and projects.
+I honestly havne't played around with it much yet, but it seems to do what I need it to do really well.
+If you aren't writing in plain text, Zotero can also integrate with Word and OpenOffice. 
 
 [^zotero]: It's also open source! 
 
 # Auto-completion
+This is just a quick note about auto-completion.
+You *need* to get an editor that has auto-completion for your references.
+It will make your life so much easier.
+So, for example, one way to cite things in LaTeX is with the `\citep{}` command.
+A good editor will connect your .bib file and your .tex file intelligently so that you don't have to remember all those bibtex keys.
+So, for example, you can just type `\citep{` and it will pop up with a list of completions.
+The best programs will let you search your .bib file and find the reference you want.
+The best of the best (e.g. emacs) let you search via title, author(s), year, etc. 
 
 # Emacs with RefTeX
