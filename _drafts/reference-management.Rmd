@@ -128,4 +128,4 @@ So if I was interested in policy pieces that Erikson has written, I can just typ
 
 And that's it!
 RefTeX is a pretty powerful tool.
-It can also handle more advanced features, like keeping track of your other references in your document (like Equations, Figures, Tables, etc). 
+It can also handle more advanced features, like keeping track of your other references in your document (like Equations, Figures, Tables, etc).
