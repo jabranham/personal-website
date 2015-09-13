@@ -58,7 +58,12 @@ It should then pop up with information similar to what I've posted above.
 Let me be clear - this .bib file is all you need to do reference management from a LaTeX document.
 Everything else I suggest here are simply tools to make it easier to manage your .bib file or to integrate it into your writing. 
 
-# Zotero
+# .bib file management programs
+There are a lot of different programs out there that can manage your .bib file (and sync it across computers).
+Some of them that I know of are jabref, Mendeley, and Zotero.
+A few Mac people I know use Bibdesk.
+There's also a program that runs in emacs that manages .bib datases ([ebib](http://joostkremers.github.io/ebib/)).
+I may move to ebib soon, but for now I'm using Zotero.
 [Zotero](https://www.zotero.org/) is a pretty nice bibliography management system.[^zotero]
 It can manage your pdf files as well as sync your bibliography across multiple computers.
 There is a plug in that allows you to export your bibliography as a .bib file: [Better BibTeX](https://zotplus.github.io/better-bibtex/).
