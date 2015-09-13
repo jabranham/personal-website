@@ -17,7 +17,16 @@ Then, LaTeX (or markdown, if you're using that) can talk to this file using a pr
 So in your LaTeX document, all you need to do to cite something is call a simple command (`\citep{}`, for example) and then insert a "key" linking what you want to cite with an entry in the .bib file.
 Then, at the end of your LaTeX document, you can simply tell it to include a bibliography and specify the style you want (APSR, for example).
 All of the formatting and inserting the actual citation will be taken care of.
-Magically, in my opinion. 
+Magically, in my opinion.
+
+So although there's a bit of setup cost, once you've done that (once), you can just write your document and simply drop in citations with a simple command (like `\citep{}`).
+Good editors will let you search through your .bib file for the reference you want without actually opening it.
+The format of the citations and the reference list will be automatically inserted and properly formatted.
+
+It will seem a little overwhelming to set up, but fear not.
+It is actually really simple.
+Setup may take a bit, but once you have that down you shouldn't need to do it again.
+Even if you do (say, for a second computer), it will be much easier. 
 
 # The .bib file
 In my last post, I briefly mentioned that you should write your files in plain text.
@@ -44,7 +53,10 @@ The very first thing ("brambor2006" in this case) is called a bibtex key.
 That's how you'll link up the references in your LaTeX (or markdown or whatever) file to the references in your .bib file. 
 Lucky for us, we don't actually have to remember how to format all this.
 Do google scholar search, and underneath the reference that we want, click "cite" then click "BibTeX" in the window that pops up.
-It should then pop up with information similar to what I've posted above. 
+It should then pop up with information similar to what I've posted above.
+
+Let me be clear - this .bib file is all you need to do reference management from a LaTeX document.
+Everything else I suggest here are simply tools to make it easier to manage your .bib file or to integrate it into your writing. 
 
 # Zotero
 [Zotero](https://www.zotero.org/) is a pretty nice bibliography management system.[^zotero]
