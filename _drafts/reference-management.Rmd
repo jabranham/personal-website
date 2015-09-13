@@ -4,7 +4,20 @@ title: Reference Management
 
 So as a grad student, I write a lot.
 Like, a lot a lot.
-And as a part of that, I
+And as a part of that, I cite a lot of articles and books.
+And there are, of course, those few articles that I find myself citing in nearly every paper I write.
+So ideally, I could have one central repository for all of the papers that I want to be able to cite, and reference that from whatever paper I'm working on.
+Then, whatever program I'm using to convert the plain text to a good looking document (LaTeX, for example) should be able to take combine the citations from the text of the document with the information from this central repository and output properly formatted citations, as well as a properly formatted bibliography.
+Luckily, this is very easy to do.
+
+The big picture is that you'll keep all of your references in a .bib file.
+You can call it anything, so long as the file extension is .bib.
+My default name for these is `library.bib`, but you can really use whatever.
+Then, LaTeX (or markdown, if you're using that) can talk to this file using a program called BibTeX.
+So in your LaTeX document, all you need to do to cite something is call a simple command (`\citep{}`, for example) and then insert a "key" linking what you want to cite with an entry in the .bib file.
+Then, at the end of your LaTeX document, you can simply tell it to include a bibliography and specify the style you want (APSR, for example).
+All of the formatting and inserting the actual citation will be taken care of.
+Magically, in my opinion. 
 
 # The .bib file
 In my last post, I briefly mentioned that you should write your files in plain text.
