@@ -62,7 +62,17 @@ Emacs is incredibly powerful.
 It's a text editor, kinda.
 It can edit text, true, but it can also run tetris out of the box.
 Or, ya know, check your email, run twitter, or act as your file manager.
-It can also act as a super powerful reference management tool.
+Or pretty much anything else you might want it to do. 
+Of particular interest for us (for this blog post, anyway) is that it can act as a super powerful reference manager. 
 
 In particular, there is a "minor mode" called RefTeX that is like a godsend for reference management.
-In a LaTeX document, you can just type 
+There are two ways for RefTeX to find your .bib file:
+
+1. You can set up a default .bib file via your `.emacs` file. So you can set the reftex-default-bibliography variable like so: `(setq reftex-default-bibliography '("path/to/bibfile.bib"))` where you replace `path/to/bibfile.bib` with the path on your system. You can also have multiple bibliographies there, since it is a list.
+
+2. RefTeX should automatically find your .bib file through the `\bibliography{}` LaTeX command. So if you've set up your bibliography in your LaTeX file, RefTeX should find it.
+
+Note that you can use either the first *or* the second way, but not both.
+
+Once you have that set up, you need to turn on RefTeX (which is a minor mode) in AuCTeX.
+Just search google for how to do this; it's relatively easy. 
