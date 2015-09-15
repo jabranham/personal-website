@@ -1,0 +1,52 @@
+---
+title: Emacs with LaTeX for Academic Writing
+---
+
+
+# Emacs with RefTeX
+Emacs is incredibly powerful.
+It's a text editor, kinda.
+It can edit text, true, but it can also run tetris out of the box.
+Or, ya know, check your email, run twitter, or act as your file manager.
+Or pretty much anything else you might want it to do. 
+Of particular interest for us (for this blog post, anyway) is that it can act as a super powerful reference manager. 
+
+In particular, there is a "minor mode" called RefTeX that is like a godsend for reference management.
+There are two ways for RefTeX to find your .bib file:
+
+1. You can set up a default .bib file via your `.emacs` file. So you can set the reftex-default-bibliography variable like so: `(setq reftex-default-bibliography '("path/to/bibfile.bib"))` where you replace `path/to/bibfile.bib` with the path on your system. You can also have multiple bibliographies there, since it is a list.
+
+2. RefTeX should automatically find your .bib file through the `\bibliography{}` LaTeX command. So if you've set up your bibliography in your LaTeX file, RefTeX should find it.
+
+Note that you can use either the first *or* the second way, but not both.
+
+Once you have that set up, you need to turn on RefTeX (which is a minor mode) in AuCTeX.
+Just search google for how to do this; it's relatively easy.
+You can also take a look at my `.emacs` file [on Github](https://github.com/jabranham/emacs), which should give you an idea of what you need to do.
+
+Once you've got that down, you're good to go!
+Just start up emacs, and open up a .tex file (make sure that AuCTeX is the major mode and that RefTeX is active as a minor mode).
+The keyboard shortcut for a citation is `C-c [`.
+This will bring up a menu that looks something like this:
+
+![RefTeX citation options](/image/reftex-options.jpg)
+
+As you can see, these are all the different citation formats.
+So, if we want the `\citep{}` command, we simply press `p`.
+At that point, we can put in a search term and RefTeX will search through our .bib file for matches.
+You can search for authors, titles, etc.
+So for example, if I am looking for something to do with policy, but I can't remember the authors, I just type in "policy" and press enter (return).
+RefTeX will then look through my .bib file and return any matches it sees.
+This will look something like this:
+
+![RefTeX matches](/image/reftex-bib-keys.jpg)
+
+I can navigate through the listings to select the one that I want.
+Once I'm on it, hitting enter will automatically insert the selection into my tex file.
+
+If I've searched for something too broad ("policy", for example) and need to narrow the search, I can press `r` to search inside my results.
+So if I was interested in policy pieces that Erikson has written, I can just type `r Erikson` and it will narrow the choices to just those pieces that mention both policy and Erikson. 
+
+And that's it!
+RefTeX is a pretty powerful tool.
+It can also handle more advanced features, like keeping track of your other references in your document (like Equations, Figures, Tables, etc).
