@@ -1,5 +1,9 @@
 ---
-title: Reference Management
+layout: post
+title: "Reference Management for Academics"
+categories: [reference-management, latex, bibtex]
+tags: [latex, bibtex, reference-management, biblatex, biber]
+comments: true
 ---
 
 So as a grad student, I write a lot.  Like, a lot a lot.  And as a
@@ -46,7 +50,7 @@ files as well.  There is a pretty standardized way to format your
 bibliography files: the ".bib" file.  Your .bib file contains
 information about each reference you want.  So, for example, if you
 wanted to cite
-[Understanding Interaction Models}(http://pan.oxfordjournals.org/content/14/1/63.short) (which everyone should read), your .bib file would contain something like the following:
+[Understanding Interaction Models](http://pan.oxfordjournals.org/content/14/1/63.short) (which everyone should read), your .bib file would contain something like the following:
 
     @article{brambor2006,
         title={Understanding Interaction Models: Improving Empirical Analyses},
@@ -65,7 +69,10 @@ The very first thing ("brambor2006" in this case) is called a bibtex key.
 That's how you'll link up the references in your LaTeX (or markdown or whatever) file to the references in your .bib file.
 Lucky for us, we don't actually have to remember how to format all this.
 Do google scholar search, and underneath the reference that we want, click "cite" then click "BibTeX" in the window that pops up.
-It should then pop up with information similar to what I've posted above.
+It should then pop up with information similar to what I've posted
+above. I very rarely actually ever look at the bib file directly,
+since there are tons of great programs out there that will generate it
+for you.
 
 Let me be clear - this .bib file is all you need to do reference management from a LaTeX document.  Everything else I suggest here are simply tools to make it easier to manage your .bib file or to integrate it into your writing.
 
@@ -177,8 +184,7 @@ computers).  Some of them that I know of are jabref, Mendeley, and
 Zotero.  A few Mac people I know use Bibdesk.  There's also a program
 that runs in emacs that manages .bib datases
 ([ebib](http://joostkremers.github.io/ebib/)).  I use ebib, which I
-recommend if you use emacs (since you can do everything from just the
-one program).
+recommend if you use emacs.
 
 For those of you who don't use emacs, I heartily recommend
 [Zotero](https://www.zotero.org/).[^zotero] It can manage your pdf
@@ -189,17 +195,14 @@ The Better BibTeX plugin can also keep the .bib file updated, so if
 you add a reference to zotero, it will automatically add it to your
 .bib file.
 
-That's all I use Zotero for, but I think it has many more features.
-It seems to be able to manage pdf files and images and whatnot.  Maybe
-I should put more effort into learning what Zotero can do, but for now
-I just use it to sync my .bib file between computers and projects.  I
-honestly havne't played around with it much yet, but it seems to do
-what I need it to do really well.  If you aren't writing in plain
+Zotero also has other features.
+It seems to be able to manage pdf files and images and whatnot. If you aren't writing in plain
 text, Zotero can also integrate with Word and OpenOffice.
 
 [^zotero]: It's also open source!
 
-# Auto-completion This is just a quick note about auto-completion.
+# Auto-completion
+This is just a quick note about auto-completion.
 You *need* to get an editor that has auto-completion for your
 references.  It will make your life so much easier.  So, for example,
 one way to cite things in LaTeX is with the `\citep{}` command.  A
