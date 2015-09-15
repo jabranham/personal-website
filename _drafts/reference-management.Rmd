@@ -65,7 +65,60 @@ question gives a really good idea of the difference between
 them. The main gist is that biblatex (and biber) are more current
 programs, whereas natbib (and bibtex) are slightly older. I'd
 recommend using biblatex (and biber) if you're just starting, as they
-offer a lot of 
+offer a lot of advantages over natbib and bibtex. For the reasons you
+might prefer one over the other, look at the stackexchange answer
+linked above. You'll probably be fine using either combination.
+
+Basically, biblatex and natbib are LaTeX packages that enable all the
+citation commands that you want. Biber and BibTeX are the backends
+that do the hard work of linking up your .tex and .bib files to
+properly format all the citations and the reference list. The
+differences between the two in practice are minimal. 
+
+## BibLaTeX and Biber
+BibLaTeX and biber are the newer, snazzier versions of natbib and
+BibTeX. As such, they come with plenty of support for things that
+natbib and BibTeX either can't do (or don't do well).
+
+To use them, you'll need to enable biblatex in your
+preamble. Somewhere, you can add
+`\usepackage[<options>]{biblatex}`. The options are actually a bit
+important here. For example, you can set the citation style. The most
+common one that I use is `citestyle=authoryear`. I also like to set
+the backend (which is probably just an old habit - biblatex used to
+set the backend as BibTeX instead of biber). So I usually do
+`\usepackage[backend=biber, citestyle=authoryear]{biblatex}` That
+produces citations in the author-year format, like (Lastname 1999),
+which is the most common in political science. There are other
+citation styles that you can check out with a quick Google search, if
+you need them.
+
+The second part is to tell biblatex/biber where your .bib file is. You
+do this with the `\addbibresource{}` command. Inside the curly braces
+should be the path to your .bib file, relative to where your .tex file
+is. So if you put your .bib file in the same folder as your .tex file,
+all you need to do is specify the name of your .bib file. For example,
+if you've named it "library.bib", then you simply need to place it in
+the same folder and then put `\addbibresource{library.bib}`. You can
+specify relative or absolute file paths if you want.
+
+At the end of your document (but before `\end{document}`, you'll want
+to add a command `\printbibliography` command). This will actually put
+in a reference list at the end.
+
+Now you're all good to go! You can cite things with the usual biblatex
+reference commands. `\autocite{bibtexkey}` will create a citation to
+the bibtexkey. Autocite will attempt to create the best kind of
+citation from available information (like citestyle, etc). You can
+specify citation styles more fully with commands like
+`\parencite{bibkey}`, which specifies that the citation should be in
+parentheses. `\footcite{}` is similar, except it creates a citation as
+a footnote. There are other commands you can use, which are all easily
+found online. 
+
+## Natbib and BibTeX
+
+# Using .bib in (r)markdown
 
 # .bib file management programs
 There are a lot of different programs out there that can manage your .bib file (and sync it across computers).
