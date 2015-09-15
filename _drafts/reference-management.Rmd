@@ -1,4 +1,6 @@
---- title: Reference Management ---
+---
+title: Reference Management
+---
 
 So as a grad student, I write a lot.  Like, a lot a lot.  And as a
 part of that, I cite a lot of articles and books.  And there are, of
@@ -37,7 +39,8 @@ actually really simple.  Setup may take a bit, but once you have that
 down you shouldn't need to do it again.  Even if you do (say, for a
 second computer), it will be much easier.
 
-# The .bib file In my last post, I briefly mentioned that you should
+# The .bib file
+In my last post, I briefly mentioned that you should
 write your files in plain text.  This applies to your bibliography
 files as well.  There is a pretty standardized way to format your
 bibliography files: the ".bib" file.  Your .bib file contains
@@ -45,13 +48,30 @@ information about each reference you want.  So, for example, if you
 wanted to cite
 [Understanding Interaction Models}(http://pan.oxfordjournals.org/content/14/1/63.short) (which everyone should read), your .bib file would contain something like the following:
 
-    @article{brambor2006, title={Understanding Interaction Models: Improving Empirical Analyses}, author={Brambor, Thomas and Clark, William Roberts and Golder, Matt}, journal={Political Analysis}, volume={14}, number={1}, pages={63--82}, year={2006}, }
+    @article{brambor2006,
+        title={Understanding Interaction Models: Improving Empirical Analyses},
+        author={Brambor, Thomas and Clark, William Roberts and Golder, Matt},
+        journal={Political Analysis},
+        volume={14},
+        number={1},
+        pages={63--82},
+        year={2006}
+    }
 
-The `@` says to begin a new reference.  We then say what kind of thing it is (in this case, an article).  Everything between the curly braces is information about the reference.  So we have information about the title, author, the journal that it's in, etc.  The very first thing ("brambor2006" in this case) is called a bibtex key.  That's how you'll link up the references in your LaTeX (or markdown or whatever) file to the references in your .bib file.  Lucky for us, we don't actually have to remember how to format all this.  Do google scholar search, and underneath the reference that we want, click "cite" then click "BibTeX" in the window that pops up.  It should then pop up with information similar to what I've posted above.
+The `@` says to begin a new reference.  We then say what kind of thing it is (in this case, an article).
+Everything between the curly braces is information about the reference.
+So we have information about the title, author, the journal that it's in, etc.
+The very first thing ("brambor2006" in this case) is called a bibtex key.
+That's how you'll link up the references in your LaTeX (or markdown or whatever) file to the references in your .bib file.
+Lucky for us, we don't actually have to remember how to format all this.
+Do google scholar search, and underneath the reference that we want, click "cite" then click "BibTeX" in the window that pops up.
+It should then pop up with information similar to what I've posted above.
 
 Let me be clear - this .bib file is all you need to do reference management from a LaTeX document.  Everything else I suggest here are simply tools to make it easier to manage your .bib file or to integrate it into your writing.
 
-# Using the .bib file in LaTeX There are two different programs and two different packages in LaTeX to manage your bibliography.  [This answer](http://tex.stackexchange.com/a/25702)
+# Using the .bib file in LaTeX
+There are two different programs and two different packages in LaTeX to manage your bibliography.
+[This answer](http://tex.stackexchange.com/a/25702)
 to a stackexchange question gives a really good idea of the difference
 between them. The main gist is that biblatex (and biber) are more
 current programs, whereas natbib (and bibtex) are slightly older. I'd
@@ -66,7 +86,8 @@ that do the hard work of linking up your .tex and .bib files to
 properly format all the citations and the reference list. The
 differences between the two in practice are minimal.
 
-## BibLaTeX and Biber BibLaTeX and biber are the newer, snazzier
+## BibLaTeX and Biber
+BibLaTeX and biber are the newer, snazzier
 versions of natbib and BibTeX. As such, they come with plenty of
 support for things that natbib and BibTeX either can't do (or don't do
 well).
@@ -107,7 +128,8 @@ parentheses. `\footcite{}` is similar, except it creates a citation as
 a footnote. There are other commands you can use, which are all easily
 found online.
 
-## Natbib and BibTeX Natbib and BibTeX are the older cousins of
+## Natbib and BibTeX
+Natbib and BibTeX are the older cousins of
 BibLaTeX and biber. They are very similar in use. You need to tell
 LaTeX that you're using natbib using the `\usepackage{natbib}`
 command. You set up the bibliography using the `\bibliographystyle{}`
@@ -123,15 +145,40 @@ parentheses while `citet` will print out a citation with the author's
 name in text and the year in parentheses.
 
 # Using .bib in (r)markdown
+Since rmarkdown really wasn't written with academic papers in mind,
+citations are a bit trickier. You need to specify your .bib file in
+the YAML frontmatter (the stuff at the top). So if your .bib file is
+named `library.bib` and is in the same folder as the .Rmd document,
+you can set up citations like so:
 
-# .bib file management programs There are a lot of different programs
-out there that can manage your .bib file (and sync it across
+    ---
+    title: My Title
+    author: Me!
+    bibliography: library.bib
+    ---
+
+To set up the reference section, you need to put `# References` at the
+end of the document (remember, the `#` symbol denotes section headings
+in rmarkdown). You must use pandoc-style citations. So if I wanted to
+reference the article from the beginning of this post, I would need to
+have brackets around it `[@brambor2006]`. That would insert a
+parenthetical citation. There are more examples of citation formats on
+[rmarkdown's website](http://rmarkdown.rstudio.com/authoring_bibliographies_and_citations.html).
+
+To tell rmarkdown (and pandoc) what citation style you want, you'll
+need a .csl file. There is a large repository of these available on
+[github](https://github.com/citation-style-language/styles) and on
+[Zotero's website](https://www.zotero.org/styles). You
+specify the .csl file in the YAML frontmatter in the `csl:` field. 
+
+# .bib file management programs
+There are a lot of different programs out there that can manage your .bib file (and sync it across
 computers).  Some of them that I know of are jabref, Mendeley, and
 Zotero.  A few Mac people I know use Bibdesk.  There's also a program
 that runs in emacs that manages .bib datases
 ([ebib](http://joostkremers.github.io/ebib/)).  I use ebib, which I
 recommend if you use emacs (since you can do everything from just the
-one program.)
+one program).
 
 For those of you who don't use emacs, I heartily recommend
 [Zotero](https://www.zotero.org/).[^zotero] It can manage your pdf
