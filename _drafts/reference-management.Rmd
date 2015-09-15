@@ -117,6 +117,19 @@ a footnote. There are other commands you can use, which are all easily
 found online. 
 
 ## Natbib and BibTeX
+Natbib and BibTeX are the older cousins of BibLaTeX and biber. They
+are very similar in use. You need to tell LaTeX that you're using
+natbib using the `\usepackage{natbib}` command. You set up the
+bibliography using the `\bibliographystyle{}` command (you can put in
+`apsr`) there for APSR-type citations. At the end of the document, put
+`\bibliography{library.bib}` to use your .bib file. Like biblatex,
+natbib supports relative and absolute file path names.
+
+Once you've done all that, you can actually start citing things in
+your document. In natbib, there are two main ways to cite things:
+`\citep{}` and `\citet{}`. `citep` will enclose the citation in
+parentheses while `citet` will print out a citation with the author's
+name in text and the year in parentheses.
 
 # Using .bib in (r)markdown
 
