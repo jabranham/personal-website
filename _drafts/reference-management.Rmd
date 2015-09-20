@@ -19,7 +19,7 @@ Then, at the end of your LaTeX document, you can simply tell it to include a bib
 All of the formatting and inserting the actual citation will be taken care of.
 Magically, in my opinion.
 
-So although there's a bit of setup cost, once you've done that (once), you can just write your document and simply drop in citations with a simple command (like `\citep{}`).
+So although there's a bit of setup cost, once you've done that (once), you can just write your document and simply drop in citations with a simple command (like `\cite{}`).
 Good editors will let you search through your .bib file for the reference you want without actually opening it.
 The format of the citations and the reference list will be automatically inserted and properly formatted.
 
@@ -60,7 +60,7 @@ Everything else I suggest here are simply tools to make it easier to manage your
 
 # .bib file management programs
 There are a lot of different programs out there that can manage your .bib file (and sync it across computers).
-Some of them that I know of are jabref, Mendeley, and Zotero.
+Some of them that I know of are JabRef, Mendeley, and Zotero.
 A few Mac people I know use Bibdesk.
 There's also a program that runs in emacs that manages .bib datases ([ebib](http://joostkremers.github.io/ebib/)).
 I may move to ebib soon, but for now I'm using Zotero.
