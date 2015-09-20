@@ -1,0 +1,21 @@
+---
+layout: A Linux Social Science Machine
+title: A Linux Social Science Machine
+categories: [social-science, machine, computing]
+tags: [social-science, machine, computing]
+comments: true
+---
+
+I put together a guide to how to set up your Linux machine for
+quantitative work. It is based loosely on the guide put together by
+Jake Bowers and Jeff Gill available
+[here](https://github.com/jwbowers/SocialScienceMacConfig).
+
+Much (most? all?) of the guide applies to Macs and Windows based
+machines, although the installation instructions may differ. 
+
+The guide is available
+[on Github](https://github.com/jabranham/SocialScienceLinuxConfig),
+and I have copied the readme file here. I encourage you to go to the
+github repository, as it may be updated and differ from the text
+here. 
