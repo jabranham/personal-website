@@ -1,5 +1,9 @@
 ---
-title: Emacs for the Social Scientist
+layout: post
+title: Emacs with LaTeX for Academic Writing
+categories: []
+tags: []
+comments: true
 ---
 
 Having a super powerful text editor can make your life much
@@ -7,6 +11,16 @@ easier. There are quite a few out there, but there's only that can do
 it all: Emacs. 
 
 ![emacs](http://imgs.xkcd.com/comics/real_programmers.png)
+
+In this post, I'll outline how to get started with emacs. There are
+plenty of tutorials out there, but I'd say that the best way to learn
+is just to jump in. Thus, I will not spend a whole lot of time
+describing what `M-x` does (the answer is everything). Instead, I'm
+going to focus on introducing some of the more useful major modes (and
+a minor mode or two) for working with LaTeX, markdown, R, and
+git. We'll also cover how to use knitr with LaTeX and rmarkdown in
+emacs (this is how you have your code and words in the same
+document). 
 
 Emacs is incredibly powerful, and ancient (in computer terms,
 anyway). Ancient as in it was invented before keyboards had arrow
