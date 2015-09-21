@@ -1,5 +1,5 @@
 ---
-title: Emacs with LaTeX for Academic Writing
+title: Emacs for the Social Scientist
 ---
 
 Having a super powerful text editor can make your life much
