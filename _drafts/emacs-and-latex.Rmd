@@ -65,6 +65,7 @@ It has a website [here](https://www.gnu.org/software/auctex/), but you
 can just get it through MELPA. 
 
 # Using R
+ESS
 
 # Reference Management
 
@@ -109,7 +110,8 @@ RefTeX is a pretty powerful tool.
 It can also handle more advanced features, like keeping track of your other references in your document (like Equations, Figures, Tables, etc).
 
 # Git
+magit
 
 # Knitr and rmarkdown
-
+Polymode
 
