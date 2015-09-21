@@ -1,5 +1,5 @@
 ---
-layout: A Linux Social Science Machine
+layout: post
 title: A Linux Social Science Machine
 categories: [linux, ubuntu, social-science, machine, computing]
 tags: [linux, ubuntu, social-science, machine, computing]
