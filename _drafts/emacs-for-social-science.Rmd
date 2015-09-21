@@ -67,7 +67,7 @@ development community.
     [here](https://launchpad.net/~ubuntu-elisp/+archive/ubuntu/ppa).
 
 
-# MELPA
+## MELPA
 Emacs is super old, so it hasn't always had the ability to manage your
 packages for you through the internet.[^internet] This was added relatively
 recently, in fact. You'll want to enable Emacs work with MELPA, which
@@ -102,7 +102,13 @@ It has a website [here](https://www.gnu.org/software/auctex/), but you
 can just get it through MELPA. 
 
 # Using R
-ESS
+Emacs can play very nicely with R (or Stata) through Emacs Speaks
+Statistics, commonly called [ESS](http://ess.r-project.org/). You can
+download it from MELPA, but it causes issues for me if I do it that
+way (no idea why), so I download and install it from Ubuntu's
+repositories with `sudo apt-get install ess`. For Mac and Windows
+users, you can try it through MELPA or through the instructions on the
+ESS website.  
 
 # Reference Management
 
