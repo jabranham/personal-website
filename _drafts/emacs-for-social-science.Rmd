@@ -108,7 +108,7 @@ download it from MELPA, but it causes issues for me if I do it that
 way (no idea why), so I download and install it from Ubuntu's
 repositories with `sudo apt-get install ess`. For Mac and Windows
 users, you can try it through MELPA or through the instructions on the
-ESS website.  
+ESS website.
 
 # Reference Management
 
