@@ -2,14 +2,71 @@
 title: Emacs with LaTeX for Academic Writing
 ---
 
+Having a super powerful text editor can make your life much
+easier. There are quite a few out there, but there's only that can do
+it all: Emacs. 
 
-# Emacs with RefTeX
-Emacs is incredibly powerful.
-It's a text editor, kinda.
-It can edit text, true, but it can also run tetris out of the box.
-Or, ya know, check your email, run twitter, or act as your file manager.
+![emacs](http://imgs.xkcd.com/comics/real_programmers.png)
+
+Emacs is incredibly powerful, and ancient (in computer terms,
+anyway). Ancient as in it was invented before keyboards had arrow
+keys. Oh, and before Windows, Mac, or Linux existed as operating
+systems. So it can be a bit... weird, at times. For example, its
+built-in tutorial (which I recommend you never even look at) tells you
+that the best way to change lines is to use control-n or control-p
+(for next and previous). While this was probably more helpful when
+keyboards didn't have arrow keys, it seems silly to me now. So what
+exactly is Emacs and why am I recommending it if it's that old?
+
+Emacs is a text editor, kinda. It can edit text, true, but it can also
+run tetris out of the box. Or, ya know,
+[check your email](http://www.emacswiki.org/emacs/CategoryMail), run
+[twitter](https://github.com/hayamiz/twittering-mode/tree/master),
+or act as your
+[file manager](http://www.gnu.org/software/emacs/manual/html_node/emacs/Dired.html).
 Or pretty much anything else you might want it to do. 
-Of particular interest for us (for this blog post, anyway) is that it can act as a super powerful reference manager. 
+
+# Install Emacs
+The first thing to note is that "Emacs" actually refers to a whole
+class of editors. The most popular is
+[GNU Emacs](https://www.gnu.org/software/emacs/), and that is the one
+I recommend. GNU Emacs is free and open source software with a huge
+development community.
+
+* **Linux**: For Ubuntu, you can just do `sudo apt-get install emacs24`
+for the latest version as of this writing.[^ppa]
+
+* **Windows**: For Windows, you can go
+  [here](http://ftp.gnu.org/pub/gnu/emacs/windows/) and download the
+  most recent version ending in .zip. As of this writing, that is
+  "emacs-24.5-bin-i686-mingw32.zip". To use, you need to unzip the
+  folder. There's no installation necessary - just use the file
+  there. To uninstall, just delete the folder.
+
+* **Mac**: For Mac, go [here](http://emacsformacosx.com/). Download
+  and install like normal. If you use Homebrew, you can also get emacs
+  through there, though it may not be as up-to-date. 
+
+[^ppa]: If you really want the bleeding edge, you can use the ppa
+    [here](https://launchpad.net/~ubuntu-elisp/+archive/ubuntu/ppa).
+
+# MELPA
+Emacs is super old, so it hasn't always had the ability to manage your
+packages for you through the internet. This was added relatively
+recently, in fact. You'll want to enable Emacs work with MELPA, which
+is an online package archive. This is super easy - just follow the
+instructions [here](https://melpa.org/#/getting-started). MELPA has a
+ton of packages - way more than you'll ever want. I'll walk though
+some of the most important here, though.
+
+# Using LaTeX
+The package you want to use for working with LaTeX is called "AuCTeX."
+It has a website [here](https://www.gnu.org/software/auctex/), but you
+can just get it through MELPA. 
+
+# Using R
+
+# Reference Management
 
 In particular, there is a "minor mode" called RefTeX that is like a godsend for reference management.
 There are two ways for RefTeX to find your .bib file:
@@ -50,3 +107,9 @@ So if I was interested in policy pieces that Erikson has written, I can just typ
 And that's it!
 RefTeX is a pretty powerful tool.
 It can also handle more advanced features, like keeping track of your other references in your document (like Equations, Figures, Tables, etc).
+
+# Git
+
+# Knitr and rmarkdown
+
+
