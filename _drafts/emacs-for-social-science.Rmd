@@ -1,5 +1,5 @@
 ---
-title: Emacs with LaTeX for Academic Writing
+title: Emacs for the Social Scientist
 ---
 
 Having a super powerful text editor can make your life much
@@ -19,13 +19,17 @@ keyboards didn't have arrow keys, it seems silly to me now. So what
 exactly is Emacs and why am I recommending it if it's that old?
 
 Emacs is a text editor, kinda. It can edit text, true, but it can also
-run tetris out of the box. Or, ya know,
+run tetris out of the box. Or, ya know, it can
 [check your email](http://www.emacswiki.org/emacs/CategoryMail), run
 [twitter](https://github.com/hayamiz/twittering-mode/tree/master),
 or act as your
 [file manager](http://www.gnu.org/software/emacs/manual/html_node/emacs/Dired.html).
-Or pretty much anything else you might want it to do. I primarily use
-emacs to write documents (in LaTeX and/or markdown), run R, and keep
+Or pretty much anything else you might want it to do. More
+realistically, you might look at [org-mode](http://orgmode.org/),
+which is a super powerful way of organizing a project and taking
+notes. I primarily use
+emacs to write documents (in LaTeX and/or
+[rmarkdown](http://rmarkdown.rstudio.com/)),  run R, and keep
 track of changes to those documents with
 [git](http://www.git-scm.com/). In this blog post, I'll briefly
 introduce how to get emacs to work the way we want it to.
@@ -63,7 +67,7 @@ development community.
     [here](https://launchpad.net/~ubuntu-elisp/+archive/ubuntu/ppa).
 
 
-# MELPA
+## MELPA
 Emacs is super old, so it hasn't always had the ability to manage your
 packages for you through the internet.[^internet] This was added relatively
 recently, in fact. You'll want to enable Emacs work with MELPA, which
@@ -98,7 +102,13 @@ It has a website [here](https://www.gnu.org/software/auctex/), but you
 can just get it through MELPA. 
 
 # Using R
-ESS
+Emacs can play very nicely with R (or Stata) through Emacs Speaks
+Statistics, commonly called [ESS](http://ess.r-project.org/). You can
+download it from MELPA, but it causes issues for me if I do it that
+way (no idea why), so I download and install it from Ubuntu's
+repositories with `sudo apt-get install ess`. For Mac and Windows
+users, you can try it through MELPA or through the instructions on the
+ESS website.  
 
 # Reference Management
 
