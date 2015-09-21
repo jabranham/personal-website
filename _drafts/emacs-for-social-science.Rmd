@@ -19,13 +19,14 @@ keyboards didn't have arrow keys, it seems silly to me now. So what
 exactly is Emacs and why am I recommending it if it's that old?
 
 Emacs is a text editor, kinda. It can edit text, true, but it can also
-run tetris out of the box. Or, ya know,
+run tetris out of the box. Or, ya know, it can
 [check your email](http://www.emacswiki.org/emacs/CategoryMail), run
 [twitter](https://github.com/hayamiz/twittering-mode/tree/master),
 or act as your
 [file manager](http://www.gnu.org/software/emacs/manual/html_node/emacs/Dired.html).
 Or pretty much anything else you might want it to do. I primarily use
-emacs to write documents (in LaTeX and/or markdown), run R, and keep
+emacs to write documents (in LaTeX and/or
+[rmarkdown](http://rmarkdown.rstudio.com/)),  run R, and keep
 track of changes to those documents with
 [git](http://www.git-scm.com/). In this blog post, I'll briefly
 introduce how to get emacs to work the way we want it to.
