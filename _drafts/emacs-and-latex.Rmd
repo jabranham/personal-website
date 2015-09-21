@@ -24,17 +24,29 @@ run tetris out of the box. Or, ya know,
 [twitter](https://github.com/hayamiz/twittering-mode/tree/master),
 or act as your
 [file manager](http://www.gnu.org/software/emacs/manual/html_node/emacs/Dired.html).
-Or pretty much anything else you might want it to do. 
+Or pretty much anything else you might want it to do. I primarily use
+emacs to write documents (in LaTeX and/or markdown), run R, and keep
+track of changes to those documents with
+[git](http://www.git-scm.com/). In this blog post, I'll briefly
+introduce how to get emacs to work the way we want it to.
+
+Emacs thinks in terms of "modes." It can have one (and only one)
+"major mode" active at any time, and any number of "minor modes." So,
+for example, if you're writing in markdown, you would have
+markdown-mode active as the major mode, and a few minor modes active
+for things like spell check and auto-complete. The first thing to do
+is to install emacs on your system. 
 
 # Install Emacs
-The first thing to note is that "Emacs" actually refers to a whole
+First, note that "Emacs" actually refers to a whole
 class of editors. The most popular is
 [GNU Emacs](https://www.gnu.org/software/emacs/), and that is the one
 I recommend. GNU Emacs is free and open source software with a huge
 development community.
 
 * **Linux**: For Ubuntu, you can just do `sudo apt-get install emacs24`
-for the latest version as of this writing.[^ppa]
+  for the latest version as of this writing.[^ppa] Other linux
+  distributions will be similar. 
 
 * **Windows**: For Windows, you can go
   [here](http://ftp.gnu.org/pub/gnu/emacs/windows/) and download the
@@ -50,14 +62,35 @@ for the latest version as of this writing.[^ppa]
 [^ppa]: If you really want the bleeding edge, you can use the ppa
     [here](https://launchpad.net/~ubuntu-elisp/+archive/ubuntu/ppa).
 
+
 # MELPA
 Emacs is super old, so it hasn't always had the ability to manage your
-packages for you through the internet. This was added relatively
+packages for you through the internet.[^internet] This was added relatively
 recently, in fact. You'll want to enable Emacs work with MELPA, which
 is an online package archive. This is super easy - just follow the
 instructions [here](https://melpa.org/#/getting-started). MELPA has a
 ton of packages - way more than you'll ever want. I'll walk though
 some of the most important here, though.
+
+[^internet]: Remember, emacs is older than the internet, at least in
+    the form that we know it today.
+
+If you're using emacs for the first time, I recommend you stop reading
+for a moment and go play around with emacs. Try to configure your
+`.emacs` file a little bit. You can do `M-x package-list-packages` to
+see all the available packages. Emacs has a lot of settings that are
+not good out of the box, and several packages aim to fix this. Try
+installing and loading the
+[better-defaults](https://github.com/technomancy/better-defaults)
+package. Several other helpful packages are listed
+[here](https://github.com/technomancy/emacs-starter-kit). You can also
+look at [my .emacs file](https://github.com/jabranham/emacs) for an
+idea of what to do.
+
+The rest of this post will assume that you're at least vaguely familiar
+with how emacs works. If you're still having trouble getting emacs to
+do something, try using google and if that fails, there's always
+[stackoverflow](http://stackoverflow.com/questions/tagged/emacs). 
 
 # Using LaTeX
 The package you want to use for working with LaTeX is called "AuCTeX."
