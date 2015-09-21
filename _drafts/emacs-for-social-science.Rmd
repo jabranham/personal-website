@@ -24,7 +24,10 @@ run tetris out of the box. Or, ya know, it can
 [twitter](https://github.com/hayamiz/twittering-mode/tree/master),
 or act as your
 [file manager](http://www.gnu.org/software/emacs/manual/html_node/emacs/Dired.html).
-Or pretty much anything else you might want it to do. I primarily use
+Or pretty much anything else you might want it to do. More
+realistically, you might look at [org-mode](http://orgmode.org/),
+which is a super powerful way of organizing a project and taking
+notes. I primarily use
 emacs to write documents (in LaTeX and/or
 [rmarkdown](http://rmarkdown.rstudio.com/)),  run R, and keep
 track of changes to those documents with
