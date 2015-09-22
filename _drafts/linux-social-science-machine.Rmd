@@ -39,7 +39,7 @@ by the similarly-titled
 put together by Jake Bowers and Jeff Gill.
 
 Steps should be similar or identical in other Debian-based Linux
-distros. For other Linux systems, you'll probably have access to
+distros. For other desktop GNU/Linux systems, you'll probably have access to
 everything I describe here, but may need to change the commands a
 bit.
 
