@@ -15,14 +15,21 @@ Much (most? all?) of the guide applies to Macs and Windows based
 machines, although the installation instructions may differ. I think
 that Ubuntu comes with some developer tools that Mac and Windows
 machines do not, so if you get an error when trying to run something,
-that's where I'd start. For example, on Mac I'm pretty sure you'll
-have to at least install [XCode](https://developer.apple.com/xcode/).
+that's where I'd start.[^xcode]
+
+[^xcode]: For example, on Mac I'm pretty sure you'll
+    have to at least install
+    [XCode](https://developer.apple.com/xcode/). Note that Xcode comes
+    with emacs, but I've been told that it's not up-to-date at all, so
+    you'll still want to install emacs as described below. 
 
 The guide is available
 [on Github](https://github.com/jabranham/SocialScienceLinuxConfig),
 and I have copied the readme file here. I encourage you to go to the
 github repository, as it may be updated and differ from the text
-here. 
+here. If you notice anything missing or run into any issues, feel free
+to use Github's issues system (or better yet set a pull request)
+noting the change. 
 
 # Configuring your Ubuntu-based PC for Quantitative Social Science Work
 This file will help you get your Ubuntu-based Linux machine up and
@@ -32,7 +39,7 @@ by the similarly-titled
 put together by Jake Bowers and Jeff Gill.
 
 Steps should be similar or identical in other Debian-based Linux
-distros. For other Linux systems, you'll probably have access to
+distros. For other desktop GNU/Linux systems, you'll probably have access to
 everything I describe here, but may need to change the commands a
 bit.
 
@@ -118,7 +125,9 @@ I really don't recommend doing that, though. You can install what's
 referred to as "vanilla" TeXLive fairly easily. There's a stackoverflow
 answer [here](http://tex.stackexchange.com/a/95373) that gives
 step-by-step instructions for how to get vanilla TeXLive set up on
-your system.
+your system. In addition to getting the most up-to-date version of
+LaTeX, the vanilla version will also let you use TeXLive''s package
+management system. 
 
 If you usually have regular access to the internet, I'd recommend
 skipping the *doc* and *source*  files. They add a lot to the
