@@ -115,8 +115,10 @@ Emacs is super old, so it hasn't always had the ability to manage your
 packages for you through the internet.[^internet] This was added relatively
 recently, in fact. You'll want to enable Emacs work with MELPA, which
 is an online package archive. This is super easy - just follow the
-instructions [here](https://melpa.org/#/getting-started). MELPA has a
-ton of packages - way more than you'll ever want. I'll walk though
+instructions [here](https://melpa.org/#/getting-started). Note that
+when it says to add to youre `.emacs` file, this is located at
+`~/.emacs.d/init.el` for most operating systems (Windows may be
+different) MELPA has a ton of packages - way more than you'll ever want. I'll walk though
 some of the most important here, though.
 
 [^internet]: Remember, emacs is older than the internet, at least in
