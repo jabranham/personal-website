@@ -15,8 +15,13 @@ Much (most? all?) of the guide applies to Macs and Windows based
 machines, although the installation instructions may differ. I think
 that Ubuntu comes with some developer tools that Mac and Windows
 machines do not, so if you get an error when trying to run something,
-that's where I'd start. For example, on Mac I'm pretty sure you'll
-have to at least install [XCode](https://developer.apple.com/xcode/).
+that's where I'd start.[^xcode]
+
+[^xcode]: For example, on Mac I'm pretty sure you'll
+    have to at least install
+    [XCode](https://developer.apple.com/xcode/). Note that Xcode comes
+    with emacs, but I've been told that it's not up-to-date at all, so
+    you'll still want to install emacs as described below. 
 
 The guide is available
 [on Github](https://github.com/jabranham/SocialScienceLinuxConfig),
