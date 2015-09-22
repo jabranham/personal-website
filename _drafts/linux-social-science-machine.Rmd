@@ -27,7 +27,9 @@ The guide is available
 [on Github](https://github.com/jabranham/SocialScienceLinuxConfig),
 and I have copied the readme file here. I encourage you to go to the
 github repository, as it may be updated and differ from the text
-here. 
+here. If you notice anything missing or run into any issues, feel free
+to use Github's issues system (or better yet set a pull request)
+noting the change. 
 
 # Configuring your Ubuntu-based PC for Quantitative Social Science Work
 This file will help you get your Ubuntu-based Linux machine up and
