@@ -126,7 +126,8 @@ some of the most important here, though.
 
 If you're using emacs for the first time, I recommend you stop reading
 for a moment and go play around with emacs. Try to configure your
-`.emacs` file a little bit. You can do `M-x package-list-packages` to
+`.emacs` file a little bit. You can do `M-x package-list-packages`
+(the `M-x` says to hold the alt key and tap x. Then type package-list-packages) to
 see all the available packages. Emacs has a lot of settings that are
 not good out of the box, and several packages aim to fix this. Try
 installing and loading the
@@ -139,7 +140,14 @@ idea of what to do.
 The rest of this post will assume that you're at least vaguely familiar
 with how emacs works. If you're still having trouble getting emacs to
 do something, try using google and if that fails, there's always
-[stackoverflow](http://stackoverflow.com/questions/tagged/emacs). 
+[stackoverflow](http://stackoverflow.com/questions/tagged/emacs). Note
+in particular I'm assuming that you're at least vaguely aware (if not
+totally comfortable yet) with emacs' convention of using `C-` and `M-`
+to denote holding the control and alt (or option) keys for the various
+keybindings. Keybindings are what most other programs refer to as
+shortcuts. Since all emacs keybindings are commands, you don't
+actually have to learn any of them - `M-x` will let you type in any
+command you want. But they will make your life a ton easier!
 
 # Using LaTeX
 The package you want to use for working with LaTeX is called "AuCTeX."
@@ -164,10 +172,15 @@ through the most common keybindings you'll need.
 Emacs can play very nicely with R (or Stata) through Emacs Speaks
 Statistics, commonly called [ESS](http://ess.r-project.org/). You can
 download it from MELPA, but it causes issues for me if I do it that
-way (no idea why), so I download and install it from Ubuntu's
+way (no idea why)[^essandpoly], so I download and install it from Ubuntu's
 repositories with `sudo apt-get install ess`. For Mac and Windows
 users, you can try it through MELPA or through the instructions on the
 ESS website.
+
+[^essandpoly]: In particular, polymode will not work properly with
+    rmarkdown files. It can't start r-mode properly inside the r-code
+    sections. If you have any idea why this is or how to fix it, I'd
+    love to hear! 
 
 ESS makes emacs play very nicely with R. You can enable "font
 locking," which is emacs-talk for syntax highlighting. It has several
