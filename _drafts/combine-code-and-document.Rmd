@@ -7,4 +7,28 @@ comments: true
 ---
 
 Combining code and the document that you're writing is called
-"literate programming". 
+"literate programming". It's one of the best practices associated with
+reproducible research, which is a hot topic in political science and
+other disciplines. This post isn't about *why* you should do this,
+it's just about *how* to do it.
+
+I'm going to talk about how to combine R code with markdown via
+rmarkdown and LaTeX via knitr.
+
+# LaTeX and knitr
+The usual file extension for these kinds of files is `.Rnw`. Knitr is
+smart enough that you don't actually have to do much; Just type up the
+LaTeX document like normal. Whenever you want to use R code, you can
+simply put:
+
+    <<>>=
+    mean(c(1,2,3))
+    @
+
+Everything between the `<<>>=` tag and the `@` tag will be fed to
+R. There are a lot of options that you can feed to knitr, which you
+can review [here](http://yihui.name/knitr/options/). Some of the most
+important are `eval`, `echo`, `results`, and `include`. I'd start
+there. 
+
+# rmarkdown 
