@@ -125,7 +125,9 @@ I really don't recommend doing that, though. You can install what's
 referred to as "vanilla" TeXLive fairly easily. There's a stackoverflow
 answer [here](http://tex.stackexchange.com/a/95373) that gives
 step-by-step instructions for how to get vanilla TeXLive set up on
-your system.
+your system. In addition to getting the most up-to-date version of
+LaTeX, the vanilla version will also let you use TeXLive''s package
+management system. 
 
 If you usually have regular access to the internet, I'd recommend
 skipping the *doc* and *source*  files. They add a lot to the
