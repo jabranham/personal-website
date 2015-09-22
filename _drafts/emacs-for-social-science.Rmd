@@ -45,12 +45,21 @@ particular order, here's what I want:
 * BibTeX key completion
 * git integration
 
-There are four big text editors out there: Atom, Emacs, Sublime Text,
-and vim. Sublime is neither free nor libre. Atom is open source, but
+A lot of people use one program do do some of these and a different
+program to do another. For example, you might use RStudio to work with
+R and a program like TeXStudio to write your LaTeX documents. I don't
+think that there's anything particularly wrong with that workflow, but
+it's frustrating to me to have to constantly switch back and
+forth. For that reason, I want a general-purpose program to edit text.
+
+There are four big cross-platform text editors out there: Atom, Emacs,
+Sublime Text, and vim. Sublime is neither free nor libre. Atom is open source, but
 is still in its infancy, and really can't do much that I need. So the
 choice is between vim and emacs. I chose emacs because it seems like
 there is a much bigger community emacs for the same sorts of things
-that I use it for. So what exatly is emacs? 
+that I use it for. I think that vim can do most or maybe all of these,
+though, so if you give emacs a try and find it not to your  liking,
+I'd suggest giving vim a go. So what exatly is emacs? 
 
 Emacs is a text editor, kinda. It can edit text, true, but it can also
 run tetris out of the box. Or, ya know, it can
@@ -63,7 +72,7 @@ realistically, you might look at [org-mode](http://orgmode.org/),
 which is a super powerful way of organizing a project and taking
 notes. I primarily use
 emacs to write documents (in LaTeX and/or
-[rmarkdown](http://rmarkdown.rstudio.com/)),  run R, and keep
+[rmarkdown](http://rmarkdown.rstudio.com/)), run R, and keep
 track of changes to those documents with
 [git](http://www.git-scm.com/). In this blog post, I'll briefly
 introduce how to get emacs to work the way we want it to.
@@ -106,8 +115,10 @@ Emacs is super old, so it hasn't always had the ability to manage your
 packages for you through the internet.[^internet] This was added relatively
 recently, in fact. You'll want to enable Emacs work with MELPA, which
 is an online package archive. This is super easy - just follow the
-instructions [here](https://melpa.org/#/getting-started). MELPA has a
-ton of packages - way more than you'll ever want. I'll walk though
+instructions [here](https://melpa.org/#/getting-started). Note that
+when it says to add to youre `.emacs` file, this is located at
+`~/.emacs.d/init.el` for most operating systems (Windows may be
+different) MELPA has a ton of packages - way more than you'll ever want. I'll walk though
 some of the most important here, though.
 
 [^internet]: Remember, emacs is older than the internet, at least in
@@ -115,7 +126,8 @@ some of the most important here, though.
 
 If you're using emacs for the first time, I recommend you stop reading
 for a moment and go play around with emacs. Try to configure your
-`.emacs` file a little bit. You can do `M-x package-list-packages` to
+`.emacs` file a little bit. You can do `M-x package-list-packages`
+(the `M-x` says to hold the alt key and tap x. Then type package-list-packages) to
 see all the available packages. Emacs has a lot of settings that are
 not good out of the box, and several packages aim to fix this. Try
 installing and loading the
@@ -128,7 +140,14 @@ idea of what to do.
 The rest of this post will assume that you're at least vaguely familiar
 with how emacs works. If you're still having trouble getting emacs to
 do something, try using google and if that fails, there's always
-[stackoverflow](http://stackoverflow.com/questions/tagged/emacs). 
+[stackoverflow](http://stackoverflow.com/questions/tagged/emacs). Note
+in particular I'm assuming that you're at least vaguely aware (if not
+totally comfortable yet) with emacs' convention of using `C-` and `M-`
+to denote holding the control and alt (or option) keys for the various
+keybindings. Keybindings are what most other programs refer to as
+shortcuts. Since all emacs keybindings are commands, you don't
+actually have to learn any of them - `M-x` will let you type in any
+command you want. But they will make your life a ton easier!
 
 # Using LaTeX
 The package you want to use for working with LaTeX is called "AuCTeX."
@@ -153,10 +172,15 @@ through the most common keybindings you'll need.
 Emacs can play very nicely with R (or Stata) through Emacs Speaks
 Statistics, commonly called [ESS](http://ess.r-project.org/). You can
 download it from MELPA, but it causes issues for me if I do it that
-way (no idea why), so I download and install it from Ubuntu's
+way (no idea why)[^essandpoly], so I download and install it from Ubuntu's
 repositories with `sudo apt-get install ess`. For Mac and Windows
 users, you can try it through MELPA or through the instructions on the
 ESS website.
+
+[^essandpoly]: In particular, polymode will not work properly with
+    rmarkdown files. It can't start r-mode properly inside the r-code
+    sections. If you have any idea why this is or how to fix it, I'd
+    love to hear! 
 
 ESS makes emacs play very nicely with R. You can enable "font
 locking," which is emacs-talk for syntax highlighting. It has several
@@ -178,7 +202,7 @@ management. There are two ways for RefTeX to find your .bib file:
    also have multiple bibliographies there, since it is a list.
 
 2. RefTeX should automatically find your .bib file through the
-   `\bibliography{}` LaTeX command. So if you've set up your
+   `\bibliography{}` (or similar) LaTeX command. So if you've set up your
    bibliography in your LaTeX file, RefTeX should find it.
 
 Note that you can use either the first *or* the second way, but not both.
@@ -230,9 +254,13 @@ different key bindings (mostly because if I only assign it to one I
 can't remember which!): `C-c g` and `C-x g`.
 
 From there, you can begin a commit with `c`, which will pull up a
-whole bunch of options. From the `magit-status` screen, you can press
+whole bunch of options. For a normal commit, just hit `c` again, which
+will let you type the commit message. Once you're done typing, `C-c
+C-c` commits.
+
+From the `magit-status` screen, you can press
 `b` to see options relating to branching. `z` will pull up stashing
-options. There's a nice cheatsheet of the most common actions for
+options. `y` will pull up a branch manager. There's a nice cheatsheet of the most common actions for
 magit [here](http://daemianmack.com/magit-cheatsheet.html). 
 
 # Knitr and rmarkdown
