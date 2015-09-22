@@ -1,8 +1,8 @@
 ---
 layout: post
 title: Emacs with LaTeX for Academic Writing
-categories: []
-tags: []
+categories: [emacs, latex, rmarkdown, markdown, git, R]
+tags: [emacs, latex, rmarkdown, markdown, git, R]
 comments: true
 ---
 
