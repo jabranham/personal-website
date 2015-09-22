@@ -202,7 +202,7 @@ management. There are two ways for RefTeX to find your .bib file:
    also have multiple bibliographies there, since it is a list.
 
 2. RefTeX should automatically find your .bib file through the
-   `\bibliography{}` LaTeX command. So if you've set up your
+   `\bibliography{}` (or similar) LaTeX command. So if you've set up your
    bibliography in your LaTeX file, RefTeX should find it.
 
 Note that you can use either the first *or* the second way, but not both.
@@ -254,9 +254,13 @@ different key bindings (mostly because if I only assign it to one I
 can't remember which!): `C-c g` and `C-x g`.
 
 From there, you can begin a commit with `c`, which will pull up a
-whole bunch of options. From the `magit-status` screen, you can press
+whole bunch of options. For a normal commit, just hit `c` again, which
+will let you type the commit message. Once you're done typing, `C-c
+C-c` commits.
+
+From the `magit-status` screen, you can press
 `b` to see options relating to branching. `z` will pull up stashing
-options. There's a nice cheatsheet of the most common actions for
+options. `y` will pull up a branch manager. There's a nice cheatsheet of the most common actions for
 magit [here](http://daemianmack.com/magit-cheatsheet.html). 
 
 # Knitr and rmarkdown
