@@ -211,7 +211,15 @@ I've already posted [a bit](/2015/09/version-control.html) about the
 wonders of git. Emacs works wonderfully with git through the package
 `magit`. It's available through MELPA, so install it however you
 like. The most useful command is `M-x magit-status`, which is kind of
-the "starting point" for all things git. 
+the "starting point" for all things git. I assign that to two
+different key bindings (mostly because if I only assign it to one I
+can't remember which!): `C-c g` and `C-x g`.
+
+From there, you can begin a commit with `c`, which will pull up a
+whole bunch of options. From the `magit-status` screen, you can press
+`b` to see options relating to branching. `z` will pull up stashing
+options. There's a nice cheatsheet of the most common actions for
+magit [here](http://daemianmack.com/magit-cheatsheet.html). 
 
 # Knitr and rmarkdown
 Polymode
