@@ -1,0 +1,10 @@
+---
+layout: post
+title: Combining Code and Writing
+categories: [emacs, latex, rmarkdown, markdown, R]
+tags: [emacs, latex, rmarkdown, markdown, R]
+comments: true
+---
+
+Combining code and the document that you're writing is called
+"literate programming". 
