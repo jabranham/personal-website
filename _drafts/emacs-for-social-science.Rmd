@@ -32,6 +32,26 @@ that the best way to change lines is to use control-n or control-p
 keyboards didn't have arrow keys, it seems silly to me now. So what
 exactly is Emacs and why am I recommending it if it's that old?
 
+I have [written before](/2015/09/rmarkdown-vs.latex.html) about what I
+look for in a text editor, but I'll recap briefly here. In no
+particular order, here's what I want:
+
+* Cross platform
+* Free and open source (at a minimum. preferably
+  [libre software](http://www.gnu.org/philosophy/free-sw.html))
+* Syntax highlighting (for R, LaTeX, and rmarkdown)
+* Code completion (for the above)
+* Ability to send R code to console for evaluation
+* BibTeX key completion
+* git integration
+
+There are four big text editors out there: Atom, Emacs, Sublime Text,
+and vim. Sublime is neither free nor libre. Atom is open source, but
+is still in its infancy, and really can't do much that I need. So the
+choice is between vim and emacs. I chose emacs because it seems like
+there is a much bigger community emacs for the same sorts of things
+that I use it for. So what exatly is emacs? 
+
 Emacs is a text editor, kinda. It can edit text, true, but it can also
 run tetris out of the box. Or, ya know, it can
 [check your email](http://www.emacswiki.org/emacs/CategoryMail), run
@@ -123,6 +143,14 @@ way (no idea why), so I download and install it from Ubuntu's
 repositories with `sudo apt-get install ess`. For Mac and Windows
 users, you can try it through MELPA or through the instructions on the
 ESS website.
+
+ESS makes emacs play very nicely with R. You can enable "font
+locking," which is emacs-talk for syntax highlighting. It has several
+nice keybindings as well. For example if you're in an R script, `C-RET` (control-return on most
+keyboards) sends the current line to R for evaluation. Similarly, `C-c
+C-c` sends a whole region to R for evaluation. You can find the whole
+list of key bindings (shortcuts)
+[here](http://ess.r-project.org/refcard.pdf). 
 
 # Reference Management
 
