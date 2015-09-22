@@ -45,12 +45,21 @@ particular order, here's what I want:
 * BibTeX key completion
 * git integration
 
-There are four big text editors out there: Atom, Emacs, Sublime Text,
-and vim. Sublime is neither free nor libre. Atom is open source, but
+A lot of people use one program do do some of these and a different
+program to do another. For example, you might use RStudio to work with
+R and a program like TeXStudio to write your LaTeX documents. I don't
+think that there's anything particularly wrong with that workflow, but
+it's frustrating to me to have to constantly switch back and
+forth. For that reason, I want a general-purpose program to edit text.
+
+There are four big cross-platform text editors out there: Atom, Emacs,
+Sublime Text, and vim. Sublime is neither free nor libre. Atom is open source, but
 is still in its infancy, and really can't do much that I need. So the
 choice is between vim and emacs. I chose emacs because it seems like
 there is a much bigger community emacs for the same sorts of things
-that I use it for. So what exatly is emacs? 
+that I use it for. I think that vim can do most or maybe all of these,
+though, so if you give emacs a try and find it not to your  liking,
+I'd suggest giving vim a go. So what exatly is emacs? 
 
 Emacs is a text editor, kinda. It can edit text, true, but it can also
 run tetris out of the box. Or, ya know, it can
@@ -63,7 +72,7 @@ realistically, you might look at [org-mode](http://orgmode.org/),
 which is a super powerful way of organizing a project and taking
 notes. I primarily use
 emacs to write documents (in LaTeX and/or
-[rmarkdown](http://rmarkdown.rstudio.com/)),  run R, and keep
+[rmarkdown](http://rmarkdown.rstudio.com/)), run R, and keep
 track of changes to those documents with
 [git](http://www.git-scm.com/). In this blog post, I'll briefly
 introduce how to get emacs to work the way we want it to.
