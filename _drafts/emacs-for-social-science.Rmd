@@ -133,7 +133,21 @@ do something, try using google and if that fails, there's always
 # Using LaTeX
 The package you want to use for working with LaTeX is called "AuCTeX."
 It has a website [here](https://www.gnu.org/software/auctex/), but you
-can just get it through MELPA. 
+can just get it through MELPA. Honestly, using AuCTeX to work with
+LaTeX is a breeze. There are a few keybindings (keyboard shortcuts)
+that will make your life easier, but most of them are
+optional. Perhaps the most important is `C-c C-c`, which will begin to
+compile your LaTeX document. It's smart enough to figure out what the
+next step in compiling your document is, so for example if you need to
+run pdflatex, then biber, then pdflatex, and pdflatex, *then* view
+your pdf (if you need to look up why you might need to run those
+commands that way, this post won't cover them.), it will run through
+all of those things in the correct order.
+
+Other than that, there isn't much that you need to know about
+AuCTeX. There is a really good
+[stackexchange](http://tex.stackexchange.com/a/21026) answer that goes
+through the most common keybindings you'll need. 
 
 # Using R
 Emacs can play very nicely with R (or Stata) through Emacs Speaks
