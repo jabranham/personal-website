@@ -236,5 +236,12 @@ options. There's a nice cheatsheet of the most common actions for
 magit [here](http://daemianmack.com/magit-cheatsheet.html). 
 
 # Knitr and rmarkdown
-Polymode
+Finally, you want to be able to combine your code for analysis and
+your document. You can do that in emacs, of course. You'll want the
+package called [polymode](https://github.com/vspinu/polymode). Long
+story short, this package allows you to have different major modes
+active in your document depending on different points. So, for
+example, if you want to combine R code and LaTeX in a `.Rnw` document,
+polymode will allow you to use LaTeX-mode when writing the document,
+then R-mode within the `<<>>= ... @` markers. 
 
