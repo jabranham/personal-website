@@ -6,6 +6,7 @@ tags: [emacs, latex, rmarkdown, markdown, R]
 comments: true
 ---
 
+
 Combining code and the document that you're writing is called
 "literate programming". It's one of the best practices associated with
 reproducible research, which is a hot topic in political science and
