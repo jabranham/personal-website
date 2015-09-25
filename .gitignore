@@ -2,3 +2,4 @@ _site/
 *.html~
 .sass-cache/
 /.Rhistory
+cv/auto/
