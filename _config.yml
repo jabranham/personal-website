@@ -9,6 +9,8 @@ url: "https://jabranham.github.io" # the base hostname & protocol for your site
 twitter_username: JAlexBranham
 github_username:  jabranham
 permalink: /:year/:month/:title.html
+gems:
+  - jekyll-sitemap
 
 # Build settings
 markdown: kramdown
