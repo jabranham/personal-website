@@ -117,9 +117,12 @@ recently, in fact. You'll want to enable Emacs work with MELPA, which
 is an online package archive. This is super easy - just follow the
 instructions [here](https://melpa.org/#/getting-started). Note that
 when it says to add to youre `.emacs` file, this is located at
-`~/.emacs.d/init.el` for most operating systems (Windows may be
+`~/.emacs.d/init.el` for most operating systems[^init] (Windows may be
 different) MELPA has a ton of packages - way more than you'll ever want. I'll walk though
 some of the most important here, though.
+
+[^init]: Emacs may not have created this file when it installed. Go
+    ahead and create it manually. 
 
 [^internet]: Remember, emacs is older than the internet, at least in
     the form that we know it today.
@@ -127,7 +130,7 @@ some of the most important here, though.
 If you're using emacs for the first time, I recommend you stop reading
 for a moment and go play around with emacs. Try to configure your
 `.emacs` file a little bit. You can do `M-x package-list-packages`
-(the `M-x` says to hold the alt key and tap x. Then type package-list-packages) to
+(the `M-x` says to hold the alt key and tap x. Then type "package-list-packages") to
 see all the available packages. Emacs has a lot of settings that are
 not good out of the box, and several packages aim to fix this. Try
 installing and loading the
@@ -135,7 +138,12 @@ installing and loading the
 package. Several other helpful packages are listed
 [here](https://github.com/technomancy/emacs-starter-kit). You can also
 look at [my .emacs file](https://github.com/jabranham/emacs) for an
-idea of what to do.
+idea of what to do.[^usepackage]
+
+[^usepackage]: Note that I use the `use-package` package in order to
+    make it easier to tote around my .emacs file. So if you want to
+    use it, you'll also need to install it and `require` it as
+    specified at the top of my init.el file. 
 
 The rest of this post will assume that you're at least vaguely familiar
 with how emacs works. If you're still having trouble getting emacs to
@@ -166,7 +174,7 @@ all of those things in the correct order.
 Other than that, there isn't much that you need to know about
 AuCTeX. There is a really good
 [stackexchange](http://tex.stackexchange.com/a/21026) answer that goes
-through the most common keybindings you'll need. 
+through the most common keybindings you'll need.
 
 # Using R
 Emacs can play very nicely with R (or Stata) through Emacs Speaks
@@ -216,7 +224,7 @@ an idea of what you need to do.
 Once you've got that down, you're good to go! Just start up emacs, and
 open up a .tex file (make sure that AuCTeX is the major mode and that
 RefTeX is active as a minor mode). The keyboard shortcut for a
-citation is `C-c [`. This will bring up a menu that looks something like this:
+citation is `C-c [`. This will bring up a menu that looks something like this[^refdefault}]:
 
 ![RefTeX citation options](/image/reftex-options.jpg)
 
@@ -232,7 +240,13 @@ This will look something like this:
 ![RefTeX matches](/image/reftex-bib-keys.jpg)
 
 I can navigate through the listings to select the one that I
-want. Once I'm on it, hitting enter will automatically insert the selection into my tex file.
+want. Once I'm on it, hitting enter will automatically insert the
+selection into my tex file.
+
+[^refdefault]: Note that these are the default commands. If you use
+    citation commands other than these (for biblatex or pandoc
+    markdown, for example), you'll need to change the options
+    available.
 
 If I've searched for something too broad ("policy", for example) and
 need to narrow the search, I can press `r` to search inside my
@@ -272,4 +286,28 @@ active in your document depending on different points. So, for
 example, if you want to combine R code and LaTeX in a `.Rnw` document,
 polymode will allow you to use LaTeX-mode when writing the document,
 then R-mode within the `<<>>= ... @` markers. 
+
+# Super useful minor modes
+A lot of emacs's power comes from the major mode that you're
+in. AuCTeX can do everything that you need for LaTeX files, for
+example. However, having a few minor modes active can make your life
+*much* easier. Here's a short list of some of the more useful minor
+modes I use:
+
+* `smartparens`: makes it easier to maintain balanced parentheses
+* `company`: autocompletes all the things! Especially useful for
+  remembering function names and variable names in R, but also useful
+  for typing difficult-to-spell words. There are a lot of different
+  packages that plug into company. You can checkout
+  `company-statistics`, `company-auctex`, and some others. 
+* `flycheck`: checks your code for syntax errors and good style on the
+  fly. To use with R, you'll need the `lintr` package available on
+  CRAN. Get it with `install.packages("lintr")`
+* `flyspell`: same concept as `flycheck`, but for spelling
+* `auto-fill`: makes test wrap lines at a reasonable length. Also note
+  that this makes actual new real lines rather than just wrapping the
+  test. This is especially useful for git, which thinks in lines of
+  code.
+* `font-lock`: This is emacs's weird way of referring to syntax
+  highlighting
 
