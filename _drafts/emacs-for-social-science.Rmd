@@ -296,7 +296,8 @@ then R-mode within the `<<>>= ... @` markers.
 # Super useful minor modes
 A lot of emacs's power comes from the major mode that you're
 in. AuCTeX can do everything that you need for LaTeX files, for
-example. However, having a few minor modes active can make your life
+example. ESS is in charge of statistics, and polymode lets us have the
+best of both of those worlds. However, having a few minor modes active can make your life
 *much* easier. Here's a short list of some of the more useful minor
 modes I use:
 
