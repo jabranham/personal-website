@@ -3,3 +3,4 @@ _site/
 .sass-cache/
 /.Rhistory
 cv/auto/
+/_drafts/.Rhistory
