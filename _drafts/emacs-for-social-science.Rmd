@@ -23,7 +23,7 @@ emacs (this is how you have your code and words in the same
 document). 
 
 Emacs is incredibly powerful, and ancient (in computer terms,
-anyway). Ancient as in it was invented before keyboards had arrow
+anyway). Just to give you an idea of how old it is, it was invented before keyboards had arrow
 keys. Oh, and before Windows, Mac, or Linux existed as operating
 systems. So it can be a bit... weird, at times. For example, its
 built-in tutorial (which I recommend you never even look at) tells you
@@ -50,7 +50,11 @@ program to do another. For example, you might use RStudio to work with
 R and a program like TeXStudio to write your LaTeX documents. I don't
 think that there's anything particularly wrong with that workflow, but
 it's frustrating to me to have to constantly switch back and
-forth. For that reason, I want a general-purpose program to edit text.
+forth. Additionally, those programs tend to me rather limited in how
+you can configure them. If you want to do something that they don't
+support, you'll just have to wait for them to release that feature
+(assuming they release it at all). For that reason, I want a
+general-purpose program to edit text.
 
 There are four big cross-platform text editors out there: Atom, Emacs,
 Sublime Text, and vim. Sublime is neither free nor libre. Atom is open source, but
@@ -58,7 +62,7 @@ is still in its infancy, and really can't do much that I need. So the
 choice is between vim and emacs. I chose emacs because it seems like
 there is a much bigger community emacs for the same sorts of things
 that I use it for. I think that vim can do most or maybe all of these,
-though, so if you give emacs a try and find it not to your  liking,
+though, so if you give emacs a try and find it not to your liking,
 I'd suggest giving vim a go. So what exatly is emacs? 
 
 Emacs is a text editor, kinda. It can edit text, true, but it can also
@@ -74,7 +78,8 @@ notes. I primarily use
 emacs to write documents (in LaTeX and/or
 [rmarkdown](http://rmarkdown.rstudio.com/)), run R, and keep
 track of changes to those documents with
-[git](http://www.git-scm.com/). In this blog post, I'll briefly
+[git](http://www.git-scm.com/), although it's slowly taking over other
+things that I do (like file management). In this blog post, I'll briefly
 introduce how to get emacs to work the way we want it to.
 
 Emacs thinks in terms of "modes." It can have one (and only one)
@@ -82,7 +87,7 @@ Emacs thinks in terms of "modes." It can have one (and only one)
 for example, if you're writing in markdown, you would have
 markdown-mode active as the major mode, and a few minor modes active
 for things like spell check and auto-complete. The first thing to do
-is to install emacs on your system. 
+is to get emacs on your system. 
 
 # Install Emacs
 First, note that "Emacs" actually refers to a whole
@@ -91,8 +96,8 @@ class of editors. The most popular is
 I recommend. GNU Emacs is free and open source software with a huge
 development community.
 
-* **Linux**: For Ubuntu, you can just do `sudo apt-get install emacs24`
-  for the latest version as of this writing.[^ppa] Other linux
+* **Linux**: For Ubuntu, you can just do `sudo apt install emacs24`
+  for a mostly up-to-date  version as of this writing.[^ppa] Other linux
   distributions will be similar. 
 
 * **Windows**: For Windows, you can go
@@ -135,7 +140,10 @@ installing and loading the
 package. Several other helpful packages are listed
 [here](https://github.com/technomancy/emacs-starter-kit). You can also
 look at [my .emacs file](https://github.com/jabranham/emacs) for an
-idea of what to do.
+idea of what to do. I like the
+[use-package](https://github.com/jwiegley/use-package)) package a
+*lot* because it makes keeping track of what's going on in the
+`.emacs` file much easier. 
 
 The rest of this post will assume that you're at least vaguely familiar
 with how emacs works. If you're still having trouble getting emacs to
