@@ -257,7 +257,7 @@ selection into my tex file.
 If I've searched for something too broad ("policy", for example) and
 need to narrow the search, I can press `r` to search inside my
 results. So if I was interested in policy pieces that Erikson has
-written, I can just type `r Erikson` and it will narrow the choices to
+written, I can just type "r Erikson" and it will narrow the choices to
 just those pieces that mention both policy and Erikson. 
 
 And that's it! RefTeX is a pretty powerful tool. It can also handle
