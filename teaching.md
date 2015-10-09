@@ -5,8 +5,10 @@ permalink: /Teaching/
 ---
 
 * Teaching in Higher Education Certificate, Temple University
-* Instructor
-  + [Introduction to Math for Political Scientists](https://www.github.com/jabranham/math-camp)
+* Short Courses
+  +
+  [Introduction to Math for Political Scientists](https://www.github.com/jabranham/math-camp)
+  + [Introduction to LaTeX Workshop](https://www.github.com/jabranham/latex-workshop)
 * Teaching Assistant 
   + Statistics I - graduate level
   + Statistics II - graduate level
