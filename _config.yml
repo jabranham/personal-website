@@ -2,7 +2,7 @@
 title: J. Alexander Branham
 email: branham@utexas.edu
 description: > # this means to ignore newlines until "baseurl:"
-  I'm a graduate student in the Department of Government at UT-Austin.
+  I'm a PhD Candidate in the Department of Government at UT-Austin.
   I study American politics, public opinion, and methods. 
 # baseurl: "/" # the subpath of your site, e.g. /blog/
 url: "https://jabranham.github.io" # the base hostname & protocol for your site
