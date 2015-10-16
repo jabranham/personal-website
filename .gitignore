@@ -4,3 +4,6 @@ _site/
 /.Rhistory
 cv/auto/
 /_drafts/.Rhistory
+*.aux
+*.fdb_latexmk
+*.fls
