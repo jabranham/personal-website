@@ -14,9 +14,17 @@ other disciplines. This post isn't about *why* you should do this,
 it's just about *how* to do it.
 
 I'm going to talk about how to combine R code with markdown via
-rmarkdown and LaTeX via knitr. There is another way of doing this
-(with Sweave), but knitr is much easier and includes some features
-that Sweave is lacking, so I focus on knitr here. 
+rmarkdown and LaTeX via knitr. There are other ways of doing this
+(such as org-mode in emacs), so this isn't supposed to be a
+comprehensive guide to all of the ways of doing this. I'm focusing on
+LaTeX because that's probably the most popular way of writing prose in
+academia, and markdown is easy to cover as well. If you need to
+include languages other than R in your analysis, you should consider
+org-mode with emacs.
+
+Knitr is just one way of combining R code with prose. There is another
+way of doing this (with Sweave), but knitr is much easier and includes
+some features that Sweave is lacking, so I focus on knitr here.
 
 # LaTeX and knitr
 The usual file extension for these kinds of files is `.Rnw`. Knitr is
@@ -28,17 +36,17 @@ simply put:
     mean(c(1,2,3))
     @
 
-Everything between the `<<>>=` tag and the `@` tag will be fed to
-R. You can label the chunk by giving it a name. This helps if there
-are any compile errors. You can also set up options for each chunk
-individually. So if we have a chunk that looks like this:
+Everything between `<<>>=` and `@` will be fed to R. You can label the
+chunk by giving it a name. This helps if there are any compile
+errors. You can also set up options for each chunk individually. So if
+we have a chunk that looks like this:
 
     <<mean-of-cars-by-cyl, echo=FALSE>>=
     library(dplyr)
     mtcars %>%
       group_by(cyl) %>%
       summarize(mean(wt))
-  @
+    @
 
 then knitr will name the chunk "mean-of-cars-by-cyl" and output the
 expression to the PDF file without including the code we used to get
@@ -108,20 +116,20 @@ important options are
   document. Great for catching errors, but ugly. Turn it off and it
   prints the warnings in the R console instead.
 
-## The cache
-Knitr supports the cache, so if you're compiling a document multiple
-times, it doesn't actually have to evaluate all of the R code every
-time. You can enable this in a chunk with the `cache=TRUE` option. You
-can also enable it globally for a document by setting the option at
-the beginning of your document:
+<!-- ## The cache -->
+<!-- Knitr supports the cache, so if you're compiling a document multiple -->
+<!-- times, it doesn't actually have to evaluate all of the R code every -->
+<!-- time. You can enable this in a chunk with the `cache=TRUE` option. You -->
+<!-- can also enable it globally for a document by setting the option at -->
+<!-- the beginning of your document: -->
 
-<<setup, include=FALSE, cache=FALSE>>=
-library(knitr)
-# set global chunk options
-opts_chunk$set(cache=TRUE, autodep=TRUE)
-@
+<!-- <<setup, include=FALSE, cache=FALSE>>= -->
+<!-- library(knitr) -->
+<!-- # set global chunk options -->
+<!-- opts_chunk$set(cache=TRUE, autodep=TRUE) -->
+<!-- @ -->
 
-This will tell knitr to automatically cache everything. The `autodep`
-option lets knitr figure out that chunks later in your document may
-depend on chunks earlier in the document, so if the earlier ones
-change, it will update the later chunks if it needs to. 
+<!-- This will tell knitr to automatically cache everything. The `autodep` -->
+<!-- option lets knitr figure out that chunks later in your document may -->
+<!-- depend on chunks earlier in the document, so if the earlier ones -->
+<!-- change, it will update the later chunks if it needs to.  -->
