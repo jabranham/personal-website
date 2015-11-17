@@ -9,7 +9,10 @@ comments: true
 When you go on the academic job market nowadays, it's definitely the
 expectation that you have a personal website that you keep relatively
 up-to-date. Since this is by no means a painless process, this post is
-intended to be an guide on how to get started with your own website.
+intended to be an guide on how to get started with your own website. I
+focus here on building a site where you want a homepage, subpages for
+teaching, research, and your CV, and a blog that you write in
+rmarkdown. 
 
 # Step 0: Choose how/where to host your site
 After you make your website, you'll need to chose where to host your
@@ -31,3 +34,29 @@ your webpages don't change for each user - so no logging in to your
 website or anything like that. They do this because it costs them very
 little to host these static sites. If they had to support dynamic
 webpages, it would be much more costly.  
+
+# Step 1: Create a Project
+
+People say the word project and mean different things. What I mean
+here is to create one folder that will house your entire website. On a
+unix-type machine (mac, linux, the BSDs), this would be something like
+this: `~/personal-website`. Once you have that setup, initialize it as
+a git repository (`git init`, in case you forgot). You can then setup
+the basic structure of your website by creating a few folders and
+files:
+
+    ~/personal-website
+    |--- 404.md
+    |--- _config.yml
+    |--- _includes
+    |
+    |
+    |--- _layouts
+    |
+    |
+    |-- _image/
+    |
+    |
+    |--- index.md
+
+That is enough to build a basic site. 
