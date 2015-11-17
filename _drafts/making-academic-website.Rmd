@@ -1,0 +1,33 @@
+---
+layout: post
+title: Using Github Pages to make an Academic Website
+categories: [website, rmarkdown, markdown]
+tags: [website, rmarkdown, markdown]
+comments: true
+---
+
+When you go on the academic job market nowadays, it's definitely the
+expectation that you have a personal website that you keep relatively
+up-to-date. Since this is by no means a painless process, this post is
+intended to be an guide on how to get started with your own website.
+
+# Step 0: Choose how/where to host your site
+After you make your website, you'll need to chose where to host your
+site. I like to think of there being different levels of these hosting
+services. On the one hand, you could choose a place like Google
+Sites. If you do that, you don't need to learn much at all, but you
+have relatively little control over how your site looks. At the other
+extreme, you can set up your own server to host your site at a
+web address you own. If you do that, you have total control over every
+aspect of your site. I chose [Github Pages](https://pages.github.com/)
+for my site because it's relatively painless to get set up, it's free,
+and it's automatically under
+[version control](/2015/09/version-control.html) (which is a
+godsend for stuff like this especially). Github pages uses
+[Jekyll](https://jekyllrb.com/). Basically what this means is that you
+can setup your pages to look basically however you want them to look,
+so long as your site is "static." Having a "static" site means that
+your webpages don't change for each user - so no logging in to your
+website or anything like that. They do this because it costs them very
+little to host these static sites. If they had to support dynamic
+webpages, it would be much more costly.  
