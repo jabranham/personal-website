@@ -13,4 +13,4 @@ goes through maximum likelihood estimation and method of moments
 estimation. It also gives some examples for each of those. I also
 wrote up a bit about statistical significance and power. If you're
 interested, you can find the pdf
-[here](https://jabranham.com/files/final-review.pdf) 
+[here](http://jabranham.com/files/final-review.pdf) 
