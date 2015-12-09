@@ -7,3 +7,4 @@ cv/auto/
 *.aux
 *.fdb_latexmk
 *.fls
+/Gemfile.lock
