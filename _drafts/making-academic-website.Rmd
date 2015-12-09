@@ -33,7 +33,16 @@ so long as your site is "static." Having a "static" site means that
 your webpages don't change for each user - so no logging in to your
 website or anything like that. They do this because it costs them very
 little to host these static sites. If they had to support dynamic
-webpages, it would be much more costly.  
+webpages, it would be much more costly.
+
+## Install dependencies
+Now for the boring part. If you want to see how your site looks
+*before* pushing the changes you make to the internet, you'll need to
+install Ruby and Jekyll. Github pages uses these to turn your files
+into a proper-looking website. Luckily, this isn't too difficult to
+do. Github has a help page
+[here](https://help.github.com/articles/using-jekyll-with-pages/) that
+describes pretty nicely how to get this set up on your machine. 
 
 # Step 1: Create a Project
 
@@ -46,17 +55,74 @@ the basic structure of your website by creating a few folders and
 files:
 
     ~/personal-website
-    |--- 404.md
     |--- _config.yml
     |--- _includes
-    |
-    |
+    |    |--- footer.html
+    |    |--- header.html
+    |    |--- head.html
     |--- _layouts
-    |
-    |
-    |-- _image/
-    |
-    |
+    |    |--- default.html
+    |    |--- page.html
+    |    |--- posts.html
+    |--- _sass
+    |    |--- base.scss
+    |    |--- _layout.scss
+    |    |----_syntax-highlighting.scss 
+    |--- css
+    |    |--- main.scss
     |--- index.md
+    |--- Gemfile
 
-That is enough to build a basic site. 
+That is enough to build a basic site. If you don't know CSS or HTML,
+you can just copy the files that I have under `_includes`, `_layouts`,
+`_sass`, and `css`. I'll walk through what each of these files does and
+how you can control their behavior.
+
+# Step 2: Configure your site
+The `_config.yml`  file allows you to set site-wide options. Here is
+what mine looks like at the moment:
+
+    # Site settings
+    title: J. Alexander Branham
+    email: branham@utexas.edu
+    description: > # this means to ignore newlines until "baseurl:"
+        I'm a PhD Candidate in the Department of Government at UT-Austin.
+        I study American politics, public opinion, and methods. 
+    url: "http://jabranham.com" # the base hostname & protocol for your site
+    twitter_username: JAlexBranham
+    github_username:  jabranham
+    permalink: /:year/:month/:title.html
+    gems:
+        - jekyll-sitemap
+
+    # Build settings
+    markdown: redcarpet
+
+Jekyll uses this file to set sitewide settings. So I just tell it the
+title of my site, my email adddress, and a few other things that
+various parts of my site use. It's easier to define variables here
+rather than go hunting through the other files for your site. The last
+few lines tells jekyll how I want markdown handled - you can probably
+delete this. The default is probably just fine.
+
+# Step 3: Make your homepage
+The file `index.md` contains your homepage. So if you're using
+github's default, this is what will be displayed at
+`username.github.io`. You can write the document using
+[markdown](https://help.github.com/articles/markdown-basics/), so no
+need to mess with formatting html or whatever. The file **must** start
+with
+
+    ---
+    layout: default
+    ---
+
+Everything between the dashes is frontmatter that jekyll will use to
+build the webpage. So all I've done there is told jekyll that the
+webpage's layout should come from "default." So Jekyll will dutifully
+look at _layouts/default.html and make my homepage according to that
+layout. In my case, the layout file tells it to include head.html
+(from _includes/head.html), then put header (from
+_includes/header.html), then the content of the page (this is whatever
+I type into the index.md file, after the frontmatter), and finally
+include the footer (from _includes/footer.html). 
