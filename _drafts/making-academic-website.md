@@ -126,3 +126,9 @@ layout. In my case, the layout file tells it to include head.html
 _includes/header.html), then the content of the page (this is whatever
 I type into the index.md file, after the frontmatter), and finally
 include the footer (from _includes/footer.html). 
+
+# Step 4: Create other pages
+
+# Step 5: Fiddle with your layout
+
+# Step 6: Profit!
