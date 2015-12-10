@@ -1,8 +1,8 @@
 ---
 layout: post
 title: Using Github Pages to make an Academic Website
-categories: [website, rmarkdown, markdown]
-tags: [website, rmarkdown, markdown]
+categories: [website, markdown]
+tags: [website, markdown]
 comments: true
 ---
 
@@ -12,7 +12,7 @@ up-to-date. Since this is by no means a painless process, this post is
 intended to be an guide on how to get started with your own website. I
 focus here on building a site where you want a homepage, subpages for
 teaching, research, and your CV, and a blog that you write in
-rmarkdown. 
+markdown. 
 
 # Step 0: Choose how/where to host your site
 After you make your website, you'll need to chose where to host your
@@ -120,15 +120,61 @@ with
 Everything between the dashes is frontmatter that jekyll will use to
 build the webpage. So all I've done there is told jekyll that the
 webpage's layout should come from "default." So Jekyll will dutifully
-look at _layouts/default.html and make my homepage according to that
-layout. In my case, the layout file tells it to include head.html
-(from _includes/head.html), then put header (from
-_includes/header.html), then the content of the page (this is whatever
-I type into the index.md file, after the frontmatter), and finally
-include the footer (from _includes/footer.html). 
+look at `_layouts/default.html` and make my homepage according to that
+layout. In my case, the layout file tells it to include `head.html`
+(from `_includes/head.html`), then put header (from
+`_includes/header.html`), then the content of the page (this is whatever
+I type into the `index.md` file, after the frontmatter), and finally
+include the footer (from `_includes/footer.html`). 
 
 # Step 4: Create other pages
+You can create other pages pretty easily. They simply go in the same
+folder as your `index.md` file. The name of the file will be the name
+of the webpage. So, for instance, I have a file named `research.md`
+and another called `teaching.md`. I use the `_includes/header.html`
+file so that you can get to those pages from any part of my
+website. Finally, I also keep my CV in this project. Since it's a
+LaTeX file, it gets its own directory so that it doesn't clutter up
+everything when it's compiled. Then I can reference it with
+`./cv/cv.pdf` when I want to link to the pdf. One day I'll get around
+to converting it to be both an html page as well as a pdf page
+(perhaps with [org mode](http://orgmode.org/) for emacs), but that's
+going to have to stay on the to-do list for now. 
 
 # Step 5: Fiddle with your layout
+Finally, I recommended that you simply copy-paste a lot of my layout
+files in order to get started as quickly as possible. Of course, the
+web would be a pretty boring place if all websites looked the same. So
+I definitely recommend that you poke around in the layout and style
+files.
 
-# Step 6: Profit!
+You also may want to expand your directory structure a bit. I've
+already mentioned that I use another subfolder for my CV files. I also
+have a folder for any images that I want on my website (my picture on
+the homepage, for example). 
+
+# Step 6: Other misc tweaks
+
+**Blog**: Jekyll is really nice for blogging. There are tons of
+  tutorials online that show you how to set this up, so I won't write
+  much here. The basic idea is that you can put drafts of posts in the
+  `_drafts` folder, then move them to the `_posts` folder when you're
+  ready to publish them. You save them in a specific format:
+  `YYYY-MM-DD-post-name.md` and then Jekyll takes care of converting
+  everything for you. You can even get fancy and add comments or
+  whatnot. 
+
+**Analyitics**: You can use a tool like
+  [google analyitics](https://www.google.com/analytics/) to keep tabs
+  on the kinds of visitors your site is getting. While not super
+  useful for me, it's interesting to look at nevertheless. Definitely
+  more useful if you're trying to reach a certain demographic or
+  trying to sell something. 
+
+**Personal domain**: This one is actually a little tricky to get set
+  up. By default, github pages hosts at *username*.github.io. If you
+  own your own domain, though, you can host it there. I found the
+  advice [here](https://github.com/leeper/leeper.github.io) to be very
+  useful in getting this set up. If you think you've followed all the
+  directions and it's still not working just walk away for a few
+  hours - it seems to take a while to go into effect. 
