@@ -8,3 +8,4 @@ cv/auto/
 *.fdb_latexmk
 *.fls
 /Gemfile.lock
+code/.Rhistory
