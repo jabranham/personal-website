@@ -11,7 +11,7 @@ finished up in San Juan, Puerto Rico. Since I've been meaning to learn
 the `twitteR` package for a little bit, I figured that this was a
 perfect time to do a fun little analysis. You can find the R code I
 used to generate the images
-[on Github](https://github.com/jabranham/jabranham.github.io/code/spsa-2016-wordcloud.R). 
+[on Github](https://github.com/jabranham/jabranham.github.io/blob/master/code/spsa-2016-wordcloud.R). 
 
 I started out by grabbing all the tweets containing the official
 conference tag (#SPSA2016). This was 259 tweets total. I did a little
