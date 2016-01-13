@@ -12,7 +12,10 @@ up-to-date. Since this is by no means a painless process, this post is
 intended to be an guide on how to get started with your own website. I
 focus here on building a site where you want a homepage, subpages for
 teaching, research, and your CV, and a blog that you write in
-markdown. 
+markdown. In other words, I focus on building a site like the one
+you're reading this on. It may be useful for you to look at the
+[source files](https://github.com/jabranham/jabranham.github.io) that
+I use to build this website. 
 
 # Step 0: Choose how/where to host your site
 After you make your website, you'll need to chose where to host your
@@ -31,11 +34,13 @@ godsend for stuff like this especially). Github pages uses
 can setup your pages to look basically however you want them to look,
 so long as your site is "static." Having a "static" site means that
 your webpages don't change for each user - so no logging in to your
-website or anything like that. They do this because it costs them very
+website or anything like that.[^1] They do this because it costs them very
 little to host these static sites. If they had to support dynamic
 webpages, it would be much more costly.
 
-## Install dependencies
+[^1]: Although you can use things like Disqus for comments.
+
+### Install dependencies
 Now for the boring part. If you want to see how your site looks
 *before* pushing the changes you make to the internet, you'll need to
 install Ruby and Jekyll. Github pages uses these to turn your files
@@ -96,14 +101,14 @@ what mine looks like at the moment:
         - jekyll-sitemap
 
     # Build settings
-    markdown: redcarpet
+    markdown: kramdown
 
 Jekyll uses this file to set sitewide settings. So I just tell it the
 title of my site, my email adddress, and a few other things that
 various parts of my site use. It's easier to define variables here
 rather than go hunting through the other files for your site. The last
-few lines tells jekyll how I want markdown handled - you can probably
-delete this. The default is probably just fine.
+few lines tells jekyll how I want markdown handled. I use `kramdown`
+for the moment because it correctly handles footnotes. 
 
 # Step 3: Make your homepage
 The file `index.md` contains your homepage. So if you're using
@@ -151,30 +156,34 @@ files.
 You also may want to expand your directory structure a bit. I've
 already mentioned that I use another subfolder for my CV files. I also
 have a folder for any images that I want on my website (my picture on
-the homepage, for example). 
+the homepage, for example), and another that contains code I used to
+make some blog posts. 
 
 # Step 6: Other misc tweaks
 
-**Blog**: Jekyll is really nice for blogging. There are tons of
-  tutorials online that show you how to set this up, so I won't write
-  much here. The basic idea is that you can put drafts of posts in the
-  `_drafts` folder, then move them to the `_posts` folder when you're
-  ready to publish them. You save them in a specific format:
-  `YYYY-MM-DD-post-name.md` and then Jekyll takes care of converting
-  everything for you. You can even get fancy and add comments or
-  whatnot. 
+### Blog 
+Jekyll is really nice for blogging. There are tons of tutorials online
+that show you how to set this up, so I won't write much here. The
+basic idea is that you can put drafts of posts in the `_drafts`
+folder, then move them to the `_posts` folder when you're ready to
+publish them. You save them in a specific format:
+`YYYY-MM-DD-post-name.md` and then Jekyll takes care of converting
+everything for you. You can even get fancy and add comments or
+whatnot.
 
-**Analyitics**: You can use a tool like
-  [google analyitics](https://www.google.com/analytics/) to keep tabs
-  on the kinds of visitors your site is getting. While not super
-  useful for me, it's interesting to look at nevertheless. Definitely
-  more useful if you're trying to reach a certain demographic or
-  trying to sell something. 
+### Analytics
+You can use a tool like
+[google analytics](https://www.google.com/analytics/) to keep tabs on
+the kinds of visitors your site is getting. While not super useful for
+me, it's interesting to look at nevertheless. Definitely more useful if
+you're trying to reach a certain demographic or trying to sell
+something.
 
-**Personal domain**: This one is actually a little tricky to get set
-  up. By default, github pages hosts at *username*.github.io. If you
-  own your own domain, though, you can host it there. I found the
-  advice [here](https://github.com/leeper/leeper.github.io) to be very
-  useful in getting this set up. If you think you've followed all the
-  directions and it's still not working just walk away for a few
-  hours - it seems to take a while to go into effect. 
+### Personal domain 
+This one is actually a little tricky to get set up. By default, github
+pages hosts at *username*.github.io. If you own your own domain,
+though, you can host it there. I found the advice
+[here](https://github.com/leeper/leeper.github.io) to be very useful
+in getting this set up. If you think you've followed all the
+directions and it's still not working just walk away for a few hours -
+it seems to take a while to go into effect.
