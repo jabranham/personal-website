@@ -16,10 +16,11 @@ permalink: /blog/
     {% capture y %}{{post.date | date:"%Y"}}{% endcapture %}
     {% if year != y %}
     {% assign year = y %}
-    <b>{{ y }}</b>
+    <br />
+    <h2 class="page-heading">{{ y }}</h2>
     {% endif %}
     <li class="listing-item">
-      <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
+      <time datetime="{{ post.date | date:"%m-%d" }}">{{ post.date | date:"%m-%d" }}</time>
       <a href="{{ site.url }}{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
     </li>
     {% endfor %}
