@@ -13,4 +13,4 @@ gems:
   - jekyll-sitemap
 
 # Build settings
-markdown: redcarpet
+markdown: kramdown
