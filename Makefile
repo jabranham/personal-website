@@ -2,4 +2,4 @@ all:
 	bundle exec jekyll serve
 
 clean:
-	rm -r /_site
+	rm -r _site/
