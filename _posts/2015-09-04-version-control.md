@@ -5,7 +5,7 @@ categories: [best_practices, version_control]
 tags: [git, github, version_control, best_practices]
 ---
 
-My [first post](/2015/09/why-blog.html) explained why I started this blog.
+My [first post](/blog/2015/09/why-blog.html) explained why I started this blog.
 Essentially, I started to make notes to myself about how I setup and use all the various bits of software that I use.
 But then I figured that it would be nice of me to put them online, since it's not much more work for me, and maybe it'll help out some other hapless person (e.g. grad students trying to figure out this grad school thing). 
 I then mentioned version control, which is one of those things I wish someone had talked with me about at the very beginning of grad school. 

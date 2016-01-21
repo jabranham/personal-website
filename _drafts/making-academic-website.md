@@ -28,7 +28,7 @@ web address you own. If you do that, you have total control over every
 aspect of your site. I chose [Github Pages](https://pages.github.com/)
 for my site because it's relatively painless to get set up, it's free,
 and it's automatically under
-[version control](/2015/09/version-control.html) (which is a
+[version control](/blog/2015/09/version-control.html) (which is a
 godsend for stuff like this especially). Github pages uses
 [Jekyll](https://jekyllrb.com/). Basically what this means is that you
 can setup your pages to look basically however you want them to look,
@@ -96,7 +96,7 @@ what mine looks like at the moment:
     url: "http://jabranham.com" # the base hostname & protocol for your site
     twitter_username: JAlexBranham
     github_username:  jabranham
-    permalink: /:year/:month/:title.html
+    permalink: /blog/:year/:month/:title.html
     gems:
         - jekyll-sitemap
 
