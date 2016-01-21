@@ -32,7 +32,7 @@ that the best way to change lines is to use control-n or control-p
 keyboards didn't have arrow keys, it seems silly to me now. So what
 exactly is Emacs and why am I recommending it if it's that old?
 
-I have [written before](/2015/09/rmarkdown-vs.latex.html) about what I
+I have [written before](/blog/2015/09/rmarkdown-vs.latex.html) about what I
 look for in a text editor, but I'll recap briefly here. In no
 particular order, here's what I want:
 
@@ -265,7 +265,7 @@ more advanced features, like keeping track of your other references in
 your document (like Equations, Figures, Tables, etc).
 
 # Git
-I've already posted [a bit](/2015/09/version-control.html) about the
+I've already posted [a bit](/blog/2015/09/version-control.html) about the
 wonders of git. Emacs works wonderfully with git through the package
 `magit`. It's available through MELPA, so install it however you
 like. The most useful command is `M-x magit-status`, which is kind of
