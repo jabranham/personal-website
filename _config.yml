@@ -14,3 +14,6 @@ gems:
 
 # Build settings
 markdown: kramdown
+
+# needed for CI builds:
+exclude: [vendor]
