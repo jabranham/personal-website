@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/jabranham/jabranham.github.io.svg?branch=master)](https://travis-ci.org/jabranham/jabranham.github.io)
+
 This is my personal website. It's hosted at
 [www.jabranham.com](www.jabranham.com)
 
