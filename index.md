@@ -2,7 +2,8 @@
 layout: default
 ---
 
-<img style="width=305px;height=435px;float:left;padding:10px;" src="/image/personal-photo.jpg" width="138" height="197">
+<img style="width=305px;height=435px;float:left;padding:10px;"
+src="/image/personal-photo.jpg" alt="profile picture" width="138" height="197">
 
 I am a PhD Candidate at [UT-Austin](https://www.utexas.edu) in the
 [Department of Government](http://www.utexas.edu/cola/government/).  I
