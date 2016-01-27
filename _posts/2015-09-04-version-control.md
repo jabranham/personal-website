@@ -11,7 +11,7 @@ But then I figured that it would be nice of me to put them online, since it's no
 I then mentioned version control, which is one of those things I wish someone had talked with me about at the very beginning of grad school. 
 
 Version control is one of those things that you don't need, until you *really really really* need it. 
-There's a [great article](http://polmeth.wustl.edu/methodologist/tpm_v18_n2.pdf) by Jake Bowers in The Political Methodologist that makes the case for why you need version control in your life, so I won't focus too much on that here. 
+There's a [great article](http://www.jakebowers.org/PAPERS/tpm_v18_n2.pdf) by Jake Bowers in The Political Methodologist that makes the case for why you need version control in your life, so I won't focus too much on that here. 
 There are a few other good articles online on the advantages of version control. 
 For example. [here](http://academia.stackexchange.com/questions/5277/why-use-version-control-systems-for-writing-a-paper) and [here](http://christinabergey.com/blog/2014/01/version-control-for-academics/).
 Finally, [here's a good article](https://www.sharelatex.com/blog/2012/10/16/collaborating-with-latex-and-git.html) on why git is so great to use with collaborators (co-authors). 
