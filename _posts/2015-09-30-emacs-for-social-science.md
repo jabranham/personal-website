@@ -32,7 +32,7 @@ that the best way to change lines is to use control-n or control-p
 keyboards didn't have arrow keys, it seems silly to me now. So what
 exactly is Emacs and why am I recommending it if it's that old?
 
-I have [written before](/blog/2015/09/rmarkdown-vs.latex.html) about what I
+I have [written before](/blog/2015/09/rmarkdown-vs-latex.html) about what I
 look for in a text editor, but I'll recap briefly here. In no
 particular order, here's what I want:
 
