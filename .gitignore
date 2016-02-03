@@ -9,3 +9,4 @@ cv/auto/
 *.fls
 /Gemfile.lock
 code/.Rhistory
+/cv/cv.out
