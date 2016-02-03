@@ -1,168 +1,155 @@
-\documentclass[margin,line]{res}
+\documentclass[article,11pt,oneside]{memoir}
 
+% to properly compile this file, use xelatexmk
+% you must have Linux Libertine font installed on your computer
+% (contrary to the name, it's available for most OSs)
 
-\oddsidemargin -.5in
-\evensidemargin -.5in
-\textwidth=6.0in
-\itemsep=0in
-\parsep=0in
+\setlength{\parindent}{0em}
+\setlrmarginsandblock{1.75in}{0.75in}{*} % left, right, ratio
+\setmarginnotes{0.15in}{1in}{0in} % sep, width, push
+\setulmarginsandblock{2in}{1in}{*} % upper, lower, ratio
+\setlength{\headsep}{0in}
+\setlength{\headheight}{1.65in}
+%\setlength{\spinemargin}{1.75in}
+\checkandfixthelayout{}
 
+\author{J. Alexander Branham}
+\title{Branham CV}
+\makeatletter
+\let\theauthor\@author{}
+\makeatother
+\usepackage{fontspec}
+\setmainfont{Linux Libertine}
 
-\newenvironment{list1}{
-    \begin{list}{\ding{113}}{%
-        \setlength{\itemsep}{0in}
-        \setlength{\parsep}{0in} \setlength{\parskip}{0in}
-        \setlength{\topsep}{0in} \setlength{\partopsep}{0in}
-        \setlength{\leftmargin}{0.17in}}}{\end{list}}
-\newenvironment{list2}{
-    \begin{list}{--}{%
-        \setlength{\itemsep}{0in}
-        \setlength{\parsep}{0in} \setlength{\parskip}{0in}
-        \setlength{\topsep}{0in} \setlength{\partopsep}{0in}
-        \setlength{\leftmargin}{0.2in}}}{\end{list}}
-
-% The 'resume' functionality for 'enumerate' lists.
-%\usepackage{enumitem}
-\usepackage{hyperref}
+\usepackage[pdfusetitle]{hyperref}
 \hypersetup{colorlinks=true,
   urlcolor=blue}
 
+\makeoddhead{plain}{\textbf{\Huge{\theauthor}
+\noindent\makebox[\linewidth]{\rule{\textwidth}{0.4pt}}}
+}{}{}
+
 \begin{document}
+\renewcommand{\section}[2]{\reversemarginpar\marginpar{{\vspace{#2}\textsc{#1}}}}
 
-\name{J. Alexander Branham \vspace*{.1in}}
-
-\begin{resume}
-
-
-\section{\sc Contact \\Information}
 Batts Hall \hfill     \\
-158 W 21st ST STOP A1800 \hfill \emph{Email:} \href{mailto:branham@utexas.edu}{branham@utexas.edu} \\
+\section{Contact Information}{-2em}158 W 21st ST STOP A1800 \hfill \emph{Email:} \href{mailto:branham@utexas.edu}{branham@utexas.edu} \\
 University of Texas, Austin \hfill \emph{Website:} \href{www.jabranham.com}{www.jabranham.com} \\
-Austin, TX 78712 \hfill
+Austin, TX 78712 \hfill \\
 
 
-\section{\sc Education}
+\section{Education}{0.5em}
 \textbf{University of Texas Austin}     \hfill     \\
  Ph.D. Candidate in Government       \hfill 
+\smallskip{}
 
-\textbf{Temple University} \hfill  \\
-M.A. in Political Science  \hfill     \emph{May 2013} \\
-Teaching in Higher Education Certificate \hfill \emph{May 2013}
+\textbf{Temple University} \hfill  \emph{May 2013} \\
+M.A. in Political Science    \\
+Teaching in Higher Education Certificate  
+\smallskip{}
 
-\textbf{Ursinus College}   \hfill     \\ 
-B.A. in Politics and International Relations    \hfill      \emph{May 2011} \\
-% Cum laude with distinguished honors in politics and international relations
+\textbf{Ursinus College} \hfill \emph{May 2011} \\ 
+B.A. in Politics and International Relations 
+% Cum laude with distinguished honors in politics and international
+% relations
+\bigskip{}
 
-\section{\sc Papers}
-\textbf{Under Review}
-\begin{list2}
-\item ``When do the Rich Win?'' (with Christopher Wlezien and Stuart Soroka)
-\item ``Campaign Shocks and Party Support: Evidence from Brazil 2014''
-  (with Brendan Apfeld)
-\end{list2}
+\section{Papers}{0.5em}
+\textbf{Under Review}\\
+``When do the Rich Win?'' (with Christopher Wlezien and Stuart Soroka)\\
+``Campaign Shocks and Party Support: Evidence from Brazil 2014'' (with Brendan Apfeld)\\
+\textbf{Working Papers}\\
+``Partisan Feedback''\\
+``Modeling Spending Preferences and Policy'' (with Stephen Jessee)
 
-\textbf{Working Papers}
-\begin{list2}
-  \item ``Partisan Feedback''
-  \item ``The Public's Preferences for Spending Policy'' (with Stephen
-    Jessee)
-\end{list2}
+\bigskip{}
 
-\section{\sc Conference\\Papers}
-\begin{list2}
-\item ``When do the Rich Win?'' Presented at the Southern Political
-  Science Association Conference, San Juan, Puerto Rico, January 7--9 2016
-\item ``Partisan Feedback'' Presented at the Midwest Political Science
-  Association Conference, Chicago, IL, April 16--19 2015
-\item ``The Impact of the Initiative: Public Opinion, Elite Ideology,
-  and Policy'' Presented at the Northeastern Political Science
-  Association Conference, Boston, MA, November 15--17 2012
-\end{list2}
+\section{Conference Papers}{0.25em}
+``When do the Rich Win?'' \hfill \emph{SPSA 2016}\\
+``Partisan Feedback'' \hfill \emph{MPSA 2015}\\
+``The Impact of the Initiative: Public Opinion, Elite Ideology,
+  and Policy'' \hfill \emph{NPSA 2012}
 
-\section{\sc Honors and \\Awards}
+\bigskip{}
+
+\section{Honors \&~Awards}{0.25em}
 Professional Development Award, University of Texas \hfill
 \emph{Spring 2016} \\
-Prestage-Cook Travel Award, Southern Political Science Association
+Prestage-Cook Travel Award, SPSA
 \hfill \emph{January 2016} \\
-UK YouGov Survey Experiment Contest \hfill \emph{Fall 2015} \\
-Clogg Fellowship, Inter-University Consortium for Political and Social
-Research \hfill \emph{Summer 2015} \\
+UK YouGov Survey Experiment Contest Winner \hfill \emph{Fall 2015} \\
+Clogg Fellowship, ICPSR \hfill \emph{Summer 2015} \\
 Pre-Dissertation Fellowship, Department of Government \hfill
 \emph{Summer 2015} \\
 ICPSR Summer Program Fellowship, Department of Government \hfill
 \emph{Summer 2015} \\
-Empirical Implications of Theoretical Models Workshop, University of
+Empirical Implications of Theoretical Models, University of
 Houston  \hfill \emph{Summer 2015} \\
 Professional Development Award, University of Texas \hfill
 \emph{Spring 2015} \\
 Graduate Student Conference Award, Temple University \hfill \emph{Fall
   2012} \\
-Frederick M. Binder Award, Ursinus College \hfill \emph{Spring 2011} % \\
+Frederick M. Binder Award, Ursinus College \hfill \emph{Spring 2011}
 
-\section{\sc Teaching \\Experience}
-\textbf{University of Texas}, Austin, Texas  \\
-\emph{Instructor}
-\begin{list2}
-\item \href{http://jabranham.com/GOV310L}{Introduction to U.S.
-    Politics} \hfill \emph{Spring 2016}
-\end{list2}
+\bigskip{}
 
-\emph{Short Courses}
-\begin{list2}
-\item
-  \href{https://github.com/jabranham/math-camp}{Introduction
-    to Math for Political Scientists} \hfill \emph{August
-    2015}
-\item
-  \href{https://github.com/jabranham/latex-workshop}{Introduction
-    to \LaTeX~Workshop} \hfill \emph{Fall 2015}
-\end{list2}
+\section{Teaching\\Experience}{0.25em}
+\textbf{University of Texas}, Austin, Texas\\
+\emph{Instructor}\\
+\href{http://jabranham.com/GOV310L}{Introduction to U.S. Politics} \hfill \emph{Spring 2016}\\
 
-\emph{Teaching Assistant} 
-\begin{list2}
-\item Statistics I, graduate level \hfill \emph{Fall 2015}
-\item Statistics II, graduate level \hfill \emph{Spring 2015}
-\item Public Choice \hfill \emph{Fall 2013}
-\item Texas Political History \hfill \emph{Spring 2014}
-\item American Government \hfill \emph{Summer 2014}
-\item Introduction to Latin American Politics \hfill \emph{Fall 2014}
-\item Political Representation \hfill \emph{Fall 2014}
-\end{list2}
+\emph{Short Courses}\\
+\href{https://github.com/jabranham/math-camp}{Introduction to Math for
+  Political Scientists} \hfill \emph{August
+  2015}\\
+\href{https://github.com/jabranham/latex-workshop}{Introduction
+  to \LaTeX~Workshop} \hfill \emph{Fall 2015}\\
 
-\textbf{Temple University}, Philadelphia, Pennsylvania  \\
-\emph{Teaching Assistant}
+\emph{Teaching Assistant} \\
+ Statistics I, graduate level \hfill \emph{Fall 2015}\\
+ Statistics II, graduate level \hfill \emph{Spring 2015}\\
+ Public Choice \hfill \emph{Fall 2013}\\
+ Texas Political History \hfill \emph{Spring 2014}\\
+ American Government \hfill \emph{Summer 2014}\\
+ Introduction to Latin American Politics \hfill \emph{Fall 2014}\\
+ Political Representation \hfill \emph{Fall 2014}\\
 
-\begin{list2}
-\item Quantitative Methods in the Social Sciences \hfill \emph{Fall 2012, Spring 2013}
-\item Foreign Governments and Politics \hfill \emph{Spring 2012, Fall 2011}
-\item Contemporary Politics of Europe \hfill \emph{Fall 2011}
-\end{list2}
+\textbf{Temple University}, Philadelphia, Pennsylvania \\
+\emph{Teaching Assistant}\\
+ Quantitative Methods in the Social Sciences \hfill \emph{Fall 2012, Spring 2013}\\
+ Foreign Governments and Politics \hfill \emph{Spring 2012, Fall 2011}\\
+ Contemporary Politics of Europe \hfill \emph{Fall 2011}\\
 
-\section{\sc University \\Service}
+\bigskip{}
+
+\section{University Service}{0.5em}
 \textbf{University of Texas} \\
 Graduate Student Organization, Co-President \hfill \emph{2015--2016} % \\
+\medskip{}
 
 \textbf{Temple University}\\
 Political Science Graduate Student Association, President \hfill \emph{2012--2013} \\
 Graduate Committee, Student Representative \hfill \emph{2012--2013} \\
 Temple University Graduate Student Association, Steward \hfill \emph{2011--2013} % \\
 
-\section{\sc Professional \\Service}
+\bigskip{}
+
+\section{Professional Service}{0.25em}
 Electoral Studies, Reviewer \hfill \emph{2015}\\
 State Politics and Policy Quarterly, Reviewer \hfill \emph{2014, 2015} \\
 
-\section{\sc Memberships}
+\section{Memberships}{0.5em}
 American Political Science Association \\
 Midwest Political Science Association \\
 Southern Political Science Association \\
 
 
-\end{resume}
 
 \end{document}
 
 
 %%% Local Variables:
 %%% mode: latex
+%%% engine: xelatexmk
 %%% TeX-master: t
 %%% End:
