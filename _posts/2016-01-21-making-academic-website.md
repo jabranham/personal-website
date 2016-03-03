@@ -62,19 +62,19 @@ files:
     ~/personal-website
     |--- _config.yml
     |--- _includes
-    |    |--- footer.html
-    |    |--- header.html
-    |    |--- head.html
+         |--- footer.html
+         |--- header.html
+         |--- head.html
     |--- _layouts
-    |    |--- default.html
-    |    |--- page.html
-    |    |--- posts.html
+         |--- default.html
+         |--- page.html
+         |--- posts.html
     |--- _sass
-    |    |--- base.scss
-    |    |--- _layout.scss
-    |    |----_syntax-highlighting.scss 
+         |--- base.scss
+         |--- _layout.scss
+         |----_syntax-highlighting.scss 
     |--- css
-    |    |--- main.scss
+         |--- main.scss
     |--- index.md
     |--- Gemfile
 
