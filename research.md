@@ -7,9 +7,12 @@ permalink: /Research/
 Feel free to [email me](mailto:branham@utexas.edu) to request a copy
 of any of the working papers.
 
-* Under Review
+* Accepted
   + Campaign Shocks and Election Support: Evidence from Brazil 2014
-    (with [Brendan Apfeld](http://bapfeld.github.io/))
+    (with [Brendan Apfeld](http://bapfeld.github.io/)), *Journal of
+    Elections, Public Opinion, and Parties*
+
+* Under Review
   + When do the Rich Win? (with
     [Stuart Soroka](http://www.snsoroka.com/) and
     [Christopher Wlezien](http://www.utexas.edu/cola/government/faculty/profile.php?id=cw26629))
