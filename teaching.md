@@ -1,7 +1,7 @@
 ---
 layout: page
 title: Teaching
-permalink: /Teaching/
+permalink: /teaching/
 ---
 
 * Teaching in Higher Education Certificate, Temple University

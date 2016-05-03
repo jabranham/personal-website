@@ -1,7 +1,7 @@
 ---
 layout: page
 title: Research
-permalink: /Research/
+permalink: /research/
 ---
 
 Feel free to [email me](mailto:branham@utexas.edu) to request a copy
