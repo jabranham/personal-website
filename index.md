@@ -12,11 +12,11 @@ received my MA from [Temple University](https://temple.edu) in
 political science. I completed my undergraduate education at
 [Ursinus College](https://ursinus.edu) in 2011.
 
-Some of my current research is listed in on [this page](/Research/).
+Some of my current research is listed in on [this page](/research/).
 If you're interested in obtaining a draft of any of the working
 papers, please feel free to email me.
 
-My teaching experience is listed [here](/Teaching/) along with (some)
+My teaching experience is listed [here](/teaching/) along with (some)
 of my notes.
 
 If you want a pdf of my CV, you can get that [here](/cv/cv.pdf)
