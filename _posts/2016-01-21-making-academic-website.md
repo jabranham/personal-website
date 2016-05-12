@@ -6,6 +6,11 @@ tags: [website, markdown]
 comments: true
 ---
 
+UPDATE - 12 May 2016 - I have created a
+[github repository](https://github.com/jabranham/github-pages-academic-starter-kit)
+that is designed so that you can fork it and get started with your own
+website as quickly as possible. 
+
 When you go on the academic job market nowadays, it's definitely the
 expectation that you have a personal website that you keep relatively
 up-to-date. Since this is by no means a painless process, this post is
