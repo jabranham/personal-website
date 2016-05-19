@@ -6,10 +6,13 @@ tags: [rstats, analysis, code, graph, plot, ggplot2]
 comments: true
 ---
 
+**Update** 19-May-2016: broken link removed and link to the github
+repo added instead
+
 ![Drone sightings by state and population](/figures/drones-by-state-and-pop.png)
 
-I ran across
-[this post](http://rud.is/b/2016/03/30/introducing-a-weekly-r-python-js-etc-vis-challenge/)
+I ran across this post
+(link broken, [github repo](https://github.com/52vis/2016-13))
 announcing a weekly R/python visualization challenge and decided that
 this was the perfect excuse I needed to brush up on my mapping skills. 
 
