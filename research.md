@@ -16,6 +16,7 @@ of any of the working papers.
   + [When do the Rich Win?](/papers/when-do-the-rich-win.pdf) (with
     [Stuart Soroka](http://www.snsoroka.com/) and
     [Christopher Wlezien](http://www.utexas.edu/cola/government/faculty/profile.php?id=cw26629))
+    + [Reproduction Materials](http://dx.doi.org/10.7910/DVN/UZSQTV)
     + Covered by
     [La Presse](http://plus.lapresse.ca/screens/703b026a-e414-4fdf-9444-000123790751|_0.html)
     (French),
