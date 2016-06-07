@@ -13,7 +13,7 @@ of any of the working papers.
     Elections, Public Opinion, and Parties*
 
 * Under Review
-  + [When do the Rich Win?](/papers/MPSA-when-do-the-rich-win.pdf) (with
+  + [When do the Rich Win?](/papers/when-do-the-rich-win.pdf) (with
     [Stuart Soroka](http://www.snsoroka.com/) and
     [Christopher Wlezien](http://www.utexas.edu/cola/government/faculty/profile.php?id=cw26629))
     + Covered by
