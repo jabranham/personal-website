@@ -11,6 +11,7 @@ of any of the working papers.
   + [Campaign Shocks and Election Support: Evidence from Brazil 2014](http://dx.doi.org/10.1080/17457289.2016.1178647)
     (with [Brendan Apfeld](http://bapfeld.github.io/)), *Journal of
     Elections, Public Opinion, and Parties*
+    + [Reproduction materials](https://github.com/jabranham/brazil)
 
 * Under Review
   + [When do the Rich Win?](/papers/when-do-the-rich-win.pdf) (with

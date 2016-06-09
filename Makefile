@@ -3,3 +3,6 @@ all:
 
 clean:
 	rm -r _site/
+
+test:
+	script/cibuild
