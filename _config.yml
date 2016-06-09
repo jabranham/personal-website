@@ -12,6 +12,7 @@ github_username:  jabranham
 permalink: /blog/:year/:month/:title.html
 gems:
   - jekyll-sitemap
+  - jekyll-redirect-from
 
 # Build settings
 markdown: kramdown
