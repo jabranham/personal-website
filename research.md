@@ -6,7 +6,7 @@ permalink: /research/
 ---
 
 Feel free to [email me](mailto:branham@utexas.edu) to request a copy
-of any of the working papers. 
+of any of the papers. 
 
 * Accepted
   + [Campaign Shocks and Election Support: Evidence from Brazil 2014](http://dx.doi.org/10.1080/17457289.2016.1178647)
