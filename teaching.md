@@ -9,7 +9,7 @@ permalink: /teaching/
 * Undergraduate
   + [Introduction to American Politics](http://www.jabranham.com/GOV310L)
 * Short Courses
-  + [Introduction to Math for Political Scientists](https://www.github.com/jabranham/math-camp)
+  + [Introduction to Math for Political Scientists](/math-camp)
   + [Introduction to LaTeX Workshop](https://www.github.com/jabranham/latex-workshop)
   + [Applied R for Social Scientists](https://github.com/jabranham/applied-r-for-social-scientists)
 * Assistant Instructor 
