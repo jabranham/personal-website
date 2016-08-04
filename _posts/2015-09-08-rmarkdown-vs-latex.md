@@ -210,7 +210,7 @@ For now, you can look at the [rmarkdown website](http://rmarkdown.rstudio.com/) 
 
 # LaTeX vs rmarkdown
 Ultimately, I don't view this as an either-or battle.
-Rmarkdown is very clearly easier to write in, and easier to read, especially for people who arne't used to LaTeX.
+Rmarkdown is very clearly easier to write in, and easier to read, especially for people who aren't used to LaTeX.
 For that reason, I think that rmarkdown is definitely better to write in, all else equal.
 
 Of course, all else isn't equal.
@@ -219,7 +219,7 @@ One thing that rmarkdown can't do (or at least I can't figure out a way to do it
 In LaTeX this is relatively easy - you simply define the thing that you want to reference with a `\label{my-reference-key}` and then reference it in your document like: `see Figure \ref{my-reference-key}`.
 I can't seem to find an easy way to do this in rmarkdown, though.
 
-For an acadmeic, that's a dealbreaker.
+For an academic, that's a dealbreaker.
 However, luckily for us, rmarkdown can handle LaTeX code no problem.
 So we can use the easier-to-read and easier-to-write rmarkdown syntax, then use LaTeX code throughout the document to augment our output pdf.[^pdfwarning]
 
