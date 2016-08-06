@@ -4,6 +4,20 @@
 % you must have Linux Libertine font installed on your computer
 % (contrary to the name, it's available for most OSs)
 
+% Set up biblatex
+\usepackage[style=authoryear, sorting=ydnt, url=false, doi=false]{biblatex}
+\addbibresource{~/Dropbox/bibliography/references.bib}
+% Remove "in" from before journals:
+\renewbibmacro{in:}{\ifentrytype{article}{}{\printtext{\bibstring{in}\intitlepunct}}}
+% make the title link to the DOI, if available: 
+\newbibmacro{string+doi}[1]{%
+  \iffieldundef{doi}{#1}{\href{http://dx.doi.org/\thefield{doi}}{#1}}}
+\DeclareFieldFormat{title}{\usebibmacro{string+doi}{\mkbibemph{#1}}}
+\DeclareFieldFormat[article]{title}{\usebibmacro{string+doi}{\mkbibquote{#1}}}
+
+% To put periods inside quotes instead of outside in refs:
+\usepackage[american]{babel}
+
 \setlength{\parindent}{0em}
 \setlrmarginsandblock{1.75in}{0.75in}{*} % left, right, ratio
 \setmarginnotes{0.15in}{1in}{0in} % sep, width, push
@@ -20,6 +34,8 @@
 \makeatother
 \usepackage{fontspec}
 \setmainfont{Linux Libertine}
+
+
 
 \usepackage[pdfusetitle]{hyperref}
 \hypersetup{colorlinks=true,
@@ -50,24 +66,17 @@ M.A. in Political Science \\*
 Teaching in Higher Education Certificate  \\
 
 \textbf{Ursinus College} \hfill \emph{May 2011} \\*
-B.A. in Politics and International Relations \\
+B.A. in Politics and International Relations 
 % Cum laude with distinguished honors in politics and international
 % relations
 
 \section{Papers}{0.5em}
-\textbf{Forthcoming}\\*
-\href{http://dx.doi.org/10.1080/17457289.2016.1178647}{``Campaign Shocks and Party Support: Evidence from Brazil 2014''} (with
-Brendan Apfeld), \\*
-\hphantom{xyz} \textit{Journal of Elections, Public Opinion, and
-  Parties}\\
-``When do the Rich Win?'' (with Christopher Wlezien and Stuart
-Soroka)\\*
-\hphantom{xyz} \textit{Political Science Quarterly}\\
-
-\textbf{Under Review}\\*
-``Modeling Spending Preferences and Policy'' (with Stephen Jessee)\\
+\nocite{branhamming}
+\nocite{apfeld2016}
+\printbibliography[heading=none]
 
 \textbf{Working Papers}\\*
+``Modeling Spending Preferences and Policy'' (with Stephen Jessee)\\*
 ``Partisan Feedback''\\*
 ``Partisan Policymaking''\\
 
@@ -94,6 +103,7 @@ Houston}{Summer 2015} \\*
   2012} \\*
 \cvitem{Frederick M. Binder Award, Ursinus College}{Spring 2011}\\
 
+\newpage
 \section{Teaching\\Experience}{0.25em}
 \textbf{University of Texas}, Austin, Texas\\*
 \emph{Instructor}\\*
