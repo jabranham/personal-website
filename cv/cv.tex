@@ -14,10 +14,10 @@
   \iffieldundef{doi}{#1}{\href{http://dx.doi.org/\thefield{doi}}{#1}}}
 \DeclareFieldFormat{title}{\usebibmacro{string+doi}{\mkbibemph{#1}}}
 \DeclareFieldFormat[article]{title}{\usebibmacro{string+doi}{\mkbibquote{#1}}}
-
 % To put periods inside quotes instead of outside in refs:
 \usepackage[american]{babel}
 
+% Set up page layout:
 \setlength{\parindent}{0em}
 \setlrmarginsandblock{1.75in}{0.75in}{*} % left, right, ratio
 \setmarginnotes{0.15in}{1in}{0in} % sep, width, push
@@ -32,15 +32,18 @@
 \makeatletter
 \let\theauthor\@author{}
 \makeatother
+
+% What font to use:
+% Note this requires xelatex to compile:
 \usepackage{fontspec}
 \setmainfont{Linux Libertine}
 
-
-
+% hyperref for links
 \usepackage[pdfusetitle]{hyperref}
 \hypersetup{colorlinks=true,
   urlcolor=blue}
 
+% Put name in header and horizontal line:
 \makeoddhead{plain}{\textbf{\Huge{\theauthor}
 \noindent\makebox[\linewidth]{\rule{\textwidth}{0.4pt}}}
 }{}{}
