@@ -18,7 +18,7 @@ gems:
 markdown: kramdown
 theme: minima
 disqus: 
-    shortname: jabranhamblog
+  shortname: jabranhamblog
 
 # needed for CI builds:
 exclude: [vendor]
