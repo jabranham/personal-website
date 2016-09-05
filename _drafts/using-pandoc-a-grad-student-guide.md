@@ -10,7 +10,7 @@ I'm all the time asked something along the lines of "Hey, you taught me markdown
 
 The answer, unfortunately, is a little complicated. The best way to do this is to use [pandoc](http://pandoc.org/), an absolutely wonderful program that converts between all kinds of markup formats (including between markdown, latex, and docx documents).[^2] Pandoc is very powerful, but a little overwhelming, especially if you aren't used to working with command line applications.
 
-So I thought I'd put together a guide to how to use pandoc, paying special attention to some of the most common tasks grad students would want to use it for.[^3] Here's a list of topics I'll be covering, and please feel free to let me know if there's something you think is missing (I'll add hyperlinks as the posts go up):
+So I thought I'd put together a guide to how to use pandoc, paying special attention to some of the most common tasks grad students would want to use it for.[^3] Pandoc has a [starter guide](http://pandoc.org/getting-started.html) online, but it includes some info that isn't directly relevant for us (and omits some interesting stuff pandoc can do). Here's a list of topics I'll be covering, and please feel free to let me know if there's something you think is missing (I'll add hyperlinks as the posts go up). Everything is meant to make it easy to write in markdown (or latex if you prefer) and share with the docx people.
 
 * Exporting to word (and pdf)
 * Importing from a commented and "tracked changes" Word document (back to markdown/latex)
