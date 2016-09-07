@@ -26,10 +26,26 @@ All this command does is tell pandoc to take my-document.md and convert it to my
 
 And that's it - we now have a Word document from our markdown or latex document. You may want to improve the style formatting of the resulting word document, though. 
 
-## Using a reference docx
+## Styling docx output
 
 If you don't want to manually go through every resulting word document to change the styles around, you can tell pandoc to use a "reference docx." This is a document that you've previously put through pandoc and tweaked the styles of. 
+
+## Citations
+
+Citations (to other scholars work or within-document citations like equations, Figures, and Tables) may get messed up when converting from markdown/latex to word. We'll go over how to fix that in a later blog post. 
+
+# Converting to pdf
+
+You'll have to have LaTeX installed.[^3] If you don't, go ahead an install TeXLive (Linux), MacTeX (macOS), or MiKTeX (Windows). Now we do basically the same thing as above: 
+
+```
+pandoc my-document.md -S -o my-document.pdf
+```
+
+And in the background pandoc will convert your markdown to latex, then run it through latex to produce a pdf. As above, any within document references you have may get messed up. Similarly to the docx reference document, pandoc relies on a latex template for decent style defaults. This is customizable, and we'll go over how to do that in a later post. 
 
 [^1]: If you are using rmarkdown, you can convert it to a markdown document by running it through knitr with the following command: `knitr::knit("my-document.Rmd")`. knitr will then go through the document, evaluate all the r chunks, and include whatever output was created when it generates "my-document.md". 
 
 [^2]: If you are not in the right folder, you may see different files. You can quit the window and try again. If it still doesn't work, you can use the `cd` command to navigate your file structure. Pandoc has a good introduction on how to do that [in Step 3 on their guide](http://pandoc.org/getting-started.html). 
+
+[^3]: I'm assuming in this section that you are interested in converting markdown to pdf using pandoc. Trying to convert a latex document to pdf this way using pandoc will likely produce an error if you have any references. But if you're using latex, you should be able to get a pdf by just running `pdflatex` (or similar) on your tex file. 
