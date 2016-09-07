@@ -19,6 +19,7 @@ These next two will be more useful if you want to write in markdown or rmarkdown
 
 * Using pandoc-citeproc to include a properly-formatted bibliography
 * Using pandoc-crossref to reference Figures, Tables, and equations
+* Changing the style of your pdf document
 
 I'm not going to go through how to install pandoc, as it's relatively simple and they have [a webpage with installation instructions](http://pandoc.org/installing.html). You'll want to make sure you have a relatively recent version; the most recent as of this writing is pandoc 1.17.2. You may check what version you have installed by typing 
 
