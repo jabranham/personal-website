@@ -14,6 +14,7 @@ So I thought I'd put together a guide to how to use pandoc, paying special atten
 
 * Exporting to word (and pdf)
 * Importing from a commented and "tracked changes" Word document (back to markdown/latex)
+* Using git happily with markdown and word
 
 These next two will be more useful if you want to write in markdown or rmarkdown and convert to word/pdf: 
 
