@@ -6,7 +6,7 @@ tags: [markdown, rmarkdown, latex, pandoc]
 comments: true
 ---
 
-*This is the first post in a [series of posts]({% post_url using-pandoc-a-grad-student-guide %}) about using pandoc to convert between (r)markdown, latex, word, and pdf. It should stand on its own, but you may want to go though the posts sequentially.*
+*This is a post in a [series of posts]({% post_url using-pandoc-a-grad-student-guide %}) about using pandoc to convert between (r)markdown, latex, word, and pdf. It should stand on its own, but you may want to go though the posts sequentially.*
 
 In this post, I'll walk through the basics of how to use pandoc to convert from (r)markdown or latex to word (docx) or pdf files. The process is actually pretty simple, but can be a bit daunting at first, particularly if you haven't worked with command line tools before. 
 
@@ -28,7 +28,15 @@ And that's it - we now have a Word document from our markdown or latex document.
 
 ## Styling docx output
 
-If you don't want to manually go through every resulting word document to change the styles around, you can tell pandoc to use a "reference docx." This is a document that you've previously put through pandoc and tweaked the styles of. 
+If you are going to convert frequently to docx, you may want to set up a reference-docx. The easiest way to do this is to convert to docx as above, open the resulting docx file, and change the "styles" until the document looks like what you want. We'll call this your "reference-docx." 
+
+When you convert new markdown/latex files to docx, you can then tell pandoc that the resulting docx file should have the same formatting styles as your "reference-docx" file. This is a fairly straightforward extension of the above command:
+
+```
+pandoc my-document.md --reference-docx=/path/to/reference-docx.docx -S -o my-document.docx
+```
+
+you'll obviously need to replace `/path/to/reference-docx.docx` with the path name of your reference docx on your computer. 
 
 ## Citations
 
