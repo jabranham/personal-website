@@ -8,6 +8,7 @@ enforce_ssl: jabranham.com
 twitter_username: JAlexBranham
 github_username:  jabranham
 permalink: /blog/:year/:month/:title.html
+google_analytics: UA-65548469-1
 gems:
   - jekyll-sitemap
   - jekyll-redirect-from
