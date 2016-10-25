@@ -29,7 +29,7 @@ You can also make your pdf file rely on your bib file by doing something like th
     	latexmk -synctex=1 -shell-escape -pdf paper
 
 Some potential drawbacks, depending on your application: 
-  * Will overwrite the bib file each time you call `make` - this isn't a big deal for me since I think of it as "updating," but you should keep it in mind.
-  * Requires an internet connection to compile the pdf
-  * Harder to collaborate. This is I think the biggest drawback of this method - if I'm collaborating with someone, I either need to allow them to directly edit my master bib file (something I'm hesitant to do since I have a system that keeps track of what I've read and what I need to read that relies on this file), or I have to manage the references for the project. There's probably a better way to do this, and it's something I'm still working on. 
+* Will overwrite the bib file each time you call `make` - this isn't a big deal for me since I think of it as "updating," but you should keep it in mind.
+* Requires an internet connection to compile the pdf
+* Harder to collaborate. This is I think the biggest drawback of this method - if I'm collaborating with someone, I either need to allow them to directly edit my master bib file (something I'm hesitant to do since I have a system that keeps track of what I've read and what I need to read that relies on this file), or I have to manage the references for the project. There's probably a better way to do this, and it's something I'm still working on. 
 
