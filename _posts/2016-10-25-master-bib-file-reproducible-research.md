@@ -6,6 +6,8 @@ tags: [research, makefile, reproducibility]
 comments: true
 ---
 
+*Updated 27 October 2016*: Added note about getting a "final" bib file
+
 Lately I've been putting in a not insignificant amount of effort to make sure that my research is reproducible. Ideally, this means that it's not just the final product that is reproducible --- it should be reproducible at each step along the way.
 
 One tool I've been increasingly reliant on is [GNU make](https://www.gnu.org/software/make/), which is a way to describe dependencies between files. So, for example, you tell it that the final paper pdf depends on your figures, tables, and the tex file. `make` is smart enough that if you ask it to recompile your pdf, it goes through and reruns the analyses that need to be rerun. In other words, if nothing but the tex file has updated, just recompile the pdf. But if you've changed your R code to make the figures, it'll remake the figures before recompiling the pdf. It's a really great tool that there are tons of resources on. I learned a lot from [Karl Broman's](http://kbroman.org/minimal_make/) website as well as [Jon Zelner's](http://www.jonzelner.net/statistics/make/reproducibility/2016/06/01/makefiles/) example. 
@@ -34,3 +36,7 @@ Some potential drawbacks, depending on your application:
 * Requires an internet connection to compile the pdf
 * Harder to collaborate. This is I think the biggest drawback of this method - if I'm collaborating with someone, I either need to allow them to directly edit my master bib file (something I'm hesitant to do since I have a system that keeps track of what I've read and what I need to read that relies on this file), or I have to manage the references for the project. There's probably a better way to do this, and it's something I'm still working on. 
 
+[Brendan Apfeld](http://brendanapfeld.com/) emailed me after I posted this reminding me that it is a good thing to be able to get a bib file containing *only* the references you used in your paper. He also helpfully provided the means of doing so: Assuming you use `biblatex`, you can do this easily with `biber`. After you run `latexmk` (or whatever), you can just run:
+
+    biber paper-file.bcf --output_format=bibtex -O newbib.bib --strip-comments
+    
