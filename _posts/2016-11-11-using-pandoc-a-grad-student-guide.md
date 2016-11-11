@@ -23,8 +23,12 @@ pandoc --version
 
 in a terminal (powershell on Windows) and then pressing enter.[^1] It will tell you what version of pandoc you have installed. 
 
+Once you have verified you have pandoc installed and up to date, we can move on to Part Two - Exporting to Word.[^4]
+
 [^1]: If you don't know how to open a terminal, just search for "terminal" (for Linux/Mac) or "powershell" (for Windows). The terminal/powershell programs come preinstalled with the operating system, so you shouldn't need to do anything else. On older Windows versions, you may need to manually install powershell.
 
 [^2]: Pandoc is also free, open-source software. It is developed [on github](https://github.com/jgm/pandoc).
 
 [^3]: So, for example, while it's possible to use pandoc to convert to and from org-mode documents, html, and many other formats, we won't focus on that. 
+
+[^4]: Link to come when the post is published; probably in a couple days.
