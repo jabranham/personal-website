@@ -10,18 +10,12 @@ I'm all the time asked something along the lines of "Hey, you taught me markdown
 
 The answer, unfortunately, is a little complicated. The best way to do this is to use [pandoc](http://pandoc.org/), an absolutely wonderful program that converts between all kinds of markup formats (including between markdown, latex, and docx documents).[^2] Pandoc is very powerful, but a little overwhelming, especially if you aren't used to working with command line applications.
 
-So I thought I'd put together a guide to how to use pandoc, paying special attention to some of the most common tasks grad students would want to use it for.[^3] Pandoc has a [starter guide](http://pandoc.org/getting-started.html) online, but it includes some info that isn't directly relevant for us (and omits some interesting stuff pandoc can do). Here's a list of topics I'll be covering, and please feel free to let me know if there's something you think is missing (I'll add hyperlinks as the posts go up). Everything is meant to make it easy to write in markdown (or latex if you prefer) and share with the docx people.
+So I thought I'd put together a guide to how to use pandoc, paying special attention to some of the most common tasks grad students would want to use it for.[^3] Pandoc has a [starter guide](http://pandoc.org/getting-started.html) online, but it includes some info that isn't directly relevant for us (and omits some interesting stuff pandoc can do). Here's a list of topics I'll be covering, and please feel free to let me know if there's something you think is missing (I'll add hyperlinks as the posts go up). Everything is meant to make it easy to write in latex (or markdown) and share with someone who wants a Word document.
 
-* Exporting to word (and pdf)
-* Importing from a commented and "tracked changes" Word document (back to markdown/latex)
+1. Exporting to word (and pdf)
+2. Importing from a commented and "tracked changes" Word document (back to markdown/latex)
 
-These next two will be more useful if you want to write in markdown or rmarkdown and convert to word/pdf: 
-
-* Using pandoc-citeproc to include a properly-formatted bibliography
-* Using pandoc-crossref to reference Figures, Tables, and equations
-* Changing the style of your pdf document
-
-I'm not going to go through how to install pandoc, as it's relatively simple and they have [a webpage with installation instructions](http://pandoc.org/installing.html). You'll want to make sure you have a relatively recent version; the most recent as of this writing is pandoc 1.17.2. You may check what version you have installed by typing 
+I'm not going to go through how to install pandoc, as it's relatively simple and they have [a webpage with installation instructions](http://pandoc.org/installing.html). You'll want to make sure you have a relatively recent version; the most recent as of this writing is pandoc 1.18. You may check what version you have installed by typing 
 
 ```
 pandoc --version
@@ -29,8 +23,8 @@ pandoc --version
 
 in a terminal (powershell on Windows) and then pressing enter.[^1] It will tell you what version of pandoc you have installed. 
 
-[^1]: If you don't know how to open a terminal, just search for "terminal" (for Linux/Mac) or "powershell" (for Windows). The terminal/powershell programs come preinstalled with the operating system, so you shouldn't need to do anything else. 
+[^1]: If you don't know how to open a terminal, just search for "terminal" (for Linux/Mac) or "powershell" (for Windows). The terminal/powershell programs come preinstalled with the operating system, so you shouldn't need to do anything else. On older Windows versions, you may need to manually install powershell.
 
-[^2]: Pandoc is also free, open-source software.
+[^2]: Pandoc is also free, open-source software. It is developed [on github](https://github.com/jgm/pandoc).
 
-[^3]: So, for example, while it's possible to use pandoc to convert to and from html (and many other formats), we won't mention that. 
+[^3]: So, for example, while it's possible to use pandoc to convert to and from org-mode documents, html, and many other formats, we won't focus on that. 
