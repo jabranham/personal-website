@@ -1,6 +1,6 @@
 ---
 layout: post
-title: A Grad Student's Guide to Pandoc: Part One
+title: A Grad Student's Guide to Pandoc - Part One
 categories: [markdown, rmarkdown, latex, pandoc]
 tags: [markdown, rmarkdown, latex, pandoc]
 comments: true
