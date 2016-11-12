@@ -1,12 +1,5 @@
-_site/
-*.html~
-.sass-cache/
-/.Rhistory
-cv/auto/
-/_drafts/.Rhistory
 *.aux
 *.fdb_latexmk
 *.fls
-/Gemfile.lock
-code/.Rhistory
-/cv/cv.out
+*.out
+/public
