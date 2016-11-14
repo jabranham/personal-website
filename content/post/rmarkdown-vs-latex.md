@@ -4,6 +4,7 @@ categories:
 - latex
 - markdown
 date: 2015-09-08T00:00:00Z
+math: true
 tags:
 - plain_text
 - latex
@@ -65,13 +66,13 @@ This includes telling LaTeX what kind of document you're writing (an article, fo
 You end the preamble by beginning the document. 
 So, for example, here is a LaTeX document:
 
-
-    % hello.tex - Our first LaTeX example!
-    \documentclass{article}
-    \begin{document}
-    This is a sentence. 
-    \end{document}
-
+```latex
+% hello.tex - Our first LaTeX example!
+\documentclass{article}
+\begin{document}
+This is a sentence. 
+\end{document}
+```
 
 This is about as simple as it gets with LaTeX. 
 The first line is a comment - LaTeX will ignore anything on a line after a percentage sign when it compiles the output pdf. 
@@ -89,12 +90,12 @@ If you do want some more material, though, there is a good basic introduction av
 Note that LaTeX doesn't care about how many spaces you put between words or after a period or whatever. 
 To start a new paragraph, you need to have an empty line between them:
 
+```latex
+This is my first paragraph.
+This is a second sentence in the first paragraph. This is a third.
 
-    This is my first paragraph.
-    This is a second sentence in the first paragraph. This is a third.
-    
-    This starts a second paragraph. 
-
+This starts a second paragraph. 
+```
 
 Any other difficulties you run into you can solve online by using the google machine. 
 
@@ -103,7 +104,9 @@ In the intro for this post, I indicated that it is super easy to use math in LaT
 There are two math modes: inline and display. 
 Inline math displays the math inline and starts and ends with dollar signs: $x=3$
 Display math displays the math centered and prominent.
-Display math is similar, except you use double dollar signs.[^l] So for an integral you could write: `$$\int_a^b x^2 dx$$`.
+Display math is similar, except you use double dollar signs.[^l] So for an integral you could write: `$$\int_a^b x^2 dx$$` and it appears: 
+
+$$\int_a^b x^2 dx$$
 
 [^l]: Some people use `\[...\]` for display math mode, but I've always found that difficult to remember, so I stick with double dollar signs. 
 
@@ -147,7 +150,7 @@ Regardless of which program you decide on, you should give a great deal of thoug
 
 [^bib]: I promise to cover BibTeX and all its wonders soon. But believe you me, it has saved me many hours of putting together all my references. And yes, you can make it play nicely with Zotero or Mendely, if you're already using those. 
 
-# (R)markdown
+# Rmarkdown
 So enough about LaTeX.
 Let's talk about it's simpler cousin, markdown.[^rmdinstall]
 Markdown is a simpler way of marking files to tell a computer how they should be typset.
