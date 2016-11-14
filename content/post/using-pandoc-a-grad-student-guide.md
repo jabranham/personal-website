@@ -20,7 +20,7 @@ The answer, unfortunately, is a little complicated. The best way to do this is t
 
 So I thought I'd put together a guide to how to use pandoc, paying special attention to some of the most common tasks grad students would want to use it for.[^3] Pandoc has a [starter guide](http://pandoc.org/getting-started.html) online, but it includes some info that isn't directly relevant for us (and omits some interesting stuff pandoc can do). Here's a list of topics I'll be covering, and please feel free to let me know if there's something you think is missing (I'll add hyperlinks as the posts go up). Everything is meant to make it easy to write in latex (or markdown) and share with someone who wants a Word document.
 
-1. Exporting to word (and pdf)
+1. [Exporting to word (and pdf)]({{< relref "post/using-pandoc-export-to-word.md" >}})
 2. Importing from a commented and "tracked changes" Word document (back to markdown/latex)
 
 I'm not going to go through how to install pandoc, as it's relatively simple and they have [a webpage with installation instructions](http://pandoc.org/installing.html). You'll want to make sure you have a relatively recent version; the most recent as of this writing is pandoc 1.18. You may check what version you have installed by typing 
