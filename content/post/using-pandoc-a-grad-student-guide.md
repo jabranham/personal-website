@@ -31,7 +31,7 @@ pandoc --version
 
 in a terminal (powershell on Windows) and then pressing enter.[^1] It will tell you what version of pandoc you have installed. 
 
-Once you have verified you have pandoc installed and up to date, we can move on to Part Two - Exporting to Word.[^4]
+Once you have verified you have pandoc installed and up to date, we can move on to [Part Two - Exporting to Word]({{< relref "post/using-pandoc-export-to-word.md" >}}).[^4]
 
 [^1]: If you don't know how to open a terminal, just search for "terminal" (for Linux/Mac) or "powershell" (for Windows). The terminal/powershell programs come preinstalled with the operating system, so you shouldn't need to do anything else. On older Windows versions, you may need to manually install powershell.
 
