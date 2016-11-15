@@ -20,6 +20,8 @@ Open up Finder(mac), File Explorer (windows), or similar if you're on linux/bsd.
 
 If you are not in the right folder, you may see different files. You can quit the window and try again. If it still doesn't work, you can use the `cd` command to navigate your file structure. Pandoc has a good introduction on how to do that [in Step 3 on their guide](http://pandoc.org/getting-started.html). 
 
+If you're interested in learning more about the terminal and how to use it, there are tons of tutorials online. You can google around to fine many. For example, [code academy](https://www.codecademy.com/learn/learn-the-command-line) has one. And there's a kinda RPG-like one [here](http://www.mprat.org/Terminus/)
+
 # Step 2: Convert to Word/docx 
 Once you have a terminal/powershell open in the right folder (i.e. you see your markdown/latex file when you `ls`), we can convert to a Word document. Here's how we do that. If you're writing with markdown instead of latex, you use the same commands but your document will be named something like "my-document.md" instead of "my-document.tex"
 
@@ -72,7 +74,7 @@ pandoc my-document.tex --reference-docx=/home/alex/Dropbox/reference-word.docx -
 ## Set up an alias 
 *HT to [Brendan Apfeld](http://brendanapfeld.com/) for this tip.*
 
-If you're frequently converting the same thing (your prospectus, say, or a chapter of your dissertation), you can set up an alias to make this quick. Just stick something like this in the file: `~/.bashrc` (on linux/mac, windows is more complicated):
+If you're frequently converting the same thing (your prospectus, say, or a chapter of your dissertation), you can set up an alias to make this quick. Just stick something like this in the file: `~/.bashrc` (on linux, mac users may want to use `~/.bash_profile`, windows is more complicated):
 
 ```shell
 alias convert_proposal="pandoc --reference-docx=/home/alex/Dropbox/reference.docx proposal.tex --bibliography=bib_file.bib -o proposal.pdf"
