@@ -1,7 +1,8 @@
-[submodule "themes/academic"]
-	path = themes/academic
-	url = git@github.com:jabranham/hugo-academic
 [submodule "public"]
 	path = public
 	url = git@github.com:jabranham/jabranham.github.io.git
+	branch = master
+[submodule "themes/academic"]
+	path = themes/academic
+	url = git@github.com:jabranham/hugo-academic
 	branch = master
