@@ -10,8 +10,6 @@ draft = true
 
 *This is a post in a [series of posts]({{< relref "post/using-pandoc-a-grad-student-guide.md" >}}) about using pandoc to convert between markdown, latex, word, and pdf. It should stand on its own, but you may want to go though the posts sequentially.*
 
-<!-- pandoc example_dw.docx --wrap=auto -S -s -o example.tex -->
-
 OK, you have [installed pandoc]({{< relref "post/using-pandoc-a-grad-student-guide.md">}}) to [convert your markdown or latex file to docx]({{< relref "post/using-pandoc-export-to-word.md" >}}) and sent it off to your adviser for comments. Now they send that file back, with comments in the word document and changes made using Word's "track changes" feature. What to do?
 
 Happily, pandoc can import back to latex/markdown from Word quite easily. I'll describe a setup that relies on [git](https://git-scm.com/) to see the "track changes" ("diffs" in git terminology) that your adviser made. You **have** been [using git]({{< relref "post/version-control.md" >}}) to keep track of your changes, right???
