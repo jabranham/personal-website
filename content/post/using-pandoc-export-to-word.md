@@ -3,7 +3,7 @@ image = ""
 math = false
 tags = ["markdown", "rmarkdown", "latex", "pandoc"]
 categories = ["markdown", "rmarkdown", "latex", "pandoc"]
-date = "2016-11-14T13:02:11-06:00"
+date = "2016-11-14"
 title = "A Grad Student's Guide to Pandoc: Part Two - Exporting to Word"
 +++
 
