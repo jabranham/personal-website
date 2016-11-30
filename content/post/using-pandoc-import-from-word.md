@@ -27,6 +27,8 @@ pandoc example.tex --bibliography=/home/alex/Dropbox/bibliography/references.bib
 
 We went over what most of the flags mean in the [exporting to word post]({{< relref "post/using-pandoc-export-to-word.md">}}). One new one is the `--wrap=none` option. This tells pandoc not to wrap your lines at 80 characters. In other words, each line in your text (latex) file will be one paragraph. The other new flag is `-s`, which tells pandoc to create a standalone document i.e. to include the preamble. 
 
+At this point, you can go ahead and commit the new `example-exported.tex` file to git.[^6]
+
 # Step 2: Look at the tracked changes
 
 Let's look at the changes our adviser made. This method will actually look at *all* the changes our adviser made, whether or not Word had "track changes" mode on. Pretty neat, huh?
@@ -34,7 +36,7 @@ Let's look at the changes our adviser made. This method will actually look at *a
 First, let's just convert the word document back to markdown/latex. This is easy to do, and just involves flipping the commands:
 
 ```shell
-pandoc example.docx --wrap=none -S -s -o example-exported.tex
+pandoc example-post-adviser.docx --wrap=none -S -s -o example-exported.tex
 ```
 
 Note that you are overwriting the tex-to-tex export that you just did. This lets git diff the files easily. By default, pandoc will accept all the "tracked changes" and ignore comments. We'll come back to comments in a moment, but for track changes, this is actually pretty useful. 
@@ -54,7 +56,7 @@ Dealing with comments from a docx file is a little more complicated. Honestly, i
 First, we need to tell pandoc to include comments in the markdown. We do that by modifying the `track-changes` option:
 
 ```shell
-pandoc example.docx --track-changes=all -S -s -o example.tex
+pandoc example-post-adviser.docx --track-changes=all -S -s -o example.tex
 ```
 
 `track-changes=all` tells pandoc to wrap insertions, deletions, and comments in curly braces.[^2] So, for example, a comment looks something like this:
@@ -80,4 +82,6 @@ That covers the basics of word to latex via pandoc! It's by no means perfect, bu
 
 [^3]: If you're reading this and know of a better way to deal with comments from Word in latex, please let me know! 
 
-[^5]: To keep track of this, I put a git "tag" on the version I send when I send it. Since tags can't share names, I also put a number. So a tag may look something like, "Smith-1". Also not that if you want to actually run this on your machine using the repo I'm talking about, you'll need to provide a bib file and change the reference in the tex document.
+[^5]: To keep track of this, I put a git "tag" on the version I send when I send it. Since tags can't share names, I also put a number. So a tag may look something like, "Smith-1". Also note that if you want to actually run this on your machine using the repo I'm talking about, you'll need to provide a bib file and change the reference in the tex document. *Update* - if pandoc yells at you, you may need to update pandoc or pandoc-citeproc. Be sure that you're running the most recent version.
+
+[^6]: There are other ways to do this so that you don't make a whole new file from your paper - using git branches, for example, could do the trick. This would keep your git repo history a bit cleaner as you don't be adding (then deleting later) what is essentially the same paper. But for simplicity's sake we'll just commit a whole new file here. 
