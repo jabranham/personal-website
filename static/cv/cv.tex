@@ -11,7 +11,7 @@
 \renewbibmacro{in:}{\ifentrytype{article}{}{\printtext{\bibstring{in}\intitlepunct}}}
 % make the title link to the DOI, if available: 
 \newbibmacro{string+doi}[1]{%
-  \iffieldundef{doi}{#1}{\href{http://dx.doi.org/\thefield{doi}}{#1}}}
+  \iffieldundef{doi}{#1}{\href{https://doi.org/\thefield{doi}}{#1}}}
 \DeclareFieldFormat{title}{\usebibmacro{string+doi}{\mkbibemph{#1}}}
 \DeclareFieldFormat[article]{title}{\usebibmacro{string+doi}{\mkbibquote{#1}}}
 % To put periods inside quotes instead of outside in refs:
@@ -111,7 +111,7 @@ B.A. in Politics and International Relations
 \section{Teaching\\Experience}{0.25em}
 \textbf{University of Texas}, Austin, Texas\\*
 \emph{Instructor}\\*
-\cvitemindent{\href{http://jabranham.com/GOV310L}{Introduction to U.S. Politics}}{Spring 2016, Fall 2016}
+\cvitemindent{\href{https://jabranham.com/GOV310L}{Introduction to U.S. Politics}}{Spring 2016, Fall 2016}
 
 \emph{Short Courses}\\*
 \cvitemindent{\href{https://github.com/jabranham/math-camp}{Introduction to Math for Political Scientists}, graduate level}{August 2015, 2016, 2017}
