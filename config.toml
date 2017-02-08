@@ -1,6 +1,6 @@
 baseurl = "https://jabranham.com"
 title = "J. Alexander Branham"
-copyright = "&copy; 2016 J. Alexander Branham"
+copyright = "&copy; 2016-2017 J. Alexander Branham"
 languageCode = "en-us"
 rssuri = "feed.xml"
 theme = "academic"
