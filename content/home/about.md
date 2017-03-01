@@ -40,9 +40,11 @@ weight = 1
  
 +++
 
-# Biography
+# About me
 
-I'm a PhD Candidate at the University of Texas at Austin, Department of Government. My interests include public opinion, public policy, elections, and methodology. I'm currently working on two projects. The first focuses on the impact of partisanship on the opinion-policy link. The second analyzes whether (and how) income inequalities affect representation of public opinion in policy outputs. Please feel free to email me for copies of working papers.
-
-- [CV (pdf)](cv/cv.pdf)
+I'm a PhD Candidate at the University of Texas at Austin, Department of Government.
+My interests include public opinion, public policy, elections, and methodology.
+I'm currently working on several research projects.
+My dissertation focuses on the impact of partisanship on the opinion-policy link.
+I'm also interested in whether (and how) income inequalities affect representation of public opinion in policy outputs.
 
