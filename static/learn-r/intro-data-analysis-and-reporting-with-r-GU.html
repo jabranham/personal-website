@@ -1,0 +1,2109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<!-- 2017-06-15 Thu 10:00 -->
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Introduction to Data Analysis and Reporting with R</title>
+<meta name="generator" content="Org mode" />
+<meta name="author" content="J. Alexander Branham" />
+<style type="text/css">
+ <!--/*--><![CDATA[/*><!--*/
+  .title  { text-align: center;
+             margin-bottom: .2em; }
+  .subtitle { text-align: center;
+              font-size: medium;
+              font-weight: bold;
+              margin-top:0; }
+  .todo   { font-family: monospace; color: red; }
+  .done   { font-family: monospace; color: green; }
+  .priority { font-family: monospace; color: orange; }
+  .tag    { background-color: #eee; font-family: monospace;
+            padding: 2px; font-size: 80%; font-weight: normal; }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .org-right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .org-left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .org-center { margin-left: auto; margin-right: auto; text-align: center; }
+  .underline { text-decoration: underline; }
+  #postamble p, #preamble p { font-size: 90%; margin: .2em; }
+  p.verse { margin-left: 3%; }
+  pre {
+    border: 1px solid #ccc;
+    box-shadow: 3px 3px 3px #eee;
+    padding: 8pt;
+    font-family: monospace;
+    overflow: auto;
+    margin: 1.2em;
+  }
+  pre.src {
+    position: relative;
+    overflow: visible;
+    padding-top: 1.2em;
+  }
+  pre.src:before {
+    display: none;
+    position: absolute;
+    background-color: white;
+    top: -10px;
+    right: 10px;
+    padding: 3px;
+    border: 1px solid black;
+  }
+  pre.src:hover:before { display: inline;}
+  /* Languages per Org manual */
+  pre.src-asymptote:before { content: 'Asymptote'; }
+  pre.src-awk:before { content: 'Awk'; }
+  pre.src-C:before { content: 'C'; }
+  /* pre.src-C++ doesn't work in CSS */
+  pre.src-clojure:before { content: 'Clojure'; }
+  pre.src-css:before { content: 'CSS'; }
+  pre.src-D:before { content: 'D'; }
+  pre.src-ditaa:before { content: 'ditaa'; }
+  pre.src-dot:before { content: 'Graphviz'; }
+  pre.src-calc:before { content: 'Emacs Calc'; }
+  pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
+  pre.src-fortran:before { content: 'Fortran'; }
+  pre.src-gnuplot:before { content: 'gnuplot'; }
+  pre.src-haskell:before { content: 'Haskell'; }
+  pre.src-java:before { content: 'Java'; }
+  pre.src-js:before { content: 'Javascript'; }
+  pre.src-latex:before { content: 'LaTeX'; }
+  pre.src-ledger:before { content: 'Ledger'; }
+  pre.src-lisp:before { content: 'Lisp'; }
+  pre.src-lilypond:before { content: 'Lilypond'; }
+  pre.src-lua:before { content: 'Lua'; }
+  pre.src-matlab:before { content: 'MATLAB'; }
+  pre.src-mscgen:before { content: 'Mscgen'; }
+  pre.src-ocaml:before { content: 'Objective Caml'; }
+  pre.src-octave:before { content: 'Octave'; }
+  pre.src-org:before { content: 'Org mode'; }
+  pre.src-oz:before { content: 'OZ'; }
+  pre.src-plantuml:before { content: 'Plantuml'; }
+  pre.src-processing:before { content: 'Processing.js'; }
+  pre.src-python:before { content: 'Python'; }
+  pre.src-R:before { content: 'R'; }
+  pre.src-ruby:before { content: 'Ruby'; }
+  pre.src-sass:before { content: 'Sass'; }
+  pre.src-scheme:before { content: 'Scheme'; }
+  pre.src-screen:before { content: 'Gnu Screen'; }
+  pre.src-sed:before { content: 'Sed'; }
+  pre.src-sh:before { content: 'shell'; }
+  pre.src-sql:before { content: 'SQL'; }
+  pre.src-sqlite:before { content: 'SQLite'; }
+  /* additional languages in org.el's org-babel-load-languages alist */
+  pre.src-forth:before { content: 'Forth'; }
+  pre.src-io:before { content: 'IO'; }
+  pre.src-J:before { content: 'J'; }
+  pre.src-makefile:before { content: 'Makefile'; }
+  pre.src-maxima:before { content: 'Maxima'; }
+  pre.src-perl:before { content: 'Perl'; }
+  pre.src-picolisp:before { content: 'Pico Lisp'; }
+  pre.src-scala:before { content: 'Scala'; }
+  pre.src-shell:before { content: 'Shell Script'; }
+  pre.src-ebnf2ps:before { content: 'ebfn2ps'; }
+  /* additional language identifiers per "defun org-babel-execute"
+       in ob-*.el */
+  pre.src-cpp:before  { content: 'C++'; }
+  pre.src-abc:before  { content: 'ABC'; }
+  pre.src-coq:before  { content: 'Coq'; }
+  pre.src-groovy:before  { content: 'Groovy'; }
+  /* additional language identifiers from org-babel-shell-names in
+     ob-shell.el: ob-shell is the only babel language using a lambda to put
+     the execution function name together. */
+  pre.src-bash:before  { content: 'bash'; }
+  pre.src-csh:before  { content: 'csh'; }
+  pre.src-ash:before  { content: 'ash'; }
+  pre.src-dash:before  { content: 'dash'; }
+  pre.src-ksh:before  { content: 'ksh'; }
+  pre.src-mksh:before  { content: 'mksh'; }
+  pre.src-posh:before  { content: 'posh'; }
+  /* Additional Emacs modes also supported by the LaTeX listings package */
+  pre.src-ada:before { content: 'Ada'; }
+  pre.src-asm:before { content: 'Assembler'; }
+  pre.src-caml:before { content: 'Caml'; }
+  pre.src-delphi:before { content: 'Delphi'; }
+  pre.src-html:before { content: 'HTML'; }
+  pre.src-idl:before { content: 'IDL'; }
+  pre.src-mercury:before { content: 'Mercury'; }
+  pre.src-metapost:before { content: 'MetaPost'; }
+  pre.src-modula-2:before { content: 'Modula-2'; }
+  pre.src-pascal:before { content: 'Pascal'; }
+  pre.src-ps:before { content: 'PostScript'; }
+  pre.src-prolog:before { content: 'Prolog'; }
+  pre.src-simula:before { content: 'Simula'; }
+  pre.src-tcl:before { content: 'tcl'; }
+  pre.src-tex:before { content: 'TeX'; }
+  pre.src-plain-tex:before { content: 'Plain TeX'; }
+  pre.src-verilog:before { content: 'Verilog'; }
+  pre.src-vhdl:before { content: 'VHDL'; }
+  pre.src-xml:before { content: 'XML'; }
+  pre.src-nxml:before { content: 'XML'; }
+  /* add a generic configuration mode; LaTeX export needs an additional
+     (add-to-list 'org-latex-listings-langs '(conf " ")) in .emacs */
+  pre.src-conf:before { content: 'Configuration File'; }
+
+  table { border-collapse:collapse; }
+  caption.t-above { caption-side: top; }
+  caption.t-bottom { caption-side: bottom; }
+  td, th { vertical-align:top;  }
+  th.org-right  { text-align: center;  }
+  th.org-left   { text-align: center;   }
+  th.org-center { text-align: center; }
+  td.org-right  { text-align: right;  }
+  td.org-left   { text-align: left;   }
+  td.org-center { text-align: center; }
+  dt { font-weight: bold; }
+  .footpara { display: inline; }
+  .footdef  { margin-bottom: 1em; }
+  .figure { padding: 1em; }
+  .figure p { text-align: center; }
+  .inlinetask {
+    padding: 10px;
+    border: 2px solid gray;
+    margin: 10px;
+    background: #ffffcc;
+  }
+  #org-div-home-and-up
+   { text-align: right; font-size: 70%; white-space: nowrap; }
+  textarea { overflow-x: auto; }
+  .linenr { font-size: smaller }
+  .code-highlighted { background-color: #ffff00; }
+  .org-info-js_info-navigation { border-style: none; }
+  #org-info-js_console-label
+    { font-size: 10px; font-weight: bold; white-space: nowrap; }
+  .org-info-js_search-highlight
+    { background-color: #ffff00; color: #000000; font-weight: bold; }
+  .org-svg { width: 90%; }
+  /*]]>*/-->
+</style>
+<script type="text/javascript">
+/*
+@licstart  The following is the entire license notice for the
+JavaScript code in this tag.
+
+Copyright (C) 2012-2017 Free Software Foundation, Inc.
+
+The JavaScript code in this tag is free software: you can
+redistribute it and/or modify it under the terms of the GNU
+General Public License (GNU GPL) as published by the Free Software
+Foundation, either version 3 of the License, or (at your option)
+any later version.  The code is distributed WITHOUT ANY WARRANTY;
+without even the implied warranty of MERCHANTABILITY or FITNESS
+FOR A PARTICULAR PURPOSE.  See the GNU GPL for more details.
+
+As additional permission under GNU GPL version 3 section 7, you
+may distribute non-source (e.g., minimized or compacted) forms of
+that code without the copy of the GNU GPL normally required by
+section 4, provided you include this license notice and a URL
+through which recipients can access the Corresponding Source.
+
+
+@licend  The above is the entire license notice
+for the JavaScript code in this tag.
+*/
+<!--/*--><![CDATA[/*><!--*/
+ function CodeHighlightOn(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(null != target) {
+     elem.cacheClassElem = elem.className;
+     elem.cacheClassTarget = target.className;
+     target.className = "code-highlighted";
+     elem.className   = "code-highlighted";
+   }
+ }
+ function CodeHighlightOff(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(elem.cacheClassElem)
+     elem.className = elem.cacheClassElem;
+   if(elem.cacheClassTarget)
+     target.className = elem.cacheClassTarget;
+ }
+/*]]>*///-->
+</script>
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        displayAlign: "center",
+        displayIndent: "0em",
+
+        "HTML-CSS": { scale: 100,
+                        linebreaks: { automatic: "false" },
+                        webFont: "TeX"
+                       },
+        SVG: {scale: 100,
+              linebreaks: { automatic: "false" },
+              font: "TeX"},
+        NativeMML: {scale: 100},
+        TeX: { equationNumbers: {autoNumber: "AMS"},
+               MultLineWidth: "85%",
+               TagSide: "right",
+               TagIndent: ".8em"
+             }
+});
+</script>
+<script type="text/javascript"
+        src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS_HTML"></script>
+</head>
+<body>
+<div id="content">
+<h1 class="title">Introduction to Data Analysis and Reporting with R</h1>
+This is an html page so that it is easier to search and copy/paste. It won't include the figures and tables but should include all the relevant code.
+<div id="outline-container-org67f4625" class="outline-2">
+<h2 id="org67f4625"><span class="section-number-2">1</span> Course Information</h2>
+<div class="outline-text-2" id="text-1">
+</div><div id="outline-container-org1a762b1" class="outline-3">
+<h3 id="org1a762b1"><span class="section-number-3">1.1</span> Course Information</h3>
+<div class="outline-text-3" id="text-1-1">
+<ul class="org-ul">
+<li>We&rsquo;ll cover tools that should be helpful in nearly any analysis
+<ul class="org-ul">
+<li>Graphing, data manipulation, etc</li>
+</ul></li>
+<li>We won&rsquo;t cover specialized, specific tools. But you should get a good enough understanding of how R works to be able to teach yourself these</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org0cdb122" class="outline-3">
+<h3 id="org0cdb122"><span class="section-number-3">1.2</span> Outline</h3>
+<div class="outline-text-3" id="text-1-2">
+<ol class="org-ol">
+<li>What is R?</li>
+<li>Graphics</li>
+<li>Basic R</li>
+<li>Data manipulation</li>
+<li>Reporting (time permitting)</li>
+</ol>
+</div>
+</div>
+</div>
+<div id="outline-container-orgcfb05aa" class="outline-2">
+<h2 id="orgcfb05aa"><span class="section-number-2">2</span> What is R?</h2>
+<div class="outline-text-2" id="text-2">
+</div><div id="outline-container-orgefac63f" class="outline-3">
+<h3 id="orgefac63f"><span class="section-number-3">2.1</span> What is R?</h3>
+<div class="outline-text-3" id="text-2-1">
+<ul class="org-ul">
+<li>This is a course about R&#x2026;  <i>mais qu&rsquo;est-ce que c&rsquo;est</i>?</li>
+<li>&ldquo;R is a language and environment for statistical computing and graphics&rdquo;</li>
+<li>Derived from S, designed at Bell Laboratories
+<ul class="org-ul">
+<li>S first appeared in 1976!</li>
+</ul></li>
+<li><i>R is a language</i> &#x2026; so be prepared for it to hurt a bit to learn!</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org0f7756d" class="outline-3">
+<h3 id="org0f7756d"><span class="section-number-3">2.2</span> Advantages of R</h3>
+<div class="outline-text-3" id="text-2-2">
+<ul class="org-ul">
+<li>Free</li>
+<li>Open-source</li>
+<li>Available on nearly every platform</li>
+<li>Extensible via <b>packages</b> &#x2014; CRAN has over 10,000</li>
+<li>Great community</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org2aafc94" class="outline-3">
+<h3 id="org2aafc94"><span class="section-number-3">2.3</span> Running code</h3>
+<div class="outline-text-3" id="text-2-3">
+<ul class="org-ul">
+<li>How to use this R thing?</li>
+<li>If you have R and Rstudio installed, open Rstudio.</li>
+<li>You should see three panes.</li>
+<li>We&rsquo;ll focus for now on the console, which is on the left and should look something like this:</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orgd5406bb" class="outline-3">
+<h3 id="orgd5406bb"><span class="section-number-3">2.4</span> The console</h3>
+<div class="outline-text-3" id="text-2-4">
+<pre class="example">
+R version 3.4.0 (2017-06-15) -- "You Stupid Darkness"
+Copyright (C) 2017 The R Foundation for Statistical Computing
+Platform: x86_64-pc-linux-gnu (64-bit)
+
+[ ... ]
+
+Type 'demo()' for some demos, 'help()' for on-line help, or
+'help.start()' for an HTML browser interface to help.
+Type 'q()' to quit R.
+
+&gt;
+</pre>
+</div>
+</div>
+<div id="outline-container-org08a013d" class="outline-3">
+<h3 id="org08a013d"><span class="section-number-3">2.5</span> R is a big giant calculator</h3>
+<div class="outline-text-3" id="text-2-5">
+<ul class="org-ul">
+<li>R can do math</li>
+<li>Really, really fancy math</li>
+<li>Try typing <code>3 + 3</code> in the console</li>
+<li>After pressing enter, R will return <code>6</code></li>
+<li>R understands the order of operations 
+<ul class="org-ul">
+<li><code>3 + 3 * 9</code> is different from <code>(3 + 3) * 9</code></li>
+</ul></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orgd98d329" class="outline-3">
+<h3 id="orgd98d329"><span class="section-number-3">2.6</span> A quiz</h3>
+<div class="outline-text-3" id="text-2-6">
+<ul class="org-ul">
+<li>Time for a quiz!</li>
+<li>What&rsquo;s 7 times 149?</li>
+<li>What&rsquo;s the square root of the previous answer?</li>
+<li><b>Tip:</b> You can hit the up arrow to get whatever you entered last</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org7baf684" class="outline-3">
+<h3 id="org7baf684"><span class="section-number-3">2.7</span> Answers</h3>
+<div class="outline-text-3" id="text-2-7">
+<div class="org-src-container">
+<pre class="src src-R"><span style="color: #a45bad;">7</span> * <span style="color: #a45bad;">149</span>
+</pre>
+</div>
+
+<pre class="example">
+[1] 1043
+
+</pre>
+
+<div class="org-src-container">
+<pre class="src src-R">(<span style="color: #a45bad;">7</span> * <span style="color: #a45bad;">149</span>) ^ (<span style="color: #a45bad;">1</span> / <span style="color: #a45bad;">2</span>)
+</pre>
+</div>
+
+<pre class="example">
+[1] 32.29551
+
+</pre>
+</div>
+</div>
+
+<div id="outline-container-org3e00cec" class="outline-3">
+<h3 id="org3e00cec"><span class="section-number-3">2.8</span> Packages</h3>
+<div class="outline-text-3" id="text-2-8">
+<ul class="org-ul">
+<li>At this point, please install a few packages. You&rsquo;ll need an internet connection.</li>
+<li><code>install.packages(c("tidyverse", "gapminder"))</code>
+<ul class="org-ul">
+<li>If you have already installed some packages, make sure they&rsquo;re up-to-date:
+<ul class="org-ul">
+<li><code>update.packages()</code></li>
+</ul></li>
+</ul></li>
+<li><b>Tip:</b> just type <code>ins</code> then hit TAB for tab-completion</li>
+<li>Don&rsquo;t worry about what is going on here, I&rsquo;ll explain it later.</li>
+<li>Depending on your exact setup, R may ask you a few questions about using a personal library. Do so.</li>
+<li>If you get an error, make sure you can access the internet (<a href="https://cloud.r-project.org">https://cloud.r-project.org</a> in particular)</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org28ea444" class="outline-3">
+<h3 id="org28ea444"><span class="section-number-3">2.9</span> R scripts</h3>
+<div class="outline-text-3" id="text-2-9">
+<ul class="org-ul">
+<li>While those packages are installing, let&rsquo;s go ahead and open up an R script.</li>
+<li>Allows you to save code so it doesn&rsquo;t disappear into the ether</li>
+<li>If using Rstudio, File, new file, R script (or Ctrl+shift+n)</li>
+<li><b>Tip</b>: can send a line from R script to console for evaluation using ctrl+enter</li>
+<li><b>Strongly recommend</b> that you type into a script and use a keyboard shortcut to evaluate code
+<ul class="org-ul">
+<li>Easier to edit &amp; rerun</li>
+<li>Allows you to save code</li>
+<li>You may make comments</li>
+</ul></li>
+</ul>
+<div class="org-src-container">
+<pre class="src src-R"><span style="color: #2aa1ae; background-color: #292e34;">## </span><span style="color: #2aa1ae; background-color: #292e34;">This adds 3 + 3</span>
+<span style="color: #a45bad;">3</span> + <span style="color: #a45bad;">3</span>
+<span style="color: #a45bad;">3</span> * <span style="color: #a45bad;">2</span> <span style="color: #2aa1ae; background-color: #292e34;"># </span><span style="color: #2aa1ae; background-color: #292e34;">same</span>
+</pre>
+</div>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orga04b652" class="outline-2">
+<h2 id="orga04b652"><span class="section-number-2">3</span> Graphics in R</h2>
+<div class="outline-text-2" id="text-3">
+</div><div id="outline-container-orgc947867" class="outline-3">
+<h3 id="orgc947867"><span class="section-number-3">3.1</span> Data Analysis with R</h3>
+<div class="outline-text-3" id="text-3-1">
+<ul class="org-ul">
+<li>We need some data to work with</li>
+</ul>
+<ul class="org-ul">
+<li>We&rsquo;re going to use some data that comes with the <code>gapminder</code> package you just installed</li>
+</ul>
+<ul class="org-ul">
+<li>To access the data, you need to load it into memory:</li>
+</ul>
+<div class="org-src-container">
+<pre class="src src-R"><span style="color: #a45bad;">library</span>(gapminder)
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-org29084e5" class="outline-3">
+<h3 id="org29084e5"><span class="section-number-3">3.2</span> Exploring our data</h3>
+<div class="outline-text-3" id="text-3-2">
+<ul class="org-ul">
+<li><code>gapminder</code> is a <b>data.frame</b></li>
+</ul>
+<ul class="org-ul">
+<li>Can get a sense of what it looks like with some <b>functions</b></li>
+</ul>
+<ul class="org-ul">
+<li>Let&rsquo;s get a sense of what <code>gapminder</code> has:</li>
+</ul>
+<div class="org-src-container">
+<pre class="src src-R">View(gapminder)
+</pre>
+</div>
+<div class="org-src-container">
+<pre class="src src-R">head(gapminder)
+</pre>
+</div>
+
+<pre class="example">
+      country continent year lifeExp      pop gdpPercap
+1 Afghanistan      Asia 1952  28.801  8425333  779.4453
+2 Afghanistan      Asia 1957  30.332  9240934  820.8530
+3 Afghanistan      Asia 1962  31.997 10267083  853.1007
+4 Afghanistan      Asia 1967  34.020 11537966  836.1971
+5 Afghanistan      Asia 1972  36.088 13079460  739.9811
+6 Afghanistan      Asia 1977  38.438 14880372  786.1134
+
+</pre>
+</div>
+</div>
+
+<div id="outline-container-org717593b" class="outline-3">
+<h3 id="org717593b"><span class="section-number-3">3.3</span> Descriptive statistics</h3>
+<div class="outline-text-3" id="text-3-3">
+<ul class="org-ul">
+<li>R has lots of built-in functions for getting a sense of the data.</li>
+<li>Try running <code>summary(gapminder)</code></li>
+<li>What&rsquo;s the average life expectancy?</li>
+</ul>
+<div class="org-src-container">
+<pre class="src src-R">summary(gapminder)
+</pre>
+</div>
+
+<pre class="example">
+       country        continent        year         lifeExp           pop           
+Afghanistan:  12   Africa  :624   Min.   :1952   Min.   :23.60   Min.   :6.001e+04  
+Albania    :  12   Americas:300   1st Qu.:1966   1st Qu.:48.20   1st Qu.:2.794e+06  
+Algeria    :  12   Asia    :396   Median :1980   Median :60.71   Median :7.024e+06  
+Angola     :  12   Europe  :360   Mean   :1980   Mean   :59.47   Mean   :2.960e+07  
+Argentina  :  12   Oceania : 24   3rd Qu.:1993   3rd Qu.:70.85   3rd Qu.:1.959e+07  
+Australia  :  12                  Max.   :2007   Max.   :82.60   Max.   :1.319e+09  
+(Other)    :1632                                                                    
+  gdpPercap       
+Min.   :   241.2  
+1st Qu.:  1202.1  
+Median :  3531.8  
+Mean   :  7215.3  
+3rd Qu.:  9325.5  
+Max.   :113523.1
+</pre>
+</div>
+</div>
+
+<div id="outline-container-org43ab50a" class="outline-3">
+<h3 id="org43ab50a"><span class="section-number-3">3.4</span> Graphics in R</h3>
+<div class="outline-text-3" id="text-3-4">
+<ul class="org-ul">
+<li>Let&rsquo;s start making graphs</li>
+<li>This is the fun part!</li>
+<li>We&rsquo;re going to rely on the `ggplot2` package, which we installed earlier (as a part of the tidyverse package)</li>
+<li>&ldquo;The Grammar of Graphics&rdquo;</li>
+<li>load it up with</li>
+</ul>
+<div class="org-src-container">
+<pre class="src src-R"><span style="color: #a45bad;">library</span>(ggplot2)
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-org94bf485" class="outline-3">
+<h3 id="org94bf485"><span class="section-number-3">3.5</span> Our question</h3>
+<div class="outline-text-3" id="text-3-5">
+<blockquote>
+<p>
+What&rsquo;s the relationship between wealth (gdp) and average life expectancy?
+</p>
+</blockquote>
+<ul class="org-ul">
+<li>Scatterplot is a good way to get started looking at data!</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org9295067" class="outline-3">
+<h3 id="org9295067"><span class="section-number-3">3.6</span> ggplot2</h3>
+<div class="outline-text-3" id="text-3-6">
+<ul class="org-ul">
+<li>Use the <code>ggplot()</code> function to start a plot.</li>
+<li>The first <i>argument</i> is to tell it the <i>data</i></li>
+<li><b>Tip:</b> use <code>?ggplot</code> to look at the help page, where you can see the names of the arguments</li>
+</ul>
+<div class="org-src-container">
+<pre class="src src-R">ggplot(data = gapminder) <span style="color: #2aa1ae; background-color: #292e34;"># </span><span style="color: #2aa1ae; background-color: #292e34;">Please use gapminder data</span>
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-orgba30ffc" class="outline-3">
+<h3 id="orgba30ffc"><span class="section-number-3">3.7</span> <code>geom_point</code></h3>
+<div class="outline-text-3" id="text-3-7">
+<ul class="org-ul">
+<li><code>ggplot()</code> by itself is pretty useless, it just starts a plot</li>
+<li>We then have to tell <code>ggplot</code> what to draw!</li>
+<li><b>Tip:</b> <code>?geom_point</code></li>
+</ul>
+<div class="org-src-container">
+<pre class="src src-R">ggplot(data = gapminder) +
+  geom_point(mapping = aes(x = gdpPercap, <span style="color: #2aa1ae; background-color: #292e34;"># </span><span style="color: #2aa1ae; background-color: #292e34;">Put gdp on x axis</span>
+                           y = lifeExp))  <span style="color: #2aa1ae; background-color: #292e34;"># </span><span style="color: #2aa1ae; background-color: #292e34;">Put lifeExp on y</span>
+
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-orgf10c9a0" class="outline-3">
+<h3 id="orgf10c9a0"><span class="section-number-3">3.8</span> </h3>
+<div class="outline-text-3" id="text-3-8">
+<p>
+<a href="figures/gdp-life.pdf">figures/gdp-life.pdf</a>
+</p>
+</div>
+</div>
+<div id="outline-container-org7ada441" class="outline-3">
+<h3 id="org7ada441"><span class="section-number-3">3.9</span> Fix that x axis!</h3>
+<div class="outline-text-3" id="text-3-9">
+<ul class="org-ul">
+<li>Is there a better way to show this relationship?</li>
+</ul>
+<div class="org-src-container">
+<pre class="src src-R">ggplot(data = gapminder) +
+  geom_point(mapping = aes(x = log(gdpPercap), <span style="color: #2aa1ae; background-color: #292e34;"># </span><span style="color: #2aa1ae; background-color: #292e34;">Log x-axis</span>
+                           y = lifeExp))
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-orgb3244f9" class="outline-3">
+<h3 id="orgb3244f9"><span class="section-number-3">3.10</span> </h3>
+<div class="outline-text-3" id="text-3-10">
+<p>
+<a href="figures/gdp-life-logx.pdf">figures/gdp-life-logx.pdf</a>
+</p>
+</div>
+</div>
+<div id="outline-container-org70c5dca" class="outline-3">
+<h3 id="org70c5dca"><span class="section-number-3">3.11</span> Aesthetics</h3>
+<div class="outline-text-3" id="text-3-11">
+<ul class="org-ul">
+<li><code>ggplot()</code> creates a coordinate system</li>
+</ul>
+<ul class="org-ul">
+<li>You can then add one or more layers to this to create a plot</li>
+</ul>
+<ul class="org-ul">
+<li>We just added the <code>geom_point()</code> layer, which used the <code>x</code> and <code>y</code> aesthetics (<code>aes</code>) to add a layer of points to our plot</li>
+</ul>
+<ul class="org-ul">
+<li>We can add more information to the aesthetics to convey more information like color, shape, and size.</li>
+</ul>
+<ul class="org-ul">
+<li>Example: What if we want to convey info about relationship between wealth and life expectancy by continent?</li>
+</ul>
+<ul class="org-ul">
+<li>One solution: add color by continent</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org7d3c45c" class="outline-3">
+<h3 id="org7d3c45c"><span class="section-number-3">3.12</span> Color</h3>
+<div class="outline-text-3" id="text-3-12">
+<div class="org-src-container">
+<pre class="src src-R">ggplot(data = gapminder) +
+  geom_point(mapping = aes(x = log(gdpPercap),
+                           y = lifeExp,
+                           <span style="color: #2aa1ae; background-color: #292e34;">## </span><span style="color: #2aa1ae; background-color: #292e34;">colour for the Brits</span>
+                           color = continent)) 
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-orgac48318" class="outline-3">
+<h3 id="orgac48318"><span class="section-number-3">3.13</span> </h3>
+<div class="outline-text-3" id="text-3-13">
+<p>
+<a href="figures/gdp-life-continent-color.pdf">figures/gdp-life-continent-color.pdf</a>
+</p>
+</div>
+</div>
+<div id="outline-container-orgf6a16f3" class="outline-3">
+<h3 id="orgf6a16f3"><span class="section-number-3">3.14</span> Multiple aesthetics - color &amp; shape</h3>
+<div class="outline-text-3" id="text-3-14">
+<ul class="org-ul">
+<li>Of course, some people are colorblind, and others don&rsquo;t print things in color, so may be nice to use something like shape in addition:</li>
+</ul>
+<div class="org-src-container">
+<pre class="src src-R">ggplot(gapminder) +
+  geom_point(aes(x = log(gdpPercap),
+                 y = lifeExp,
+                 color = continent, 
+                 shape = continent))
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-org91cde05" class="outline-3">
+<h3 id="org91cde05"><span class="section-number-3">3.15</span> </h3>
+<div class="outline-text-3" id="text-3-15">
+<p>
+<a href="figures/gdp-life-continent-shape.pdf">figures/gdp-life-continent-shape.pdf</a>
+</p>
+</div>
+</div>
+<div id="outline-container-orgfea18b5" class="outline-3">
+<h3 id="orgfea18b5"><span class="section-number-3">3.16</span> More about aesthetics</h3>
+<div class="outline-text-3" id="text-3-16">
+<ul class="org-ul">
+<li>There are more aesthetic mappings</li>
+<li>Try <code>size</code>, and <code>alpha</code> (transparency) for yourself</li>
+</ul>
+<ul class="org-ul">
+<li>You can set aesthetics directly by mapping the aesthetic to a value <b><i>outside</i></b> the call to <code>aes()</code></li>
+<li>For example, we may want to make the dots slightly transparent to avoid overplotting</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orgc554a62" class="outline-3">
+<h3 id="orgc554a62"><span class="section-number-3">3.17</span> Aesthetics not mapped to variable</h3>
+<div class="outline-text-3" id="text-3-17">
+<div class="org-src-container">
+<pre class="src src-R">ggplot(data = gapminder) +
+  geom_point(mapping = aes(x = log(gdpPercap),
+                           y = lifeExp,
+                           color = continent),
+             alpha = <span style="color: #a45bad;">0.5</span>)
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-orgd1a5da5" class="outline-3">
+<h3 id="orgd1a5da5"><span class="section-number-3">3.18</span> </h3>
+<div class="outline-text-3" id="text-3-18">
+<p>
+<a href="figures/gdp-life-transparent.pdf">figures/gdp-life-transparent.pdf</a>
+</p>
+</div>
+</div>
+
+<div id="outline-container-org866730b" class="outline-3">
+<h3 id="org866730b"><span class="section-number-3">3.19</span> Facets</h3>
+<div class="outline-text-3" id="text-3-19">
+<ul class="org-ul">
+<li>So we can use aesthetics to add variables to our graph like <code>color</code>.</li>
+<li>We might also want to add variables by splitting up the graph based on values of another variables &#x2014; e.g. subfigures</li>
+<li>If we want to use just one variable, use <code>facet_wrap()</code></li>
+</ul>
+<div class="org-src-container">
+<pre class="src src-R">ggplot(data = gapminder) +
+  geom_point(mapping = aes(x = log(gdpPercap),
+                           y = lifeExp)) +
+  facet_wrap( ~ continent, nrow = <span style="color: #a45bad;">2</span>)
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-org21687ba" class="outline-3">
+<h3 id="org21687ba"><span class="section-number-3">3.20</span> </h3>
+<div class="outline-text-3" id="text-3-20">
+<p>
+<a href="figures/gdp-life-facet-continent.pdf">figures/gdp-life-facet-continent.pdf</a>
+</p>
+</div>
+</div>
+<div id="outline-container-orgf2c40b4" class="outline-3">
+<h3 id="orgf2c40b4"><span class="section-number-3">3.21</span> Facets with two variables</h3>
+<div class="outline-text-3" id="text-3-21">
+<ul class="org-ul">
+<li>ggplot can facet with two variables with one by row and the other by column</li>
+<li>Use <code>facet_grid(row ~ column)</code> to do so</li>
+<li>Our <code>gapminder</code> data aren&rsquo;t very well suited for this, but you could do something like:</li>
+</ul>
+<div class="org-src-container">
+<pre class="src src-R">ggplot(data = gapminder) +
+  geom_point(mapping = aes(x = log(gdpPercap),
+                           y = lifeExp)) +
+  <span style="color: #2aa1ae; background-color: #292e34;">## </span><span style="color: #2aa1ae; background-color: #292e34;">year &gt;= 2000 will be TRUE or FALSE; </span>
+  <span style="color: #2aa1ae; background-color: #292e34;">## </span><span style="color: #2aa1ae; background-color: #292e34;">we'll learn more about logical statements later on:</span>
+  facet_grid(year &gt;= <span style="color: #a45bad;">2000</span> ~ continent)  
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-org1d6aa05" class="outline-3">
+<h3 id="org1d6aa05"><span class="section-number-3">3.22</span> </h3>
+<div class="outline-text-3" id="text-3-22">
+<p>
+<a href="figures/gdp-life-facet-continent-post2000.pdf">figures/gdp-life-facet-continent-post2000.pdf</a>
+</p>
+</div>
+</div>
+<div id="outline-container-org0b35814" class="outline-3">
+<h3 id="org0b35814"><span class="section-number-3">3.23</span> ggplot</h3>
+<div class="outline-text-3" id="text-3-23">
+<ul class="org-ul">
+<li>Review of what we&rsquo;ve learned so far:
+<ul class="org-ul">
+<li><code>ggplot()</code> creates a blank coordinate system</li>
+</ul></li>
+</ul>
+<ul class="org-ul">
+<li><code>aes()</code> helps us map variables to visual properties (x/y location, color, shape, etc)</li>
+</ul>
+<ul class="org-ul">
+<li><code>facet_wrap()</code> and <code>facet_grid()</code> help us convey variables via subfigures</li>
+</ul>
+<ul class="org-ul">
+<li>But what about plots other than the scatterplot?</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orga4ddbb8" class="outline-3">
+<h3 id="orga4ddbb8"><span class="section-number-3">3.24</span> geoms</h3>
+<div class="outline-text-3" id="text-3-24">
+<ul class="org-ul">
+<li>A <code>geom</code> (geometrical object) is <code>ggplot</code>&rsquo;s way of representing data</li>
+</ul>
+<ul class="org-ul">
+<li>We&rsquo;ve been using <code>geom_point()</code> to represent data as points, e.g. a scatterplot</li>
+<li>A <code>geom</code> is (usually) the thing we call the plot - line plots, bar plots, boxplots, etc</li>
+</ul>
+<ul class="org-ul">
+<li>Let&rsquo;s plot the same relationship between wealth and life expectancy but using <code>geom_smooth()</code> rather than <code>geom_point()</code>:</li>
+</ul>
+<div class="org-src-container">
+<pre class="src src-R">ggplot(data = gapminder) +
+  geom_smooth(mapping = aes(x = log(gdpPercap),
+                            y = lifeExp)) 
+
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-org1585ea6" class="outline-3">
+<h3 id="org1585ea6"><span class="section-number-3">3.25</span> </h3>
+<div class="outline-text-3" id="text-3-25">
+<p>
+<a href="figures/gdp-life-smooth.pdf">figures/gdp-life-smooth.pdf</a>
+</p>
+</div>
+</div>
+<div id="outline-container-org5ee17f7" class="outline-3">
+<h3 id="org5ee17f7"><span class="section-number-3">3.26</span> geoms</h3>
+<div class="outline-text-3" id="text-3-26">
+<ul class="org-ul">
+<li>Hey, that last plot looked pretty linear</li>
+<li>We can use OLS instead:</li>
+</ul>
+<div class="org-src-container">
+<pre class="src src-R">ggplot(data = gapminder) +
+  geom_smooth(mapping = aes(x = log(gdpPercap),
+                            y = lifeExp),
+              method = <span style="color: #2d9574;">"lm"</span>)
+
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-orge1b9504" class="outline-3">
+<h3 id="orge1b9504"><span class="section-number-3">3.27</span> </h3>
+<div class="outline-text-3" id="text-3-27">
+<p>
+<a href="figures/gdp-life-smooth-lm.pdf">figures/gdp-life-smooth-lm.pdf</a>
+</p>
+</div>
+</div>
+<div id="outline-container-orgc6e8ea5" class="outline-3">
+<h3 id="orgc6e8ea5"><span class="section-number-3">3.28</span> geoms and aesthetics</h3>
+<div class="outline-text-3" id="text-3-28">
+<ul class="org-ul">
+<li>Note that different aesthetics are available for different geoms</li>
+</ul>
+<ul class="org-ul">
+<li>So while <code>linetype</code> didn&rsquo;t really make sense for our scatterplot, it makes total sense for a line:</li>
+</ul>
+<div class="org-src-container">
+<pre class="src src-R">ggplot(data = gapminder) +
+  geom_smooth(mapping = aes(x = log(gdpPercap),
+                            y = lifeExp,
+                            color = continent,
+                            linetype = continent),
+              method = <span style="color: #2d9574;">"lm"</span>)
+
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-orge298dd8" class="outline-3">
+<h3 id="orge298dd8"><span class="section-number-3">3.29</span> </h3>
+<div class="outline-text-3" id="text-3-29">
+<p>
+<a href="figures/gdp-life-smooth-continent.pdf">figures/gdp-life-smooth-continent.pdf</a>
+</p>
+</div>
+</div>
+<div id="outline-container-org9193771" class="outline-3">
+<h3 id="org9193771"><span class="section-number-3">3.30</span> multiple geoms</h3>
+<div class="outline-text-3" id="text-3-30">
+<ul class="org-ul">
+<li>To add multiple geoms, just add them one after the other:</li>
+</ul>
+<div class="org-src-container">
+<pre class="src src-R">ggplot(data = gapminder) +
+  geom_smooth(mapping = aes(x = log(gdpPercap),
+                            y = lifeExp)) +
+  geom_point(mapping = aes(x = log(gdpPercap),
+                           y = lifeExp))
+
+
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-org54895af" class="outline-3">
+<h3 id="org54895af"><span class="section-number-3">3.31</span> </h3>
+<div class="outline-text-3" id="text-3-31">
+<p>
+<a href="figures/gdp-life-smooth-point.pdf">figures/gdp-life-smooth-point.pdf</a>
+</p>
+</div>
+</div>
+<div id="outline-container-org4712aac" class="outline-3">
+<h3 id="org4712aac"><span class="section-number-3">3.32</span> inherit aes</h3>
+<div class="outline-text-3" id="text-3-32">
+<ul class="org-ul">
+<li>Instead of retyping the <code>aes</code> mapping, we can specify a set of defaults in the <code>ggplot()</code> call, and overwrite (or add) then in each <code>geom</code> call:</li>
+</ul>
+<div class="org-src-container">
+<pre class="src src-R">ggplot(data = gapminder,
+       mapping = aes(x = log(gdpPercap),
+                     y = lifeExp)) +
+  geom_smooth() +
+  geom_point(mapping = aes(color = continent))
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-org3ee801f" class="outline-3">
+<h3 id="org3ee801f"><span class="section-number-3">3.33</span> </h3>
+<div class="outline-text-3" id="text-3-33">
+<p>
+<a href="figures/gdp-life-smooth-point-color.pdf">figures/gdp-life-smooth-point-color.pdf</a>
+</p>
+</div>
+</div>
+<div id="outline-container-org3ba36d7" class="outline-3">
+<h3 id="org3ba36d7"><span class="section-number-3">3.34</span> Review</h3>
+<div class="outline-text-3" id="text-3-34">
+<ul class="org-ul">
+<li>ggplot2 provides a very flexible way to make high-quality graphics</li>
+<li>stuff we didn&rsquo;t look at:
+<ul class="org-ul">
+<li>Lots of different geoms</li>
+<li>Changing scales</li>
+<li>Position</li>
+<li>How to save to include in your paper (later, I promise!)</li>
+</ul></li>
+</ul>
+</div>
+</div>
+</div>
+<div id="outline-container-org185faf4" class="outline-2">
+<h2 id="org185faf4"><span class="section-number-2">4</span> Basic R</h2>
+<div class="outline-text-2" id="text-4">
+</div><div id="outline-container-org96a7b9f" class="outline-3">
+<h3 id="org96a7b9f"><span class="section-number-3">4.1</span> Basics</h3>
+<div class="outline-text-3" id="text-4-1">
+<ul class="org-ul">
+<li>We skipped all of this because plotting is more fun &amp; I wanted to start with something fun</li>
+<li>Let&rsquo;s talk about basic R</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orgeb411c3" class="outline-3">
+<h3 id="orgeb411c3"><span class="section-number-3">4.2</span> Calculator</h3>
+<div class="outline-text-3" id="text-4-2">
+<ul class="org-ul">
+<li>Remember R can be a calculator:</li>
+</ul>
+<div class="org-src-container">
+<pre class="src src-R"><span style="color: #a45bad;">3</span> * <span style="color: #a45bad;">3</span> + <span style="color: #a45bad;">29</span> ^ <span style="color: #a45bad;">4</span> + <span style="color: #a45bad;">7</span>
+</pre>
+</div>
+
+<pre class="example">
+[1] 707297
+
+</pre>
+
+<ul class="org-ul">
+<li>But R doesn&rsquo;t &ldquo;remember&rdquo; the answer to that anywhere</li>
+</ul>
+<ul class="org-ul">
+<li>You must <i>assign</i> the output to an object in order for R to remember it:</li>
+</ul>
+<div class="org-src-container">
+<pre class="src src-R">x <span style="color: #a45bad;">&lt;-</span> <span style="color: #a45bad;">3</span> * <span style="color: #a45bad;">3</span> + <span style="color: #a45bad;">29</span> ^ <span style="color: #a45bad;">4</span> + <span style="color: #a45bad;">7</span>
+my_name <span style="color: #a45bad;">&lt;-</span> <span style="color: #2d9574;">"Alex Branham"</span>
+</pre>
+</div>
+<ul class="org-ul">
+<li><b>Tip</b>: In Rstudio, use alt+- (option+-) to get <code>&lt;-</code></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org0aff492" class="outline-3">
+<h3 id="org0aff492"><span class="section-number-3">4.3</span> Wait, what?</h3>
+<div class="outline-text-3" id="text-4-3">
+<ul class="org-ul">
+<li>Yeah, I just assigned letters to an object</li>
+</ul>
+<ul class="org-ul">
+<li>We can inspect the contents of an object by typing it into the R console:</li>
+</ul>
+<div class="org-src-container">
+<pre class="src src-R">x
+</pre>
+</div>
+
+<pre class="example">
+[1] 707297
+
+</pre>
+
+<ul class="org-ul">
+<li>Here, type <code>my_</code> then hit tab to have autocompletion</li>
+</ul>
+<div class="org-src-container">
+<pre class="src src-R">my_name
+</pre>
+</div>
+
+<pre class="example">
+[1] "Alex Branham"
+
+</pre>
+</div>
+</div>
+
+<div id="outline-container-orgd0c56f5" class="outline-3">
+<h3 id="orgd0c56f5"><span class="section-number-3">4.4</span> +</h3>
+<div class="outline-text-3" id="text-4-4">
+<ul class="org-ul">
+<li>If you forgot the closing <code>"</code> &#x2014;  <code>my_name &lt;- "Alex Branham</code></li>
+<li>The R prompt will change from <code>&gt;</code> to <code>+</code></li>
+<li>This indicates that R is waiting for you.</li>
+<li>Cancel by mashing <code>ESC</code></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orgcac6d19" class="outline-3">
+<h3 id="orgcac6d19"><span class="section-number-3">4.5</span> R is pedantic</h3>
+<div class="outline-text-3" id="text-4-5">
+<ul class="org-ul">
+<li>You have to be really specific with R:</li>
+</ul>
+<div class="org-src-container">
+<pre class="src src-R">x
+</pre>
+</div>
+
+<pre class="example">
+[1] 707297
+
+</pre>
+
+<div class="org-src-container">
+<pre class="src src-R">X
+</pre>
+</div>
+
+<pre class="example">
+Error: object 'X' not found
+
+</pre>
+
+<div class="org-src-container">
+<pre class="src src-R">my_nam
+</pre>
+</div>
+
+<pre class="example">
+Error: object 'my_nam' not found
+
+</pre>
+</div>
+</div>
+
+<div id="outline-container-org2dfc599" class="outline-3">
+<h3 id="org2dfc599"><span class="section-number-3">4.6</span> Things don&rsquo;t happen magically</h3>
+<div class="outline-text-3" id="text-4-6">
+<div class="org-src-container">
+<pre class="src src-R">x
+</pre>
+</div>
+
+<pre class="example">
+[1] 707297
+
+</pre>
+
+<div class="org-src-container">
+<pre class="src src-R">x / <span style="color: #a45bad;">1000</span>
+</pre>
+</div>
+
+<pre class="example">
+[1] 707.297
+
+</pre>
+
+<div class="org-src-container">
+<pre class="src src-R">x
+</pre>
+</div>
+
+<pre class="example">
+[1] 707297
+
+</pre>
+</div>
+</div>
+
+<div id="outline-container-org6994859" class="outline-3">
+<h3 id="org6994859"><span class="section-number-3">4.7</span> Missing values</h3>
+<div class="outline-text-3" id="text-4-7">
+<ul class="org-ul">
+<li>Missing data is represented by <code>NA</code> in R</li>
+<li>R thinks about this as &ldquo;something that&rsquo;s there, but whose value we do not know&rdquo;</li>
+<li>Missingness propagates</li>
+</ul>
+<div class="org-src-container">
+<pre class="src src-R">mean(c(<span style="color: #a45bad;">1</span>, <span style="color: #a45bad;">2</span>, <span style="color: #ce537a; font-weight: bold;">NA</span>))
+</pre>
+</div>
+
+<pre class="example">
+[1] NA
+
+</pre>
+</div>
+</div>
+
+<div id="outline-container-org8bd86b4" class="outline-3">
+<h3 id="org8bd86b4"><span class="section-number-3">4.8</span> Missingness quiz</h3>
+<div class="outline-text-3" id="text-4-8">
+<ul class="org-ul">
+<li>What will be the result?</li>
+<li>We&rsquo;ll learn more about logical statements in a bit, this asks &ldquo;Is 3 equal to NA&rdquo;?</li>
+</ul>
+<div class="org-src-container">
+<pre class="src src-R"><span style="color: #a45bad;">3</span> == <span style="color: #ce537a; font-weight: bold;">NA</span>
+<span style="color: #ce537a; font-weight: bold;">NA</span> == <span style="color: #ce537a; font-weight: bold;">NA</span>
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-orgf693fe8" class="outline-3">
+<h3 id="orgf693fe8"><span class="section-number-3">4.9</span> Missingness quiz answer</h3>
+<div class="outline-text-3" id="text-4-9">
+<div class="org-src-container">
+<pre class="src src-R"><span style="color: #a45bad;">3</span> == <span style="color: #ce537a; font-weight: bold;">NA</span>
+</pre>
+</div>
+
+<pre class="example">
+[1] NA
+
+</pre>
+
+<div class="org-src-container">
+<pre class="src src-R"><span style="color: #ce537a; font-weight: bold;">NA</span> == <span style="color: #ce537a; font-weight: bold;">NA</span>
+</pre>
+</div>
+
+<pre class="example">
+[1] NA
+
+</pre>
+</div>
+</div>
+
+<div id="outline-container-orgf984203" class="outline-3">
+<h3 id="orgf984203"><span class="section-number-3">4.10</span> Functions</h3>
+<div class="outline-text-3" id="text-4-10">
+<ul class="org-ul">
+<li>Functions in R can take zero or more arguments</li>
+</ul>
+<pre class="example">
+function(arg1 = object1, arg2 = object2, arg3 = object3)
+</pre>
+<div class="org-src-container">
+<pre class="src src-R">my_vector <span style="color: #a45bad;">&lt;-</span> seq(from = <span style="color: #a45bad;">1</span>, to = <span style="color: #a45bad;">10</span>, by = <span style="color: #a45bad;">1</span>)
+my_vector
+</pre>
+</div>
+
+<pre class="example">
+ 
+[1]  1  2  3  4  5  6  7  8  9 10
+
+</pre>
+
+<div class="org-src-container">
+<pre class="src src-R">mean(x = my_vector)
+</pre>
+</div>
+
+<pre class="example">
+[1] 5.5
+
+</pre>
+</div>
+</div>
+
+<div id="outline-container-orgf6f730b" class="outline-3">
+<h3 id="orgf6f730b"><span class="section-number-3">4.11</span> Functions, continued</h3>
+<div class="outline-text-3" id="text-4-11">
+<div class="org-src-container">
+<pre class="src src-R">my_vector <span style="color: #a45bad;">&lt;-</span> c(<span style="color: #a45bad;">1</span>, <span style="color: #a45bad;">2</span>, <span style="color: #a45bad;">3</span>, <span style="color: #ce537a; font-weight: bold;">NA</span>, <span style="color: #ce537a; font-weight: bold;">NA</span>, <span style="color: #ce537a; font-weight: bold;">NA</span>, <span style="color: #a45bad;">3</span>, <span style="color: #a45bad;">2</span>, <span style="color: #a45bad;">1</span>)
+mean(x = my_vector)
+</pre>
+</div>
+
+<pre class="example">
+[1] NA
+
+</pre>
+
+<div class="org-src-container">
+<pre class="src src-R">mean(x = my_vector, na.rm = <span style="color: #ce537a; font-weight: bold;">TRUE</span>)
+</pre>
+</div>
+
+<pre class="example">
+[1] 2
+
+</pre>
+</div>
+</div>
+
+<div id="outline-container-org2b71816" class="outline-3">
+<h3 id="org2b71816"><span class="section-number-3">4.12</span> Function arguments</h3>
+<div class="outline-text-3" id="text-4-12">
+<ul class="org-ul">
+<li>You don&rsquo;t have to specify argument names if you type them in order.</li>
+<li>Since <code>x</code> is the first argument of <code>mean()</code>, no need to type <code>mean(x = my_vector)</code></li>
+<li>Instead, can just type <code>mean(my_vector)</code></li>
+<li>This cuts down on the amount you have to type</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org214b52e" class="outline-3">
+<h3 id="org214b52e"><span class="section-number-3">4.13</span> Data</h3>
+<div class="outline-text-3" id="text-4-13">
+<ul class="org-ul">
+<li>OK, so now we know how to assign stuff and functions</li>
+<li>Let&rsquo;s learn about how R thinks about data
+<ul class="org-ul">
+<li>&ldquo;data&rdquo; here doesn&rsquo;t have to mean data from e.g. a survey</li>
+</ul></li>
+<li>R cares about the <b>class</b> (type) of data and its <b>dimension(s)</b></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orgb772b55" class="outline-3">
+<h3 id="orgb772b55"><span class="section-number-3">4.14</span> Data types</h3>
+<div class="outline-text-3" id="text-4-14">
+<ul class="org-ul">
+<li>We&rsquo;ll discuss the four most common data types:
+<ul class="org-ul">
+<li>Numeric</li>
+<li>Logical</li>
+<li>Character</li>
+<li>Factor</li>
+</ul></li>
+<li>We&rsquo;ll also cover <code>NA</code></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org9c0ab50" class="outline-3">
+<h3 id="org9c0ab50"><span class="section-number-3">4.15</span> Numeric</h3>
+<div class="outline-text-3" id="text-4-15">
+<ul class="org-ul">
+<li>Numeric is how R thinks about numbers!</li>
+<li>These can also be called &ldquo;integer&rdquo; (if round numbers) or &ldquo;double&rdquo;</li>
+</ul>
+<div class="org-src-container">
+<pre class="src src-R">class(c(<span style="color: #a45bad;">1</span>, <span style="color: #a45bad;">2</span>, <span style="color: #a45bad;">3</span>))
+</pre>
+</div>
+
+<pre class="example">
+[1] "numeric"
+
+</pre>
+
+<div class="org-src-container">
+<pre class="src src-R">sum(c(<span style="color: #a45bad;">1</span>, <span style="color: #a45bad;">2</span>, <span style="color: #a45bad;">3</span>))
+</pre>
+</div>
+
+<pre class="example">
+[1] 6
+
+</pre>
+
+<div class="org-src-container">
+<pre class="src src-R">class(sum(c(<span style="color: #a45bad;">1</span>, <span style="color: #a45bad;">2</span>, <span style="color: #a45bad;">3</span>)))
+</pre>
+</div>
+
+<pre class="example">
+[1] "numeric"
+
+</pre>
+</div>
+</div>
+
+<div id="outline-container-org3b6aca4" class="outline-3">
+<h3 id="org3b6aca4"><span class="section-number-3">4.16</span> Logical</h3>
+<div class="outline-text-3" id="text-4-16">
+<ul class="org-ul">
+<li>Logical can take two values &#x2014; <code>TRUE</code> or <code>FALSE</code></li>
+</ul>
+<ul class="org-ul">
+<li>This is useful for dummy variables and tests</li>
+</ul>
+<div class="org-src-container">
+<pre class="src src-R"><span style="color: #a45bad;">1</span>:<span style="color: #a45bad;">10</span> &gt; <span style="color: #a45bad;">5</span>
+</pre>
+</div>
+
+<pre class="example">
+[1] FALSE FALSE FALSE FALSE FALSE  TRUE  TRUE  TRUE  TRUE  TRUE
+
+</pre>
+</div>
+</div>
+
+<div id="outline-container-org6bb9f34" class="outline-3">
+<h3 id="org6bb9f34"><span class="section-number-3">4.17</span> Character</h3>
+<div class="outline-text-3" id="text-4-17">
+<ul class="org-ul">
+<li>Characters represent text</li>
+<li>Sometimes these are called &ldquo;strings&rdquo;</li>
+</ul>
+<div class="org-src-container">
+<pre class="src src-R">c(<span style="color: #2d9574;">"This"</span>, <span style="color: #2d9574;">"vector"</span>, <span style="color: #2d9574;">"is"</span>, <span style="color: #2d9574;">"of"</span>, <span style="color: #2d9574;">"length"</span>, <span style="color: #2d9574;">"what?"</span>)
+c(<span style="color: #2d9574;">"How about this one?"</span>)
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-orgb40e7c1" class="outline-3">
+<h3 id="orgb40e7c1"><span class="section-number-3">4.18</span> Factor</h3>
+<div class="outline-text-3" id="text-4-18">
+<ul class="org-ul">
+<li>Factors are how R thinks about categorical variables</li>
+</ul>
+<ul class="org-ul">
+<li>We already worked with these when we used the <code>continent</code> variable from <code>gapminder</code></li>
+</ul>
+<div class="org-src-container">
+<pre class="src src-R">head(gapminder$continent)
+</pre>
+</div>
+
+<pre class="example">
+[1] Asia Asia Asia Asia Asia Asia
+Levels: Africa Americas Asia Europe Oceania
+
+</pre>
+</div>
+</div>
+
+<div id="outline-container-org993167b" class="outline-3">
+<h3 id="org993167b"><span class="section-number-3">4.19</span> Data type quiz</h3>
+<div class="outline-text-3" id="text-4-19">
+<p>
+What type of data are the following?
+</p>
+<div class="org-src-container">
+<pre class="src src-R"><span style="color: #a45bad;">182</span>
+c(<span style="color: #2d9574;">"My name is Alex"</span>)
+<span style="color: #2d9574;">"TRUE"</span>
+<span style="color: #ce537a; font-weight: bold;">FALSE</span>
+c(<span style="color: #a45bad;">1</span>, <span style="color: #a45bad;">2</span>, <span style="color: #a45bad;">3</span>)
+c(<span style="color: #a45bad;">1</span>, <span style="color: #2d9574;">"Alex"</span>, <span style="color: #ce537a; font-weight: bold;">TRUE</span>)
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-org0158552" class="outline-3">
+<h3 id="org0158552"><span class="section-number-3">4.20</span> Data dimensions</h3>
+<div class="outline-text-3" id="text-4-20">
+<p>
+What&rsquo;s the difference?
+</p>
+<pre class="example">
+[1] 1 2 3 4 5 6
+
+</pre>
+
+<pre class="example">
+     [,1] [,2]
+[1,]    1    4
+[2,]    2    5
+[3,]    3    6
+
+</pre>
+
+<ul class="org-ul">
+<li>Data can have <b>dimensions</b></li>
+<li>Numeric, logical, character, and factors are single dimensions (so are lists)</li>
+</ul>
+<ul class="org-ul">
+<li>That matrix is a 3 by 2 matrix</li>
+<li>Why might we want to have two-dimensional data?</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org001f0f9" class="outline-3">
+<h3 id="org001f0f9"><span class="section-number-3">4.21</span> The data.frame</h3>
+<div class="outline-text-3" id="text-4-21">
+<ul class="org-ul">
+<li>Matrices must have the same type, but we can mix and match types with a <code>data.frame</code></li>
+<li>Remember <code>gapminder</code> from earlier?</li>
+<li>We used a <code>data.frame</code> to store columns with different data types</li>
+</ul>
+<ul class="org-ul">
+<li>We can access (index, subset) <code>data.frame</code> objects using notation similar to matrix notation:</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org41baab7" class="outline-3">
+<h3 id="org41baab7"><span class="section-number-3">4.22</span> Indexing data.frame</h3>
+<div class="outline-text-3" id="text-4-22">
+<div class="org-src-container">
+<pre class="src src-R">gapminder[<span style="color: #a45bad;">2</span>, <span style="color: #a45bad;">1</span>] <span style="color: #2aa1ae; background-color: #292e34;"># </span><span style="color: #2aa1ae; background-color: #292e34;">get whatever is in the second row, 1st col</span>
+gapminder[<span style="color: #a45bad;">1</span>, ]  <span style="color: #2aa1ae; background-color: #292e34;"># </span><span style="color: #2aa1ae; background-color: #292e34;">get the first col (all)</span>
+gapminder[, <span style="color: #a45bad;">1</span>]  <span style="color: #2aa1ae; background-color: #292e34;"># </span><span style="color: #2aa1ae; background-color: #292e34;">get the first row (all)</span>
+gapminder[, <span style="color: #2d9574;">"country"</span>] <span style="color: #2aa1ae; background-color: #292e34;"># </span><span style="color: #2aa1ae; background-color: #292e34;">select by name</span>
+gapminder$country <span style="color: #2aa1ae; background-color: #292e34;"># </span><span style="color: #2aa1ae; background-color: #292e34;">slightly different</span>
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-orgba59b68" class="outline-3">
+<h3 id="orgba59b68"><span class="section-number-3">4.23</span> Review</h3>
+<div class="outline-text-3" id="text-4-23">
+<ul class="org-ul">
+<li>What we learned</li>
+<li>Missingness propagates</li>
+<li>Functions &amp; arguments</li>
+<li>Basic vectors: numeric, logical, character, factor</li>
+<li>Dimensions &amp; the data.frame</li>
+</ul>
+</div>
+</div>
+</div>
+<div id="outline-container-org8866e6d" class="outline-2">
+<h2 id="org8866e6d"><span class="section-number-2">5</span> Data import &amp; manipulation</h2>
+<div class="outline-text-2" id="text-5">
+</div><div id="outline-container-orgef3044d" class="outline-3">
+<h3 id="orgef3044d"><span class="section-number-3">5.1</span> Importing data</h3>
+<div class="outline-text-3" id="text-5-1">
+<ul class="org-ul">
+<li>Importing data in R is either trivially easy (usually) or super specific and difficult (rarely), so we won&rsquo;t actually be doing this</li>
+</ul>
+<ul class="org-ul">
+<li>R has a lot of build in functions: <code>read.csv()</code>, <code>read.table()</code>, etc</li>
+<li>Packages provide still more: <code>readr::read_csv()</code>, <code>haven::read_dta()</code>, etc</li>
+</ul>
+<ul class="org-ul">
+<li>I prefer the <code>rio</code> package because I don&rsquo;t have to think</li>
+<li>Always gives you a <code>data.frame</code>:</li>
+</ul>
+<div class="org-src-container">
+<pre class="src src-R"><span style="color: #a45bad;">library</span>(rio)
+csv_data <span style="color: #a45bad;">&lt;-</span> import(<span style="color: #2d9574;">"file.csv"</span>)
+stata_data <span style="color: #a45bad;">&lt;-</span> import(<span style="color: #2d9574;">"file.dta"</span>)
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-org50794ae" class="outline-3">
+<h3 id="org50794ae"><span class="section-number-3">5.2</span> Working directories &amp; project structure</h3>
+<div class="outline-text-3" id="text-5-2">
+<ul class="org-ul">
+<li>R has the concept of a &ldquo;working directory&rdquo;</li>
+<li>You can see where this is by typing <code>getwd()</code> into the console</li>
+<li>I like to store data and code in separate folders:</li>
+<li><b>Tip</b>: Rstudio can manage &ldquo;projects&rdquo; that take care of a lot of this</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orgabc40ac" class="outline-3">
+<h3 id="orgabc40ac"><span class="section-number-3">5.3</span> Simple project structure</h3>
+<div class="outline-text-3" id="text-5-3">
+<pre class="example">
+my-paper-project/
+|--- code/
+|    |--- my-script.R
+|    |--- my-alt-script.R
+|--- data/
+|    |--- awesome-data.csv
+|--- output/
+|    |--- figure1.eps
+|    |--- figure2.eps
+|    |--- table1.tex
+|    |--- table2.tex
+|--- my-paper.tex
+</pre>
+</div>
+</div>
+<div id="outline-container-orgb5ac4d8" class="outline-3">
+<h3 id="orgb5ac4d8"><span class="section-number-3">5.4</span> Relative paths</h3>
+<div class="outline-text-3" id="text-5-4">
+<ul class="org-ul">
+<li>If you have code like that, you need to know what a relative path is so that code in your <code>code/</code> directory can load data in your <code>data/</code> directory!</li>
+</ul>
+<ul class="org-ul">
+<li>So if we&rsquo;re running a file from <code>code/</code> (that&rsquo;s the working directory), we can load data by doing:</li>
+</ul>
+<div class="org-src-container">
+<pre class="src src-R">my_awesome_data <span style="color: #a45bad;">&lt;-</span> import(<span style="color: #2d9574;">"../data/awesome_data.csv"</span>)
+</pre>
+</div>
+<ul class="org-ul">
+<li>Two dots <code>..</code> says &ldquo;go up one directory&rdquo;, we could chain them to go up two: <code>../..</code></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org17824ff" class="outline-3">
+<h3 id="org17824ff"><span class="section-number-3">5.5</span> dplyr</h3>
+<div class="outline-text-3" id="text-5-5">
+<ul class="org-ul">
+<li>We are going to use dplyr, another package you&rsquo;ve installed, to help us transform data</li>
+</ul>
+<ul class="org-ul">
+<li><code>filter()</code> drops rows based on columns</li>
+<li><code>select()</code>  selects columns</li>
+</ul>
+<ul class="org-ul">
+<li><code>mutate()</code>  creates new variables</li>
+<li><code>summarize()</code> return statistics</li>
+</ul>
+<ul class="org-ul">
+<li><code>group_by()</code> allows us to do the above by groups</li>
+</ul>
+<p>
+-These functions take data as the first argument and always return a data.frame<sup><a id="fnr.1" class="footref" href="#fn.1">1</a></sup>
+</p>
+<div class="org-src-container">
+<pre class="src src-R"><span style="color: #a45bad;">library</span>(dplyr)
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-orgad29027" class="outline-3">
+<h3 id="orgad29027"><span class="section-number-3">5.6</span> <code>filter</code></h3>
+<div class="outline-text-3" id="text-5-6">
+<ul class="org-ul">
+<li><code>filter()</code> uses logical statements (that are TRUE) to return rows:</li>
+</ul>
+<div class="org-src-container">
+<pre class="src src-R">filter(gapminder, continent == <span style="color: #2d9574;">"Asia"</span>)
+filter(gapminder, continent == <span style="color: #2d9574;">"Asia"</span> &amp; year &gt;= <span style="color: #a45bad;">2000</span>)
+filter(gapminder, continent == <span style="color: #2d9574;">"Asia"</span> &amp; year != <span style="color: #a45bad;">2000</span>)
+filter(gapminder, continent == <span style="color: #2d9574;">"Asia"</span> | year == <span style="color: #a45bad;">2000</span>)
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-orgb8551c6" class="outline-3">
+<h3 id="orgb8551c6"><span class="section-number-3">5.7</span> Quiz</h3>
+<div class="outline-text-3" id="text-5-7">
+<ul class="org-ul">
+<li>Use filter to return all the rows containing observations from Asia or Africa</li>
+</ul>
+<div class="org-src-container">
+<pre class="src src-R">filter(gapminder, continent == <span style="color: #2d9574;">"Asia"</span> | continent == <span style="color: #2d9574;">"Africa"</span>)
+filter(gapminder, continent <span style="color: #a45bad;">%in%</span> c(<span style="color: #2d9574;">"Asia"</span>, <span style="color: #2d9574;">"Africa"</span>))
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-org893cd80" class="outline-3">
+<h3 id="org893cd80"><span class="section-number-3">5.8</span> <code>select</code></h3>
+<div class="outline-text-3" id="text-5-8">
+<ul class="org-ul">
+<li>The <code>select</code> function selects one or more columns:</li>
+</ul>
+<div class="org-src-container">
+<pre class="src src-R">select(gapminder, country)
+select(gapminder, country, year, continent)
+select(gapminder, -continent)
+</pre>
+</div>
+<ul class="org-ul">
+<li>several helper functions (e.g. <code>starts_with</code>), see <code>?select</code> for examples</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orgb5bc962" class="outline-3">
+<h3 id="orgb5bc962"><span class="section-number-3">5.9</span> <code>mutate</code></h3>
+<div class="outline-text-3" id="text-5-9">
+<ul class="org-ul">
+<li>Mutate creates new variables:</li>
+</ul>
+<div class="org-src-container">
+<pre class="src src-R">mutate(gapminder, gdp = pop * gdpPercap)
+</pre>
+</div>
+
+<pre class="example">
+# A tibble: 1,704 x 7
+       country continent  year lifeExp      pop gdpPercap         gdp
+        &lt;fctr&gt;    &lt;fctr&gt; &lt;int&gt;   &lt;dbl&gt;    &lt;int&gt;     &lt;dbl&gt;       &lt;dbl&gt;
+ 1 Afghanistan      Asia  1952  28.801  8425333  779.4453  6567086330
+ 2 Afghanistan      Asia  1957  30.332  9240934  820.8530  7585448670
+ 3 Afghanistan      Asia  1962  31.997 10267083  853.1007  8758855797
+ 4 Afghanistan      Asia  1967  34.020 11537966  836.1971  9648014150
+ 5 Afghanistan      Asia  1972  36.088 13079460  739.9811  9678553274
+ 6 Afghanistan      Asia  1977  38.438 14880372  786.1134 11697659231
+ 7 Afghanistan      Asia  1982  39.854 12881816  978.0114 12598563401
+ 8 Afghanistan      Asia  1987  40.822 13867957  852.3959 11820990309
+ 9 Afghanistan      Asia  1992  41.674 16317921  649.3414 10595901589
+10 Afghanistan      Asia  1997  41.763 22227415  635.3414 14121995875
+# ... with 1,694 more rows
+</pre>
+</div>
+</div>
+
+<div id="outline-container-orgc0d7059" class="outline-3">
+<h3 id="orgc0d7059"><span class="section-number-3">5.10</span> <code>summarize</code></h3>
+<div class="outline-text-3" id="text-5-10">
+<ul class="org-ul">
+<li><code>summarize</code> (or <code>summarise</code> if you prefer) creates summary statistics:</li>
+</ul>
+<div class="org-src-container">
+<pre class="src src-R">summarize(gapminder, mean_life = mean(lifeExp))
+</pre>
+</div>
+
+<pre class="example">
+# A tibble: 1 x 1
+  mean_life
+      &lt;dbl&gt;
+1  59.47444
+
+</pre>
+
+<ul class="org-ul">
+<li>Though whoop-de-doo, we could&rsquo;ve just done <code>mean(gapminder$lifeExp)</code> to get that!</li>
+</ul>
+<ul class="org-ul">
+<li>Much more useful if we do this by groups</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orge2e5550" class="outline-3">
+<h3 id="orge2e5550"><span class="section-number-3">5.11</span> <code>group_by</code></h3>
+<div class="outline-text-3" id="text-5-11">
+<ul class="org-ul">
+<li>All the functions we just learned can be performed by groups!</li>
+<li>This is really exciting and makes life much easier</li>
+<li>Calculate mean life expectancy by year:</li>
+</ul>
+<div class="org-src-container">
+<pre class="src src-R">summarize(group_by(gapminder, year), mean_life = mean(lifeExp))
+<span style="color: #2aa1ae; background-color: #292e34;">## </span><span style="color: #2aa1ae; background-color: #292e34;">Or, to add it to the data:</span>
+mutate(group_by(gapminder, year), year_mean_life = mean(lifeExp))
+</pre>
+</div>
+
+<pre class="example">
+# A tibble: 12 x 2
+    year mean_life
+   &lt;int&gt;     &lt;dbl&gt;
+ 1  1952  49.05762
+ 2  1957  51.50740
+ 3  1962  53.60925
+ 4  1967  55.67829
+ 5  1972  57.64739
+ 6  1977  59.57016
+ 7  1982  61.53320
+ 8  1987  63.21261
+ 9  1992  64.16034
+10  1997  65.01468
+11  2002  65.69492
+12  2007  67.00742
+# A tibble: 1,704 x 7
+# Groups:   year [12]
+       country continent  year lifeExp      pop gdpPercap year_mean_life
+        &lt;fctr&gt;    &lt;fctr&gt; &lt;int&gt;   &lt;dbl&gt;    &lt;int&gt;     &lt;dbl&gt;          &lt;dbl&gt;
+ 1 Afghanistan      Asia  1952  28.801  8425333  779.4453       49.05762
+ 2 Afghanistan      Asia  1957  30.332  9240934  820.8530       51.50740
+ 3 Afghanistan      Asia  1962  31.997 10267083  853.1007       53.60925
+ 4 Afghanistan      Asia  1967  34.020 11537966  836.1971       55.67829
+ 5 Afghanistan      Asia  1972  36.088 13079460  739.9811       57.64739
+ 6 Afghanistan      Asia  1977  38.438 14880372  786.1134       59.57016
+ 7 Afghanistan      Asia  1982  39.854 12881816  978.0114       61.53320
+ 8 Afghanistan      Asia  1987  40.822 13867957  852.3959       63.21261
+ 9 Afghanistan      Asia  1992  41.674 16317921  649.3414       64.16034
+10 Afghanistan      Asia  1997  41.763 22227415  635.3414       65.01468
+# ... with 1,694 more rows
+</pre>
+</div>
+</div>
+
+<div id="outline-container-org7bb8fca" class="outline-3">
+<h3 id="org7bb8fca"><span class="section-number-3">5.12</span> <code>group_by</code>, continued</h3>
+<div class="outline-text-3" id="text-5-12">
+<ul class="org-ul">
+<li>Calculate change in life expectancy by country:</li>
+</ul>
+<div class="org-src-container">
+<pre class="src src-R">mutate(group_by(gapminder, country),
+       life_change = lifeExp - lag(lifeExp))
+</pre>
+</div>
+
+<pre class="example">
+# A tibble: 1,704 x 7
+# Groups:   country [142]
+       country continent  year lifeExp      pop gdpPercap life_change
+        &lt;fctr&gt;    &lt;fctr&gt; &lt;int&gt;   &lt;dbl&gt;    &lt;int&gt;     &lt;dbl&gt;       &lt;dbl&gt;
+ 1 Afghanistan      Asia  1952  28.801  8425333  779.4453          NA
+ 2 Afghanistan      Asia  1957  30.332  9240934  820.8530       1.531
+ 3 Afghanistan      Asia  1962  31.997 10267083  853.1007       1.665
+ 4 Afghanistan      Asia  1967  34.020 11537966  836.1971       2.023
+ 5 Afghanistan      Asia  1972  36.088 13079460  739.9811       2.068
+ 6 Afghanistan      Asia  1977  38.438 14880372  786.1134       2.350
+ 7 Afghanistan      Asia  1982  39.854 12881816  978.0114       1.416
+ 8 Afghanistan      Asia  1987  40.822 13867957  852.3959       0.968
+ 9 Afghanistan      Asia  1992  41.674 16317921  649.3414       0.852
+10 Afghanistan      Asia  1997  41.763 22227415  635.3414       0.089
+# ... with 1,694 more rows
+</pre>
+</div>
+</div>
+
+<div id="outline-container-orgf41094e" class="outline-3">
+<h3 id="orgf41094e"><span class="section-number-3">5.13</span> <code>group_by</code>, continued</h3>
+<div class="outline-text-3" id="text-5-13">
+<ul class="org-ul">
+<li>You can group by multiple variables</li>
+</ul>
+<div class="org-src-container">
+<pre class="src src-R">summarize(group_by(gapminder, continent, year),
+          mean_life = mean(lifeExp))
+</pre>
+</div>
+
+<pre class="example">
+# A tibble: 60 x 3
+# Groups:   continent [?]
+   continent  year mean_life
+      &lt;fctr&gt; &lt;int&gt;     &lt;dbl&gt;
+ 1    Africa  1952  39.13550
+ 2    Africa  1957  41.26635
+ 3    Africa  1962  43.31944
+ 4    Africa  1967  45.33454
+ 5    Africa  1972  47.45094
+ 6    Africa  1977  49.58042
+ 7    Africa  1982  51.59287
+ 8    Africa  1987  53.34479
+ 9    Africa  1992  53.62958
+10    Africa  1997  53.59827
+# ... with 50 more rows
+</pre>
+</div>
+</div>
+
+<div id="outline-container-org582ec4b" class="outline-3">
+<h3 id="org582ec4b"><span class="section-number-3">5.14</span> Chaining</h3>
+<div class="outline-text-3" id="text-5-14">
+<ul class="org-ul">
+<li>What if we want to select all countries in Africa and calculate mean life expectancy by year?</li>
+</ul>
+<ul class="org-ul">
+<li>This is easy to do because the dplyr functions always take the data as their first argument and always return a data.frame</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org7323c08" class="outline-3">
+<h3 id="org7323c08"><span class="section-number-3">5.15</span> Chaining, continued</h3>
+<div class="outline-text-3" id="text-5-15">
+<ul class="org-ul">
+<li>One option:</li>
+</ul>
+<div class="org-src-container">
+<pre class="src src-R">summarize(group_by(filter(gapminder,
+                          continent == <span style="color: #2d9574;">"Africa"</span>),
+                   year),
+          mean_life = mean(lifeExp))
+</pre>
+</div>
+<ul class="org-ul">
+<li>Or we could assign to objects along the way</li>
+</ul>
+<div class="org-src-container">
+<pre class="src src-R">just_africa <span style="color: #a45bad;">&lt;-</span> filter(gapminder,continent == <span style="color: #2d9574;">"Africa"</span>),
+africa_by_year <span style="color: #a45bad;">&lt;-</span> group_by(just_africa, year)
+summarize(africa_by_year, mean_life = mean(lifeExp))
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-org75f0f62" class="outline-3">
+<h3 id="org75f0f62"><span class="section-number-3">5.16</span> Piping</h3>
+<div class="outline-text-3" id="text-5-16">
+<ul class="org-ul">
+<li>Both of those have downsides, though</li>
+</ul>
+<ul class="org-ul">
+<li>We&rsquo;ll use the <i>pipe</i> <code>%&gt;%</code> to &ldquo;pipe&rdquo; the thing on the left into the thing on the right:</li>
+<li><b>Tip:</b> In Rstudio, use Ctrl+shift+m (Cmd+shift+m) to get <code>%&gt;%</code></li>
+</ul>
+<div class="org-src-container">
+<pre class="src src-R">gapminder <span style="color: #a45bad;">%&gt;%</span>
+  filter(continent == <span style="color: #2d9574;">"Africa"</span>) <span style="color: #a45bad;">%&gt;%</span>
+</pre>
+</div>
+<div class="org-src-container">
+<pre class="src src-R">group_by(year) <span style="color: #a45bad;">%&gt;%</span>
+</pre>
+</div>
+<div class="org-src-container">
+<pre class="src src-R">summarize(meanlife = mean(lifeExp))
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-org61c8a26" class="outline-3">
+<h3 id="org61c8a26"><span class="section-number-3">5.17</span> Quiz</h3>
+<div class="outline-text-3" id="text-5-17">
+<ul class="org-ul">
+<li>Create a data.frame containing the continent, year, avg life expectancy, and change in avg life expectancy</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org947419a" class="outline-3">
+<h3 id="org947419a"><span class="section-number-3">5.18</span> Quiz answers</h3>
+<div class="outline-text-3" id="text-5-18">
+<div class="org-src-container">
+<pre class="src src-R">gapminder <span style="color: #a45bad;">%&gt;%</span>
+  group_by(continent, year) <span style="color: #a45bad;">%&gt;%</span>
+  summarize(avg_life = mean(lifeExp)) <span style="color: #a45bad;">%&gt;%</span>
+  mutate(change_life = avg_life - lag(avg_life))
+</pre>
+</div>
+
+<pre class="example">
+# A tibble: 60 x 4
+# Groups:   continent [5]
+   continent  year avg_life change_life
+      &lt;fctr&gt; &lt;int&gt;    &lt;dbl&gt;       &lt;dbl&gt;
+ 1    Africa  1952 39.13550          NA
+ 2    Africa  1957 41.26635  2.13084615
+ 3    Africa  1962 43.31944  2.05309615
+ 4    Africa  1967 45.33454  2.01509615
+ 5    Africa  1972 47.45094  2.11640385
+ 6    Africa  1977 49.58042  2.12948077
+ 7    Africa  1982 51.59287  2.01244231
+ 8    Africa  1987 53.34479  1.75192308
+ 9    Africa  1992 53.62958  0.28478846
+10    Africa  1997 53.59827 -0.03130769
+# ... with 50 more rows
+</pre>
+</div>
+</div>
+
+<div id="outline-container-org3d70cc2" class="outline-3">
+<h3 id="org3d70cc2"><span class="section-number-3">5.19</span> Ungrouping</h3>
+<div class="outline-text-3" id="text-5-19">
+<ul class="org-ul">
+<li>Note that our answer had &ldquo;continent&rdquo; as a group</li>
+<li>It&rsquo;s easy to forget about this, so if you&rsquo;re saving the object for use later, you may want to run <code>ungroup()</code> to undo the grouping on the data.frame.</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org970a8fa" class="outline-3">
+<h3 id="org970a8fa"><span class="section-number-3">5.20</span> Other data manipulation</h3>
+<div class="outline-text-3" id="text-5-20">
+<ul class="org-ul">
+<li>Those commands take care of the most common data manipulation tasks</li>
+<li>There&rsquo;s tons more but we don&rsquo;t have the time to go over them all</li>
+<li>Search engines and R&rsquo;s help are your friend</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orgc452012" class="outline-3">
+<h3 id="orgc452012"><span class="section-number-3">5.21</span> Review</h3>
+<div class="outline-text-3" id="text-5-21">
+<ul class="org-ul">
+<li>We learned how to use some of the most common <code>dplyr</code> functions to manipulate data (filter, select, mutate, summarize)</li>
+<li><code>group_by</code> makes doing this by groups super easy</li>
+<li>Piping can make it easier to read code</li>
+</ul>
+</div>
+</div>
+</div>
+<div id="outline-container-orgd6efe14" class="outline-2">
+<h2 id="orgd6efe14"><span class="section-number-2">6</span> Reporting from R</h2>
+<div class="outline-text-2" id="text-6">
+</div><div id="outline-container-org37d2470" class="outline-3">
+<h3 id="org37d2470"><span class="section-number-3">6.1</span> Reporting</h3>
+<div class="outline-text-3" id="text-6-1">
+<ul class="org-ul">
+<li>We&rsquo;ve learned most of what you need to do data analysis!</li>
+<li>Now let&rsquo;s do a new analysis on how to report, so we&rsquo;ll learn
+<ul class="org-ul">
+<li>How to report</li>
+<li>Review much of what we learned</li>
+<li>Learn a few more tricks and tips</li>
+</ul></li>
+<li>Right now is a good time to &ldquo;restart&rdquo; R (close and reopen is one way)</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orgb521ca1" class="outline-3">
+<h3 id="orgb521ca1"><span class="section-number-3">6.2</span> New data</h3>
+<div class="outline-text-3" id="text-6-2">
+<ul class="org-ul">
+<li>Let&rsquo;s change the dataset we&rsquo;re using, just for something new:</li>
+<li>We&rsquo;ll use the <code>midwest</code> dataset from <code>ggplot2</code>, which has info on some U.S. midwest counties:</li>
+</ul>
+<div class="org-src-container">
+<pre class="src src-R"><span style="color: #a45bad;">library</span>(dplyr); <span style="color: #a45bad;">library</span>(ggplot2)
+midwest
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-org7ec83ab" class="outline-3">
+<h3 id="org7ec83ab"><span class="section-number-3">6.3</span> Descriptive statistics</h3>
+<div class="outline-text-3" id="text-6-3">
+<ul class="org-ul">
+<li>Let&rsquo;s look at the relationship between college education and the percent living in poverty. And maybe this looks different in metro areas, so let&rsquo;s keep that in mind too.</li>
+</ul>
+<ul class="org-ul">
+<li>I always like to show some descriptive statistics:</li>
+</ul>
+<div class="org-src-container">
+<pre class="src src-R">midwest <span style="color: #a45bad;">%&gt;%</span>
+  select(percbelowpoverty, percollege, inmetro) <span style="color: #a45bad;">%&gt;%</span>
+  summarize_all(funs(mean, sd))
+</pre>
+</div>
+<ul class="org-ul">
+<li>But what if we want to show that in our paper?</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org95f4dad" class="outline-3">
+<h3 id="org95f4dad"><span class="section-number-3">6.4</span> stargazer</h3>
+<div class="outline-text-3" id="text-6-4">
+<ul class="org-ul">
+<li>There are several packages that let you easily make \LaTeX&nbsp;tables, let&rsquo;s use <code>stargazer</code>:</li>
+</ul>
+<div class="org-src-container">
+<pre class="src src-R"><span style="color: #a45bad;">library</span>(stargazer)
+</pre>
+</div>
+<ul class="org-ul">
+<li>Can handle Word too, need to do an html dance. See package docs.</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org3312bcf" class="outline-3">
+<h3 id="org3312bcf"><span class="section-number-3">6.5</span> Descriptive stats, latex table:</h3>
+<div class="outline-text-3" id="text-6-5">
+<div class="org-src-container">
+<pre class="src src-R">midwest <span style="color: #a45bad;">%&gt;%</span>
+  select(percbelowpoverty, percollege, inmetro) <span style="color: #a45bad;">%&gt;%</span>
+  <span style="color: #2aa1ae; background-color: #292e34;">## </span><span style="color: #2aa1ae; background-color: #292e34;">stargazer is picky about tibbles vs data.frames</span>
+  as.data.frame <span style="color: #a45bad;">%&gt;%</span>
+  stargazer(out = <span style="color: #2d9574;">"../output/desc-stats.tex"</span>,
+            title = <span style="color: #2d9574;">"Descriptive Statistics"</span>)
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-org58e3402" class="outline-3">
+<h3 id="org58e3402"><span class="section-number-3">6.6</span> Descriptive stats, latex table result</h3>
+<div class="outline-text-3" id="text-6-6">
+<ul class="org-ul">
+<li>use <code>\input{output/desc-stats.tex}</code> to import the table into your paper</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orga33fb55" class="outline-3">
+<h3 id="orga33fb55"><span class="section-number-3">6.7</span> Plot 1</h3>
+<div class="outline-text-3" id="text-6-7">
+<ul class="org-ul">
+<li>Let&rsquo;s make a scatterplot!</li>
+</ul>
+<ul class="org-ul">
+<li>Make a scatterplot with <code>percbelowpoverty</code> on the y-axis and include info on <code>percollege</code> and <code>inmetro</code></li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org073923b" class="outline-3">
+<h3 id="org073923b"><span class="section-number-3">6.8</span> Plot 1, simple</h3>
+<div class="outline-text-3" id="text-6-8">
+<div class="org-src-container">
+<pre class="src src-R">midwest <span style="color: #a45bad;">%&gt;%</span>
+  select(percbelowpoverty, percollege, inmetro) <span style="color: #a45bad;">%&gt;%</span>
+  <span style="color: #2aa1ae; background-color: #292e34;">## </span><span style="color: #2aa1ae; background-color: #292e34;">inmetro is a number but needs to be discrete.</span>
+  <span style="color: #2aa1ae; background-color: #292e34;">## </span><span style="color: #2aa1ae; background-color: #292e34;">as.logical will convert so that a 0 is FALSE</span>
+  mutate(inmetro = as.logical(inmetro)) <span style="color: #a45bad;">%&gt;%</span>
+  ggplot(aes(percbelowpoverty, percollege,
+             color = inmetro,
+             shape = inmetro)) +
+  geom_point()
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-org40e0249" class="outline-3">
+<h3 id="org40e0249"><span class="section-number-3">6.9</span> Plot 1, full</h3>
+<div class="outline-text-3" id="text-6-9">
+<div class="org-src-container">
+<pre class="src src-R">midwest <span style="color: #a45bad;">%&gt;%</span>
+  select(percbelowpoverty, percollege, inmetro) <span style="color: #a45bad;">%&gt;%</span>
+  mutate(inmetro = as.logical(inmetro)) <span style="color: #a45bad;">%&gt;%</span>
+  ggplot(aes(percbelowpoverty, percollege,
+             color = inmetro,
+             shape = inmetro)) +
+  geom_point() +
+  scale_color_discrete(labels = c(<span style="color: #2d9574;">"Rural"</span>, <span style="color: #2d9574;">"Urban"</span>), name = <span style="color: #2d9574;">""</span>) +
+  scale_shape_discrete(labels = c(<span style="color: #2d9574;">"Rural"</span>, <span style="color: #2d9574;">"Urban"</span>), name = <span style="color: #2d9574;">""</span>) +
+  labs(y = <span style="color: #2d9574;">"Percent below poverty line"</span>,
+       x = <span style="color: #2d9574;">"Percent with a college education"</span>) +
+  theme_bw()
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-org38a7ae9" class="outline-3">
+<h3 id="org38a7ae9"><span class="section-number-3">6.10</span> How to save ggplots</h3>
+<div class="outline-text-3" id="text-6-10">
+<ul class="org-ul">
+<li>The <code>ggsave</code> function saves a plot (by default, the last one you plotted)</li>
+<li>It&rsquo;s important to specify the width and height</li>
+</ul>
+<div class="org-src-container">
+<pre class="src src-R">ggsave(<span style="color: #2d9574;">"../output/my-scatterplot.eps"</span>,
+       <span style="color: #2aa1ae; background-color: #292e34;">## </span><span style="color: #2aa1ae; background-color: #292e34;">Important to specify!!!</span>
+       width = <span style="color: #a45bad;">9</span>, height = <span style="color: #a45bad;">6.5</span>)
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-org8bd6c03" class="outline-3">
+<h3 id="org8bd6c03"><span class="section-number-3">6.11</span> </h3>
+<div class="outline-text-3" id="text-6-11">
+<p>
+<a href="figures/my-scatterplot.pdf">figures/my-scatterplot.pdf</a>
+</p>
+</div>
+</div>
+<div id="outline-container-orgaeb7eb5" class="outline-3">
+<h3 id="orgaeb7eb5"><span class="section-number-3">6.12</span> Linear regression</h3>
+<div class="outline-text-3" id="text-6-12">
+<ul class="org-ul">
+<li><p>
+Let&rsquo;s run a linear predicting poverty with education and include an interaction term for inmetro
+</p>
+<ul class="org-ul">
+<li>Yes, I&rsquo;m ignoring all kinds of issues with this particular model</li>
+</ul>
+<div class="org-src-container">
+<pre class="src src-R">my_reg <span style="color: #a45bad;">&lt;-</span> lm(percbelowpoverty~percollege * inmetro,
+            data= midwest)
+summary(my_reg)
+</pre>
+</div></li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org63de937" class="outline-3">
+<h3 id="org63de937"><span class="section-number-3">6.13</span> Linear regression table</h3>
+<div class="outline-text-3" id="text-6-13">
+<div class="org-src-container">
+<pre class="src src-R">stargazer(my_reg,
+          out = <span style="color: #2d9574;">"../output/my-reg.tex"</span>)
+</pre>
+</div>
+<ul class="org-ul">
+<li>Use <code>\input{output/my-reg.tex}</code> in your \LaTeX&nbsp; document to import the table!</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org9d9382c" class="outline-3">
+<h3 id="org9d9382c"><span class="section-number-3">6.14</span> </h3>
+<div class="outline-text-3" id="text-6-14">
+</div>
+</div>
+<div id="outline-container-org6fa322b" class="outline-3">
+<h3 id="org6fa322b"><span class="section-number-3">6.15</span> </h3>
+<div class="outline-text-3" id="text-6-15">
+<p>
+Thanks for coming!
+</p>
+</div>
+</div>
+</div>
+<div id="footnotes">
+<h2 class="footnotes">Footnotes: </h2>
+<div id="text-footnotes">
+
+<div class="footdef"><sup><a id="fn.1" class="footnum" href="#fnr.1">1</a></sup> <div class="footpara"><p class="footpara">
+Technically, a <code>tibble</code>, but the difference isn&rsquo;t very much, so we&rsquo;ll ignore that
+</p></div></div>
+
+
+</div>
+</div></div>
+<div id="postamble" class="status">
+<p class="date">Date: June 2017</p>
+<p class="author">Author: J. Alexander Branham</p>
+<p class="date">Created: 2017-06-15 Thu 10:00</p>
+<p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
+</div>
+</body>
+</html>
