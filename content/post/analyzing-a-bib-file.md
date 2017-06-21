@@ -9,7 +9,7 @@ Lots of little things happen in grad school that take you by surprise but really
 
 When I started working on this, one thing that became immediately apparent was that I lacked any sort of organized system for getting notified about new articles. Which seems like something I should have done year 1 and is rather obvious in retrospect. But hey, I was a young grad student.
 
-I tested out two ways of getting notifications. One was with email alerts. All the publishers are more than happy to email you about new issues/articles. This worked, but it was annoying to get all these emails in my inbox. So I then switched to using RSS.[^1] That's my current setup.[^2] All of the major publishers publish RSS or Atom feeds for their journals, so it's easy to get subscribed. Well, all of them except Cambridge. Luckily, there is a webapp that lets you [add RSS posts via email](https://zapier.com/zapbook/zaps/1363/add-a-new-rss-posts-via-email/). So I signed up for Cambridge's email alerts but gave them an email address that that company gave me. 
+I tested out two ways of getting notifications. One was with email alerts. All the publishers are more than happy to email you about new issues/articles. This worked, but it was annoying to get all these emails in my inbox. So I then switched to using RSS.[^1] That's my current setup. All of the major publishers publish RSS or Atom feeds for their journals, so it's easy to get subscribed. Well, all of them except Cambridge. Luckily, there is a webapp that lets you [add RSS posts via email](https://zapier.com/zapbook/zaps/1363/add-a-new-rss-posts-via-email/). So I signed up for Cambridge's email alerts but gave them an email address that that company gave me. 
 
 Now that I get notifications about new articles/issues, it certainly *feels* like I read more. But having some empirical evidence would be nice. 
 
@@ -37,4 +37,3 @@ Suspicion confirmed again. We read *a lot* from the same three journals in cours
 
 [^1]: And yes, of course you can read RSS in Emacs. [gnus](http://www.gnus.org/) is built-in and there's also [elfeed](https://github.com/skeeto/elfeed), which is what I use.
 
-[^2]: If you want a list of all the RSS subscriptions I currently use, including the journals, you can find that [on github](https://github.com/jabranham/emacs/blob/master/elfeed.org). 
