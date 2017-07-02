@@ -38,7 +38,7 @@ name = "J. Alexander Branham"
   math = false
 
   # Enable native social sharing buttons?
-  sharing = true
+  sharing = false
 
   # Link custom CSS and JS assets
   #   (relative to /static/css and /static/js respectively)
