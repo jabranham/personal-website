@@ -11,7 +11,7 @@ title: A github pages starter kit for academic websites
 ---
 
 A few people have told me that my previous
-[blog post](/blog/2016/01/making-academic-website.html) has really
+[blog post]({{< relref "post/making-academic-website.md" >}}) has really
 helped them out. I've also noticed that my own website occasionally
 gets cloned. I've done quite a bit with my website, though, so it's
 not quite as "clean" as I'd like it to be, were I showing someone how
