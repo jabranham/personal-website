@@ -14,7 +14,7 @@ post = "/blog/:year/:month/:filename"
 disqusShortname = "jabranhamblog"
 
 # Enable analytics by entering your Google Analytics tracking ID
-googleAnalytics = "UA-65548469-1"
+googleAnalytics =
 
 
 [params]
