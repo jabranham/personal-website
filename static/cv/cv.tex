@@ -17,7 +17,8 @@
 % To put periods inside quotes instead of outside in refs:
 \usepackage[american]{babel}
 \usepackage{csquotes}
-
+\usepackage{changepage}   % for the adjustwidth environment
+\usepackage{calc}
 % Set up page layout:
 \setlength{\parindent}{0em}
 \setlrmarginsandblock{1.75in}{0.75in}{*} % left, right, ratio
@@ -147,12 +148,20 @@ Austin, TX 78712 \hfill \\
 \cvitemindent{Graduate Committee, Student Representative}{2012--2013} \\
 
 \section{Professional Service}{0.25em}
-\textbf{Reviewer}\\*
-\cvitemindent{\emph{American Journal of Political Science}}{}\\*
-\cvitemindent{\emph{American Political Science Review}}{}\\*
-\cvitemindent{\emph{American Politics Research}}{}\\*
-\cvitemindent{\emph{Electoral Studies}}{}\\*
-\cvitemindent{\emph{State Politics and Policy Quarterly}}{}\\
+\textbf{Reviewer}
+% Wrap in adjustwidth to indent to the same level as items in \cvitemindent.
+% First argument is adjust from left margin, second is adjust from right.
+\begin{adjustwidth}{\widthof{\hphantom{xyz}}}{}
+  % Wrap in flushleft to stop awkward line breaking. Journal names should be all
+  % on the same line.
+  \begin{flushleft}
+    \emph{American Journal of Political Science},
+    \emph{American Political Science Review},
+    \emph{American Politics Research},
+    \emph{Electoral Studies},
+    \emph{State Politics and Policy Quarterly}
+  \end{flushleft}
+\end{adjustwidth}
 
 \textbf{Section Chair}\\*
 \cvitemindent{\emph{Electoral Politics, Southern Political Science Association}}{2019}\\
