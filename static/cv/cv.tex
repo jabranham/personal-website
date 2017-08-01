@@ -152,19 +152,19 @@ Austin, TX 78712 \hfill \\
 % Wrap in adjustwidth to indent to the same level as items in \cvitemindent.
 % First argument is adjust from left margin, second is adjust from right.
 \begin{adjustwidth}{\widthof{\hphantom{xyz}}}{}
-  % Wrap in flushleft to stop awkward line breaking. Journal names should be all
-  % on the same line.
+  % flushleft avoids hyphonating journal titles
   \begin{flushleft}
-    \emph{American Journal of Political Science},
-    \emph{American Political Science Review},
-    \emph{American Politics Research},
-    \emph{Electoral Studies},
-    \emph{State Politics and Policy Quarterly}
+    % Put a nonbreaking space to avoid splitting Journal titles across lines
+    \emph{American~Journal~of~Political~Science},
+    \emph{American~Political~Science~Review},
+    \emph{American~Politics~Research},
+    \emph{Electoral~Studies},
+    \emph{State~Politics~and~Policy~Quarterly}
   \end{flushleft}
 \end{adjustwidth}
 
 \textbf{Section Chair}\\*
-\cvitemindent{\emph{Electoral Politics, Southern Political Science Association}}{2019}\\
+\cvitemindent{Electoral Politics, \emph{Southern Political Science Association}}{2019}\\
 
 \vspace*{\fill}
 Updated \today{}
