@@ -70,6 +70,9 @@
     \noindent\makebox[\linewidth]{\rule{\textwidth}{0.4pt}}}
 }{}{}
 
+\copypagestyle{lastpage}{plain}
+\makeoddfoot{lastpage}{Updated \today{}}{\thepage}{}
+
 \begin{document}
 \renewcommand{\section}[2]{\reversemarginpar\marginpar{{\vspace{#2}\textsc{#1}}}}
 \newcommand{\cvitem}[2]{#1 \hfill \textit{#2}}
@@ -194,8 +197,7 @@ Austin, TX 78712 \hfill \\
 \textbf{Section Chair}\\*
 \cvitemindent{Electoral Politics, \emph{Southern Political Science Association}}{2019}\\
 
-\vspace*{\fill}
-Updated \today{}
+\thispagestyle{lastpage}
 \end{document}
 
 % Local Variables:
