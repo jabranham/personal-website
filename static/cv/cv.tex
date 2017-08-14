@@ -14,6 +14,25 @@
   \iffieldundef{doi}{#1}{\href{https://doi.org/\thefield{doi}}{#1}}}
 \DeclareFieldFormat{title}{\usebibmacro{string+doi}{\mkbibemph{#1}}}
 \DeclareFieldFormat[article]{title}{\usebibmacro{string+doi}{\mkbibquote{#1}}}
+
+% Remove (n.d.) from working papers:
+\DeclareLabeldate{%
+  \field{date}
+  \field{year}
+  \field{eventdate}
+  \field{origdate}
+  \field{urldate}
+  \field{pubstate}
+  \literal{nodate}
+}
+
+\renewbibmacro*{addendum+pubstate}{%
+  \printfield{addendum}%
+  \newunit\newblock
+  \iffieldequalstr{labeldatesource}{pubstate}
+    {}
+    {\printfield{pubstate}}}
+
 % To put periods inside quotes instead of outside in refs:
 \usepackage[american]{babel}
 \usepackage{csquotes}
@@ -79,10 +98,21 @@ Austin, TX 78712 \hfill \\
 % Cum laude with distinguished honors in politics and international relations
 
 \section{Publications}{1.5em}
-\nocite{branham2017b}
-\nocite{branham2017}
-\nocite{apfeld2016}
-\printbibliography[heading=none]
+\begin{refsection}
+  \nocite{branham2017b}
+  \nocite{branham2017}
+  \nocite{apfeld2016}
+  \printbibliography[heading=none]
+\end{refsection}
+\vspace{-1em}
+
+\section{Working Papers}{1.5em}
+\begin{refsection}
+  \nocite{branham}
+  \nocite{sohlberg}
+  \nocite{branhamb}
+  \printbibliography[heading=none]
+\end{refsection}
 
 \section{Teaching\\Experience}{0.25em}
 \textbf{University of Texas}\\*
