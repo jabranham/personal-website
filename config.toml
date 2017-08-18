@@ -2,7 +2,6 @@ baseurl = "https://jabranham.com/"
 title = "J. Alexander Branham"
 copyright = "&copy; 2016-2017 J. Alexander Branham"
 languageCode = "en-us"
-rssuri = "feed.xml"
 theme = "academic"
 enableEmoji = true
 footnotereturnlinkcontents = "<sup>^</sup>"
@@ -16,6 +15,8 @@ disqusShortname = "jabranhamblog"
 # Enable analytics by entering your Google Analytics tracking ID
 # googleAnalytics =
 
+[outputFormats.RSS]
+baseName = "feed"
 
 [params]
 name = "J. Alexander Branham"
