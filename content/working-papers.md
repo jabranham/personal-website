@@ -14,7 +14,7 @@ title = "Working Papers"
 
 +++
 
-- [Partisan Feedback](/papers/working-papers/branham-partisan-feedback.pdf): Heterogeneity in Opinion Responsiveness
+- [Partisan Feedback](/papers/working-papers/partisan-feedback.pdf): Heterogeneity in Opinion Responsiveness
 - [Sources of Polling Accuracy](/papers/working-papers/sources-of-polling-accuracy.pdf): How Election Context Affects the Polls
 - From Opinion to Policy: Links Between Representatives, Policy Change, and Public Opinion
   - Contact me for a draft copy
