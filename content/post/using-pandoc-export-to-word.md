@@ -39,7 +39,7 @@ Sometimes pandoc has an easier time outputting to .odt first rather than straigh
 If you have figures in your latex document that you want to appear in the Word document, you have to include them in a file format that Word supports. Word does not support PDFs. I've found that eps files are supported pretty well, so that's what I've been using recently. YMMV.
 
 ## Citations
-Citations may get messed up when converting from markdown/latex to word. Luckily this is an easy fix. The solution relies on `pandoc-citeproc`, which lets pandoc figure out citations. You probably installed this when you installed pandoc, but if not you'll need to install it. Once you have it installed, you simply let pandoc know where your `.bib` file is. So if your `.bib` file is in the same folder as your latex document, it is this simple:
+Citations may get messed up when converting from markdown/latex to word. Luckily this is an easy fix. The solution relies on `pandoc-citeproc`, which lets pandoc figure out citations. You probably installed this when you installed pandoc, but if not you'll need to install it. Once you have it installed, you simply let pandoc know where your `.bib` file is. So if your `.bib` file is in the same folder as your latex document, it is this simple:[^1]
 
 ```shell
 pandoc my-document.tex --bibliography=library.bib -S -o my-document.docx
@@ -83,3 +83,4 @@ alias convert_proposal="pandoc --reference-docx=/home/alex/Dropbox/reference.doc
 # Outro 
 That about wraps it up. I hope this was useful. After using pandoc to convert latex to Word, I've come to the conclusion that it's good enough for infrequent or one-off conversions. It's certainly not the case that I'll be stuck retyping the whole paper to submit it to a journal that only accepts docx files, for example. What it is not good enough to do (yet?) is collaboration with a coauthor who uses word.
 
+[^1]: Update 2017-11-10: A helpful reader pointed out to me that if your bib file is incorrectly formatted, this will cause pandoc-citeproc to throw an error. You can use `pandoc-citeproc -y library.bib` to find out which entry is causing the error.
