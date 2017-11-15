@@ -1,18 +1,16 @@
 +++
 # About/Biography widget.
-
+widget = "about"
+active = true
 date = "2016-04-20T00:00:00"
 draft = false
-
-widget = "about"
 
 # Order that this section will appear in.
 weight = 1
 
 # List your academic interests.
 [interests]
-  title = "Interests"
-  interests = [
+    interests = [
     "Public Opinion",
     "Public Policy",
     "Elections",
@@ -20,8 +18,6 @@ weight = 1
   ]
 
 # List your qualifications (such as academic degrees).
-[education]
-  title = "Education"
 
 [[education.courses]]
   course = "PhD Candidate"
