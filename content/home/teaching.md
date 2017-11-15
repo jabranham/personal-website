@@ -20,6 +20,7 @@ weight = 50
   + [Introduction to Math for Political Scientists](https://www.jabranham.com/math-camp)
   + [Introduction to Data Analysis and Reporting with R](https://www.jabranham.com/learn-r)
 * Workshops
+  + I have materials from various R workshops [here](/learn-r)
   + [Introduction to LaTeX Workshop](https://www.github.com/jabranham/latex-workshop)
   + [Applied R for Social Scientists](https://github.com/jabranham/applied-r-for-social-scientists)
 * Assistant Instructor 
