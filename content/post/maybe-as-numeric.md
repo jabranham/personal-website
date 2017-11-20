@@ -12,7 +12,7 @@ Of course, getting the grades out of my university's learning management system 
 
 ~~~R
 grades <- data.frame(student = c("","Joe Schmoe","Jane Schmane"),
-                     quiz = c("","87","98"), stringsAsFactors = FALSE)
+                     quiz = c("","87","98"))
 grades
        student quiz
 1
@@ -35,6 +35,7 @@ One solution, probably easier than what I came up with, would be to just manuall
 
 ```R
 maybe_as_numeric <- function(v){
+  if (is.factor(v)) v <- as.character(v)
   if (is(tryCatch(as.numeric(v),
                   warning = function(w) w),
          "warning")){
@@ -45,6 +46,8 @@ maybe_as_numeric <- function(v){
 }
 ```
 
-There's probably a better way to do this, but this seems to work at least for now. Hopefully someone else finds it useful. Now we can `map_df(grades, maybe_as_numeric)` and all goes well. Our secretly-numeric columns are now actually numeric, and we keep important things like students' names and ID's. 
+There's probably a better way to do this[^2], but this seems to work at least for now. Hopefully someone else finds it useful. Now we can `map_df(grades, maybe_as_numeric)` and all goes well. Our secretly-numeric columns are now actually numeric, and we keep important things like students' names and ID's. 
 
 [^1]: "Actually" being defined as `as.numeric` not throwing a warning
+
+[^2]: Update 2017-11-20: Turns out there was a better way. Brendan Apfeld helpfully reminded me that R's way of dealing with strings can be problematic because it secretly stores them as factors. To get around this, I just dumbly convert factors to characters before checking what as.numeric does. 
