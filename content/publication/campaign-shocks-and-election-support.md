@@ -8,6 +8,7 @@ image_preview = ""
 math = true
 publication = "*Journal of Elections, Public Opinion, and Parties*"
 publication_short = ""
+publication_types = ["2"]
 selected = false
 title = "Campaign Shocks and Party Support: Evidence from Brazil’s 2014 Presidential Election"
 url_code = ""

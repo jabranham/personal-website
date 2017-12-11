@@ -8,6 +8,7 @@ image_preview = ""
 math = true
 publication = "*Political Science Quarterly*"
 publication_short = ""
+publication_types = ["2"]
 selected = false
 title = "When do the Rich Win?"
 url_code = ""

@@ -8,6 +8,7 @@ image_preview = ""
 math = false
 publication = "*Electoral Studies*"
 publication_short = ""
+publication_types = ["2"]
 selected = false
 title = "Modeling Spending Preferences & Public Policy"
 url_code = ""
