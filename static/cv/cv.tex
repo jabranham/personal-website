@@ -1,11 +1,11 @@
-\documentclass[article,11pt,oneside]{memoir}
+\documentclass[article,11pt,oneside,letterpaper]{memoir}
 
 % to properly compile this file, use xelatexmk
 % you must have Linux Libertine font installed on your computer
 % (contrary to the name, it's available for most OSs)
 
 % Set up biblatex
-\usepackage[style=authoryear, sorting=ydnt, url=false, doi=false]{biblatex}
+\usepackage[style=authoryear, sorting=none, url=false, doi=false]{biblatex}
 \addbibresource{~/Sync/bibliography/references.bib}
 % Remove "in" from before journals:
 \renewbibmacro{in:}{\ifentrytype{article}{}{\printtext{\bibstring{in}\intitlepunct}}}
@@ -92,11 +92,11 @@ Austin, TX 78712 \hfill \\
 
 \section{Education}{0.5em}
 \textbf{University of Texas Austin} \hfill \emph{August 2013---Present}\\*
-\cvitemindent{Ph.D. Candidate in Government}{} \\
+\cvitemindent{Ph.D. Candidate in Government}{}
 
 \textbf{Temple University} \hfill  \emph{May 2013} \\*
 \cvitemindent{M.A. in Political Science}{} \\*
-\cvitemindent{Teaching in Higher Education Certificate}{}  \\
+\cvitemindent{Teaching in Higher Education Certificate}{}
 
 \textbf{Ursinus College} \hfill \emph{May 2011} \\*
 \cvitemindent{B.A. in Politics and International Relations }{}
@@ -104,18 +104,19 @@ Austin, TX 78712 \hfill \\
 
 \section{Publications}{1.5em}
 \begin{refsection}
+  \nocite{branham}
   \nocite{branham2017b}
   \nocite{branham2017}
   \nocite{apfeld2016}
   \printbibliography[heading=none]
 \end{refsection}
-\vspace{-1em}
+% \vspace{-1em}
 
 \section{Working Papers}{1.5em}
 \begin{refsection}
-  \nocite{branham}
-  \nocite{sohlberg}
-  \nocite{branhamb}
+  \nocite{sohlberg_branham}
+  \nocite{branham_persson}
+  \nocite{branham_partisan_policy}
   \printbibliography[heading=none]
 \end{refsection}
 
