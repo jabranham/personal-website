@@ -185,23 +185,25 @@ Austin, TX 78712 \hfill \\
 \cvitemindent{Graduate Committee, Student Representative}{2012--2013} \\
 
 \section{Professional Service}{0.25em}
-\textbf{Reviewer}
-% Wrap in adjustwidth to indent to the same level as items in \cvitemindent.
-% First argument is adjust from left margin, second is adjust from right.
-\begin{adjustwidth}{\widthof{\hphantom{xyz}}}{}
-  % flushleft avoids hyphonating journal titles
-  \begin{flushleft}
-    % Put a nonbreaking space to avoid splitting Journal titles across lines
-    \emph{American~Journal~of~Political~Science},
-    \emph{American~Political~Science~Review},
-    \emph{American~Politics~Research},
-    \emph{Electoral~Studies},
-    \emph{State~Politics~and~Policy~Quarterly}
-  \end{flushleft}
-\end{adjustwidth}
 
 \textbf{Section Chair}\\*
 \cvitemindent{Electoral Politics, \emph{Southern Political Science Association}}{2019}%\\
+
+\newcommand{\reviewyear}[2]{
+  \textbf{Reviewer}, \emph{#1}
+  \begin{adjustwidth}{\widthof{\hphantom{xyz}}}{}
+    % flushleft avoids hyphonating journal titles
+    \begin{flushleft}
+      % Put a nonbreaking space to avoid splitting Journal titles across lines
+      #2
+    \end{flushleft}    
+  \end{adjustwidth}
+}
+
+\reviewyear{2018}{{\emph{American~Journal~of~Political~Science}}}
+\reviewyear{2017}{{\emph{American~Political~Science~Review}, \emph{American~Politics~Research}}}
+\reviewyear{2016}{{\emph{American~Journal~of~Political~Science}, \emph{American~Politics~Research}}}
+\reviewyear{2015}{{\emph{Electoral~Studies}, \emph{State~Politics~and~Policy~Quarterly}}}
 
 \thispagestyle{lastpage}
 \end{document}
