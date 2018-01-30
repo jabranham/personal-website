@@ -22,7 +22,7 @@ I have set up a [git repository](https://github.com/jabranham/pandoc-a-grad-stud
 No, that's not a typo. Pandoc in the background uses a "latex template" when converting latex documents. So when you import the Word document later, you'll want to look at the differences between that document and your original document using pandoc's template. If that's not clear, just forge ahead blindly; it will make sense in a bit. So first export the **version of the paper you sent your adviser** to tex:[^5]
 
 ```shell
-pandoc example.tex --bibliography=/home/alex/Dropbox/bibliography/references.bib --wrap=none -S -s -o example-exported.tex
+pandoc example.tex --bibliography=/home/alex/Dropbox/bibliography/references.bib --wrap=none -s -o example-exported.tex
 ```
 
 We went over what most of the flags mean in the [exporting to word post]({{< relref "post/using-pandoc-export-to-word.md">}}). One new one is the `--wrap=none` option. This tells pandoc not to wrap your lines at 80 characters. In other words, each line in your text (latex) file will be one paragraph. The other new flag is `-s`, which tells pandoc to create a standalone document i.e. to include the preamble. 
@@ -36,7 +36,7 @@ Let's look at the changes our adviser made. This method will actually look at *a
 First, let's just convert the word document back to markdown/latex. This is easy to do, and just involves flipping the commands:
 
 ```shell
-pandoc example-post-adviser.docx --wrap=none -S -s -o example-exported.tex
+pandoc example-post-adviser.docx --wrap=none -s -o example-exported.tex
 ```
 
 Note that you are overwriting the tex-to-tex export that you just did. This lets git diff the files easily. By default, pandoc will accept all the "tracked changes" and ignore comments. We'll come back to comments in a moment, but for track changes, this is actually pretty useful. 
@@ -56,7 +56,7 @@ Dealing with comments from a docx file is a little more complicated. Honestly, i
 First, we need to tell pandoc to include comments in the markdown. We do that by modifying the `track-changes` option:
 
 ```shell
-pandoc example-post-adviser.docx --track-changes=all -S -s -o example.tex
+pandoc example-post-adviser.docx --track-changes=all -s -o example.tex
 ```
 
 `track-changes=all` tells pandoc to wrap insertions, deletions, and comments in curly braces.[^2] So, for example, a comment looks something like this:

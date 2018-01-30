@@ -26,10 +26,10 @@ If you're interested in learning more about the terminal and how to use it, ther
 Once you have a terminal/powershell open in the right folder (i.e. you see your markdown/latex file when you `ls`), we can convert to a Word document. Here's how we do that. If you're writing with markdown instead of latex, you use the same commands but your document will be named something like "my-document.md" instead of "my-document.tex"
 
 ```shell
-pandoc my-document.tex -S -o my-document.docx
+pandoc my-document.tex -o my-document.docx
 ```
 
-All this command does is tell pandoc to take my-document.tex and convert it to my-document.docx. We pass two options to pandoc: `-S` which tells pandoc to convert smart quotes, em- and en-dashes, and ellipses where appropriate. (You *are* using dashes [correctly](http://tex.stackexchange.com/a/3821/88712), aren't you???) `-o mydocument.docx` tells pandoc the output (hence the `o`) that we want. So we could have named the resulting docx file anything - it doesn't need to have the same name as our markdown document.
+All this command does is tell pandoc to take my-document.tex and convert it to my-document.docx. We pass the `-o` option to pandoc: `-o mydocument.docx` tells pandoc the output (hence the `o`) that we want. So we could have named the resulting docx file anything - it doesn't need to have the same name as our markdown document.
 
 And that's it - we now have a Word document from our markdown or latex document. It's really that easy. If it's a simple latex document, pandoc does an excellent job. If it's more complicated you may need to make some manual adjustments to the Word document. In particular, you may have to descend into the hell that is MS Word Table Editor to get tables looking decent. 
 
@@ -42,7 +42,7 @@ If you have figures in your latex document that you want to appear in the Word d
 Citations may get messed up when converting from markdown/latex to word. Luckily this is an easy fix. The solution relies on `pandoc-citeproc`, which lets pandoc figure out citations. You probably installed this when you installed pandoc, but if not you'll need to install it. Once you have it installed, you simply let pandoc know where your `.bib` file is. So if your `.bib` file is in the same folder as your latex document, it is this simple:[^1]
 
 ```shell
-pandoc my-document.tex --bibliography=library.bib -S -o my-document.docx
+pandoc my-document.tex --bibliography=library.bib -o my-document.docx
 ```
 
 You can use relative paths if it is elsewhere on your computer. 
@@ -53,7 +53,7 @@ If you are going to convert frequently to docx, you may want to set up a referen
 When you convert new markdown/latex files to docx, you can then tell pandoc that the resulting docx file should have the same formatting styles as your "reference-docx" file. This is a fairly straightforward extension of the above command:
 
 ```shell
-pandoc my-document.tex --bibliography=library.bib --reference-docx=reference-docx.docx -S -o my-document.docx
+pandoc my-document.tex --bibliography=library.bib --reference-docx=reference-docx.docx -o my-document.docx
 ```
 
 you'll obviously need to replace with the path name of your reference docx on your computer. 
@@ -68,7 +68,7 @@ Emacs has great support for pandoc with [pandoc-mode](https://joostkremers.githu
 Once you set up one reference docx, there's no reason not to use that one for every analysis. Go ahead and put it somewhere on your computer (Dropbox, for example) and then you can reference it from anywhere: 
 
 ```shell
-pandoc my-document.tex --reference-docx=/home/alex/Dropbox/reference-word.docx -S -o my-document.docx
+pandoc my-document.tex --reference-docx=/home/alex/Dropbox/reference-word.docx -o my-document.docx
 ```
 
 ## Set up an alias 
