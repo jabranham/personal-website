@@ -45,7 +45,7 @@ Citations may get messed up when converting from markdown/latex to word. Luckily
 pandoc my-document.tex --bibliography=library.bib -o my-document.docx
 ```
 
-You can use relative paths if it is elsewhere on your computer. 
+You can use paths like `~/path/to/library.bib` if it is elsewhere on your computer.
 
 ## Styling docx output
 If you are going to convert frequently to docx, you may want to set up a reference-docx. The easiest way to do this is to convert to docx as above, open the resulting docx file, and change the "styles" until the document looks like what you want. Pandoc calls this your "reference-docx." You can find a list of supported styles [in pandoc's user guide](http://pandoc.org/MANUAL.html) (search for "--reference-docx"). 
