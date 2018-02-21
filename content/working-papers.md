@@ -14,7 +14,7 @@ title = "Working Papers"
 
 +++
 
-- [Sources of Polling Accuracy](/papers/working-papers/sources-of-polling-accuracy.pdf): How Election Context Affects the Polls
+- [Just a Difficult Election to Poll?](/papers/working-papers/sources-of-polling-accuracy.pdf): How Context Affects Polling Accuracy 
 - From Opinion to Policy: Links Between Representatives, Policy Change, and Public Opinion
   - Contact me for a draft copy
 - Partisan Preferences and Policy Outputs: How Much Does Winning Actually Matter?
