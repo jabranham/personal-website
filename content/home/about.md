@@ -11,10 +11,10 @@ weight = 1
 # List your academic interests.
 [interests]
     interests = [
-    "Public Opinion",
-    "Public Policy",
     "Elections",
     "Methodology"
+    "Public Opinion",
+    "Public Policy",
   ]
 
 # List your qualifications (such as academic degrees).
