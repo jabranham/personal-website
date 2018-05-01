@@ -36,7 +36,7 @@ baseName = "feed"
 
 [params]
   #   Choose from `default`, `ocean`, `forest`, `coffee`, or `dark`.
-  color_theme = "coffee"
+  color_theme = "forest"
   #   Choose from `default`, `classic`, or `playfair`.
   font = "default"
   name = "J. Alexander Branham"
