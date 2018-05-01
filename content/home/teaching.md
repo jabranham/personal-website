@@ -15,10 +15,10 @@ weight = 50
 
 * Teaching in Higher Education Certificate, Temple University
 * Undergraduate
-  + [Introduction to American Politics](https://www.jabranham.com/GOV310L)
+  + [Introduction to American Politics](/GOV310L)
 * Short Courses
-  + [Introduction to Math for Political Scientists](https://www.jabranham.com/math-camp)
-  + [Introduction to Data Analysis and Reporting with R](https://www.jabranham.com/learn-r)
+  + [Introduction to Math for Political Scientists](/math-camp)
+  + [Introduction to Data Analysis and Reporting with R](/learn-r)
 * Workshops
   + I have materials from various R workshops [here](/learn-r)
   + [Introduction to LaTeX Workshop](https://www.github.com/jabranham/latex-workshop)
