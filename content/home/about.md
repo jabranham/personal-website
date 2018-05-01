@@ -12,9 +12,9 @@ weight = 1
 [interests]
     interests = [
     "Elections",
-    "Methodology"
+    "Methodology",
     "Public Opinion",
-    "Public Policy",
+    "Public Policy"
   ]
 
 # List your qualifications (such as academic degrees).
