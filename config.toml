@@ -74,7 +74,7 @@ baseName = "feed"
   math = false
 
   highlight = true
-  highlight_languages = []
+  highlight_languages = ["r", "python"]
   # highlight_style = "github"
   # Enable native social sharing buttons?
   sharing = false
