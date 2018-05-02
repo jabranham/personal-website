@@ -1,8 +1,7 @@
 +++
 tags = ["code", "latex", "analysis", "r"]
 math = false
-date = "2018-05-02T15:11:38-06:00"
-draft = false
+date = "2018-05-02"
 title = "Reporting Numbers in LaTeX Documents"
 +++
 
