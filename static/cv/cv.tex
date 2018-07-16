@@ -69,11 +69,13 @@
 \makeoddhead{plain}{\textbf{\Huge{\theauthor}
     \noindent\makebox[\linewidth]{\rule{\textwidth}{0.4pt}}}
 }{}{}
+\makeoddfoot{plain}{}{}{}
+\makeevenfoot{plain}{}{}{}
 
 % Make a new page style 'lastpage' that inherits from 'plain' (the pagestyle
 % used everywhere), but puts ``Updated \today{}'' in the footer:
 \copypagestyle{lastpage}{plain}
-\makeoddfoot{lastpage}{Updated \today{}}{\thepage}{}
+\makeoddfoot{lastpage}{Updated \today{}}{}{}
 
 \begin{document}
 \renewcommand{\section}[2]{\reversemarginpar\marginpar{{\vspace{#2}\textsc{#1}}}}
